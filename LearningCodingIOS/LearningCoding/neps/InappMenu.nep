@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<NEP>
+    <ResourceFolder advDevice="Custom">../Art/menus-hd</ResourceFolder>
+    <LinkMenu name="GemsInAppMenu" path="../GameData/Menu/GemsInAppMenu.plist"></LinkMenu>
+    <LinkMenu name="InappMenu" path="../GameData/Menu/InappMenu.plist"></LinkMenu>
+    <LinkMenu name="TicketsInAppMenu" path="../GameData/Menu/TicketsInAppMenu.plist"></LinkMenu>
+</NEP>

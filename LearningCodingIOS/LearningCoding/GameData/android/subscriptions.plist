@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>daysDuration</key>
+		<string>7</string>
+		<key>gain</key>
+		<string>1</string>
+		<key>price</key>
+		<string>2.99$</string>
+		<key>priceInDollars</key>
+		<string>2.99</string>
+		<key>productId</key>
+		<string>s_3</string>
+		<key>profileId</key>
+		<string>1288006542</string>
+		<key>thumbName</key>
+		<string>diamonds_pack_01.png</string>
+		<key>title</key>
+		<string>Weekly subscription</string>
+	</dict>
+	<dict>
+		<key>daysDuration</key>
+		<string>28</string>
+		<key>gain</key>
+		<string>1</string>
+		<key>price</key>
+		<string>7.99$</string>
+		<key>priceInDollars</key>
+		<string>7.99</string>
+		<key>productId</key>
+		<string>s_4</string>
+		<key>profileId</key>
+		<string>1288041458</string>
+		<key>thumbName</key>
+		<string>diamonds_pack_01.png</string>
+		<key>title</key>
+		<string>Monthly subscription</string>
+	</dict>
+</array>
+</plist>

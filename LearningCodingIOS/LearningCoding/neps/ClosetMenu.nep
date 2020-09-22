@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<NEP>
+    <ResourceFolder advDevice="iPhone5">../Art/menus-hd</ResourceFolder>
+    <LinkMenu name="ClosetMenu" path="../GameData/Menu/ClosetMenu.plist"></LinkMenu>
+    <LinkMenu name="ClosetMenu3" path="../GameData/Menu/ClosetMenu3.plist"></LinkMenu>
+    <LinkMenu name="OccasionClothesTutorial" path="../GameData/Menu/OccasionClothesTutorial.plist"></LinkMenu>
+    <LinkMenu name="StartingLookMenu" path="../GameData/Menu/StartingLookMenu.plist"></LinkMenu>
+</NEP>

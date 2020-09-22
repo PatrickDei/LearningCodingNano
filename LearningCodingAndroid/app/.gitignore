@@ -1,0 +1,7 @@
+build/
+bin/
+obj/
+gen/
+Default/
+libs/
+server/

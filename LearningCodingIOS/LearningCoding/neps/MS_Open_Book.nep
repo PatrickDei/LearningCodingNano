@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<NEP>
+    <ResourceFolder advDevice="Custom">../Art/menus-hd</ResourceFolder>
+    <LinkMenu name="BonusChapterPanel" path="../GameData/Menu/BonusChapterPanel.plist"></LinkMenu>
+    <LinkMenu name="BonusChapterTutorial" path="../GameData/Menu/BonusChapterTutorial.plist"></LinkMenu>
+    <LinkMenu name="Open_Book" path="../GameData/Menu/Open_Book.plist"></LinkMenu>
+</NEP>

@@ -1,0 +1,7 @@
+include ':app'
+include 'cocos2dx'
+project(':cocos2dx').projectDir = new File('../StoryGameIOS/StoryGame/cocos2dx/platform/android/java')
+include 'googlePlayDownloader'
+project(':googlePlayDownloader').projectDir = new File('libraries/GooglePlayDownloaderLibrary')
+include 'googlePlayLicesing'
+project(':googlePlayLicesing').projectDir = new File('libraries/GooglePlayLicensing')

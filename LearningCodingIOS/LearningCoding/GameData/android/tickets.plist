@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>gain</key>
+		<string>6</string>
+		<key>price</key>
+		<string>1.99$</string>
+		<key>priceInDollars</key>
+		<string>1.99</string>
+		<key>productId</key>
+		<string>pc_2</string>
+		<key>profileId</key>
+		<string>94004</string>
+		<key>thumbName</key>
+		<string>ticket-small.png</string>
+		<key>title</key>
+		<string>Extra Small pack</string>
+	</dict>
+	<dict>
+		<key>extra</key>
+		<string>10</string>
+		<key>extraText</key>
+		<string>35</string>
+		<key>gain</key>
+		<string>20</string>
+		<key>price</key>
+		<string>4.99$</string>
+		<key>priceInDollars</key>
+		<string>4.99</string>
+		<key>productId</key>
+		<string>pc_3</string>
+		<key>profileId</key>
+		<string>94005</string>
+		<key>thumbName</key>
+		<string>ticket-medium.png</string>
+		<key>title</key>
+		<string>Medium pack</string>
+	</dict>
+	<dict>
+		<key>extra</key>
+		<string>20</string>
+		<key>gain</key>
+		<string>50</string>
+		<key>extraText</key>
+		<string>65</string>
+		<key>hot</key>
+		<string>1</string>
+		<key>price</key>
+		<string>9.99$</string>
+		<key>priceInDollars</key>
+		<string>9.99</string>
+		<key>productId</key>
+		<string>pc_4</string>
+		<key>profileId</key>
+		<string>94006</string>
+		<key>thumbName</key>
+		<string>ticket-large.png</string>
+		<key>title</key>
+		<string>Large pack</string>
+	</dict>
+	<dict>
+		<key>best</key>
+		<string>1</string>
+		<key>extra</key>
+		<string>30</string>
+		<key>extraText</key>
+		<string>85</string>
+		<key>gain</key>
+		<string>275</string>
+		<key>price</key>
+		<string>49.99$</string>
+		<key>priceInDollars</key>
+		<string>49.99</string>
+		<key>productId</key>
+		<string>pc_5</string>
+		<key>profileId</key>
+		<string>94007</string>
+		<key>thumbName</key>
+		<string>ticket-extra_large.png</string>
+		<key>title</key>
+		<string>Extra large pack</string>
+	</dict>
+</array>
+</plist>

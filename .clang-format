@@ -1,0 +1,21 @@
+# BasedOnStyle:  Google
+SortIncludes: true
+ColumnLimit: 120
+SpaceBeforeParens: ControlStatements
+UseTab: Never
+# BreakBeforeBraces: Linux
+IndentWidth: 4
+IndentCaseLabels: true
+BreakBeforeBraces: Custom
+BraceWrapping:
+ AfterClass: true
+ AfterControlStatement: false
+ AfterEnum: false
+ AfterFunction: true
+ AfterNamespace: true
+ AfterObjCDeclaration: false
+ AfterStruct: false
+ AfterUnion: false
+ BeforeCatch: false
+ BeforeElse: false
+ IndentBraces: false

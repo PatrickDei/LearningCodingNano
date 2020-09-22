@@ -1,0 +1,2732 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>gender</key>
+		<string>f</string>
+		<key>look</key>
+		<dict>
+			<key>clothIds</key>
+			<dict/>
+			<key>eyebrowsColor</key>
+			<string>107, 61, 23</string>
+			<key>hairColor</key>
+			<string>130, 73, 27</string>
+			<key>skinIds</key>
+			<dict>
+				<key>hair</key>
+				<string>15007</string>
+			</dict>
+		</dict>
+		<key>priceGems</key>
+		<string>10</string>
+		<key>profileId</key>
+		<string>70001</string>
+	</dict>
+	<dict>
+		<key>gender</key>
+		<string>f</string>
+		<key>look</key>
+		<dict>
+			<key>clothIds</key>
+			<dict/>
+			<key>eyebrowsColor</key>
+			<string>118, 92, 39</string>
+			<key>hairColor</key>
+			<string>227, 176, 70</string>
+			<key>skinIds</key>
+			<dict>
+				<key>hair</key>
+				<string>15019</string>
+			</dict>
+		</dict>
+		<key>priceGems</key>
+		<string>20</string>
+		<key>profileId</key>
+		<string>70002</string>
+	</dict>
+	<dict>
+		<key>category</key>
+		<string>0</string>
+		<key>gender</key>
+		<string>f</string>
+		<key>look</key>
+		<dict>
+			<key>clothIds</key>
+			<dict/>
+			<key>eyebrowsColor</key>
+			<string>94, 22, 22</string>
+			<key>hairColor</key>
+			<string>127, 14, 28</string>
+			<key>skinIds</key>
+			<dict>
+				<key>hair</key>
+				<string>15045</string>
+			</dict>
+		</dict>
+		<key>priceGems</key>
+		<string>30</string>
+		<key>profileId</key>
+		<string>70003</string>
+	</dict>
+	<dict>
+		<key>gender</key>
+		<string>f</string>
+		<key>look</key>
+		<dict>
+			<key>clothIds</key>
+			<dict>
+				<key>earring</key>
+				<string>18039</string>
+			</dict>
+			<key>eyebrowsColor</key>
+			<string>151, 92, 51</string>
+			<key>hairColor</key>
+			<string>189, 114, 63</string>
+			<key>skinIds</key>
+			<dict>
+				<key>hair</key>
+				<string>15052</string>
+			</dict>
+		</dict>
+		<key>priceGems</key>
+		<string>50</string>
+		<key>profileId</key>
+		<string>70005</string>
+	</dict>
+	<dict>
+		<key>gender</key>
+		<string>f</string>
+		<key>look</key>
+		<dict>
+			<key>clothIds</key>
+			<dict/>
+			<key>eyebrowsColor</key>
+			<string>158, 106, 40</string>
+			<key>hairColor</key>
+			<string>220, 146, 54</string>
+			<key>skinIds</key>
+			<dict>
+				<key>hair</key>
+				<string>15038</string>
+			</dict>
+		</dict>
+		<key>priceGems</key>
+		<string>10</string>
+		<key>profileId</key>
+		<string>70014</string>
+	</dict>
+	<dict>
+		<key>gender</key>
+		<string>f</string>
+		<key>look</key>
+		<dict>
+			<key>clothIds</key>
+			<dict/>
+			<key>eyebrowsColor</key>
+			<string>148, 130, 75</string>
+			<key>hairColor</key>
+			<string>223, 195, 111</string>
+			<key>skinIds</key>
+			<dict>
+				<key>hair</key>
+				<string>15004</string>
+			</dict>
+		</dict>
+		<key>priceGems</key>
+		<string>10</string>
+		<key>profileId</key>
+		<string>70015</string>
+	</dict>
+	<dict>
+		<key>gender</key>
+		<string>f</string>
+		<key>look</key>
+		<dict>
+			<key>clothIds</key>
+			<dict/>
+			<key>eyebrowsColor</key>
+			<string>151, 138, 110</string>
+			<key>hairColor</key>
+			<string>219, 199, 159</string>
+			<key>skinIds</key>
+			<dict>
+				<key>hair</key>
+				<string>15020</string>
+			</dict>
+		</dict>
+		<key>priceGems</key>
+		<string>10</string>
+		<key>profileId</key>
+		<string>70016</string>
+	</dict>
+	<dict>
+		<key>gender</key>
+		<string>f</string>
+		<key>look</key>
+		<dict>
+			<key>clothIds</key>
+			<dict/>
+			<key>eyebrowsColor</key>
+			<string>131, 85, 42</string>
+			<key>hairColor</key>
+			<string>169, 108, 53</string>
+			<key>skinIds</key>
+			<dict>
+				<key>hair</key>
+				<string>15048</string>
+			</dict>
+		</dict>
+		<key>priceGems</key>
+		<string>10</string>
+		<key>profileId</key>
+		<string>70017</string>
+	</dict>
+	<dict>
+		<key>gender</key>
+		<string>f</string>
+		<key>look</key>
+		<dict>
+			<key>clothIds</key>
+			<dict/>
+			<key>eyebrowsColor</key>
+			<string>180, 104, 39</string>
+			<key>hairColor</key>
+			<string>226, 129, 47</string>
+			<key>skinIds</key>
+			<dict>
+				<key>hair</key>
+				<string>15051</string>
+			</dict>
+		</dict>
+		<key>priceGems</key>
+		<string>10</string>
+		<key>profileId</key>
+		<string>70018</string>
+	</dict>
+	<dict>
+		<key>gender</key>
+		<string>f</string>
+		<key>look</key>
+		<dict>
+			<key>clothIds</key>
+			<dict/>
+			<key>eyebrowsColor</key>
+			<string>123, 54, 35</string>
+			<key>hairColor</key>
+			<string>163, 70, 45</string>
+			<key>skinIds</key>
+			<dict>
+				<key>hair</key>
+				<string>15044</string>
+			</dict>
+		</dict>
+		<key>priceGems</key>
+		<string>10</string>
+		<key>profileId</key>
+		<string>70019</string>
+	</dict>
+	<dict>
+		<key>gender</key>
+		<string>f</string>
+		<key>look</key>
+		<dict>
+			<key>clothIds</key>
+			<dict/>
+			<key>eyebrowsColor</key>
+			<string>125, 68, 22</string>
+			<key>hairColor</key>
+			<string>125, 68, 22</string>
+			<key>skinIds</key>
+			<dict>
+				<key>hair</key>
+				<string>15027</string>
+			</dict>
+		</dict>
+		<key>priceGems</key>
+		<string>20</string>
+		<key>profileId</key>
+		<string>70020</string>
+	</dict>
+	<dict>
+		<key>gender</key>
+		<string>f</string>
+		<key>look</key>
+		<dict>
+			<key>clothIds</key>
+			<dict/>
+			<key>eyebrowsColor</key>
+			<string>165, 117, 61</string>
+			<key>hairColor</key>
+			<string>233, 215, 175</string>
+			<key>skinIds</key>
+			<dict>
+				<key>hair</key>
+				<string>15036</string>
+			</dict>
+		</dict>
+		<key>priceGems</key>
+		<string>20</string>
+		<key>profileId</key>
+		<string>70021</string>
+	</dict>
+	<dict>
+		<key>gender</key>
+		<string>f</string>
+		<key>look</key>
+		<dict>
+			<key>clothIds</key>
+			<dict/>
+			<key>eyebrowsColor</key>
+			<string>115, 68, 31</string>
+			<key>hairColor</key>
+			<string>147, 87, 38</string>
+			<key>skinIds</key>
+			<dict>
+				<key>hair</key>
+				<string>15029</string>
+			</dict>
+		</dict>
+		<key>priceGems</key>
+		<string>20</string>
+		<key>profileId</key>
+		<string>70022</string>
+	</dict>
+	<dict>
+		<key>category</key>
+		<string>2</string>
+		<key>description</key>
+		<string>These beautiful curls have a vintage feel!</string>
+		<key>gender</key>
+		<string>f</string>
+		<key>look</key>
+		<dict>
+			<key>clothIds</key>
+			<dict/>
+			<key>eyebrowsColor</key>
+			<string>129, 64, 42</string>
+			<key>hairColor</key>
+			<string>162, 78, 52</string>
+			<key>skinIds</key>
+			<dict>
+				<key>hair</key>
+				<string>15044</string>
+			</dict>
+		</dict>
+		<key>name</key>
+		<string>Auburn Curls</string>
+		<key>priceGems</key>
+		<string>40</string>
+		<key>profileId</key>
+		<string>70023</string>
+	</dict>
+	<dict>
+		<key>gender</key>
+		<string>f</string>
+		<key>look</key>
+		<dict>
+			<key>clothIds</key>
+			<dict/>
+			<key>eyebrowsColor</key>
+			<string>129, 81, 33</string>
+			<key>hairColor</key>
+			<string>26, 177, 166</string>
+			<key>skinIds</key>
+			<dict>
+				<key>hair</key>
+				<string>15013</string>
+			</dict>
+		</dict>
+		<key>priceGems</key>
+		<string>20</string>
+		<key>profileId</key>
+		<string>70024</string>
+	</dict>
+	<dict>
+		<key>category</key>
+		<string>2</string>
+		<key>description</key>
+		<string>A delicate color that looks so, so sweet!</string>
+		<key>gender</key>
+		<string>f</string>
+		<key>look</key>
+		<dict>
+			<key>clothIds</key>
+			<dict>
+				<key>earring</key>
+				<string>18039</string>
+			</dict>
+			<key>eyebrowsColor</key>
+			<string>169, 117, 76</string>
+			<key>hairColor</key>
+			<string>226, 155, 101</string>
+			<key>skinIds</key>
+			<dict>
+				<key>hair</key>
+				<string>15018</string>
+			</dict>
+		</dict>
+		<key>name</key>
+		<string>Strawberry Blonde</string>
+		<key>priceGems</key>
+		<string>20</string>
+		<key>profileId</key>
+		<string>70025</string>
+	</dict>
+	<dict>
+		<key>gender</key>
+		<string>f</string>
+		<key>look</key>
+		<dict>
+			<key>clothIds</key>
+			<dict/>
+			<key>eyebrowsColor</key>
+			<string>162, 112, 37</string>
+			<key>hairColor</key>
+			<string>230, 134, 133</string>
+			<key>skinIds</key>
+			<dict>
+				<key>hair</key>
+				<string>15014</string>
+			</dict>
+		</dict>
+		<key>priceGems</key>
+		<string>20</string>
+		<key>profileId</key>
+		<string>70026</string>
+	</dict>
+	<dict>
+		<key>gender</key>
+		<string>f</string>
+		<key>look</key>
+		<dict>
+			<key>clothIds</key>
+			<dict/>
+			<key>eyebrowsColor</key>
+			<string>153, 118, 65</string>
+			<key>hairColor</key>
+			<string>230, 178, 97</string>
+			<key>skinIds</key>
+			<dict>
+				<key>hair</key>
+				<string>15055</string>
+			</dict>
+		</dict>
+		<key>priceGems</key>
+		<string>20</string>
+		<key>profileId</key>
+		<string>70027</string>
+	</dict>
+	<dict>
+		<key>category</key>
+		<string>2</string>
+		<key>description</key>
+		<string>Short and sleek cannot be boring with this hot color!</string>
+		<key>gender</key>
+		<string>f</string>
+		<key>look</key>
+		<dict>
+			<key>clothIds</key>
+			<dict/>
+			<key>eyebrowsColor</key>
+			<string>152, 102, 39</string>
+			<key>hairColor</key>
+			<string>39, 210, 195</string>
+			<key>skinIds</key>
+			<dict>
+				<key>hair</key>
+				<string>15059</string>
+			</dict>
+		</dict>
+		<key>name</key>
+		<string>Turquoise Trendsetter</string>
+		<key>priceGems</key>
+		<string>20</string>
+		<key>profileId</key>
+		<string>70029</string>
+	</dict>
+	<dict>
+		<key>gender</key>
+		<string>f</string>
+		<key>look</key>
+		<dict>
+			<key>clothIds</key>
+			<dict>
+				<key>earring</key>
+				<string>18039</string>
+			</dict>
+			<key>eyebrowsColor</key>
+			<string>134, 71, 36</string>
+			<key>hairColor</key>
+			<string>163, 86, 43</string>
+			<key>skinIds</key>
+			<dict>
+				<key>hair</key>
+				<string>15059</string>
+			</dict>
+		</dict>
+		<key>priceGems</key>
+		<string>20</string>
+		<key>profileId</key>
+		<string>70030</string>
+	</dict>
+	<dict>
+		<key>gender</key>
+		<string>f</string>
+		<key>look</key>
+		<dict>
+			<key>clothIds</key>
+			<dict/>
+			<key>eyebrowsColor</key>
+			<string>161, 135, 64</string>
+			<key>hairColor</key>
+			<string>214, 190, 121</string>
+			<key>skinIds</key>
+			<dict>
+				<key>hair</key>
+				<string>15006</string>
+			</dict>
+		</dict>
+		<key>priceGems</key>
+		<string>30</string>
+		<key>profileId</key>
+		<string>70031</string>
+	</dict>
+	<dict>
+		<key>category</key>
+		<string>2</string>
+		<key>description</key>
+		<string>Look fierce with this fire red color!</string>
+		<key>gender</key>
+		<string>f</string>
+		<key>look</key>
+		<dict>
+			<key>clothIds</key>
+			<dict/>
+			<key>eyebrowsColor</key>
+			<string>178, 99, 38</string>
+			<key>hairColor</key>
+			<string>221, 123, 48</string>
+			<key>skinIds</key>
+			<dict>
+				<key>hair</key>
+				<string>15020</string>
+			</dict>
+		</dict>
+		<key>name</key>
+		<string>Kissed by Fire</string>
+		<key>priceGems</key>
+		<string>30</string>
+		<key>profileId</key>
+		<string>70032</string>
+	</dict>
+	<dict>
+		<key>category</key>
+		<string>2</string>
+		<key>description</key>
+		<string>Turn heads with these luscious curls!</string>
+		<key>gender</key>
+		<string>f</string>
+		<key>look</key>
+		<dict>
+			<key>clothIds</key>
+			<dict/>
+			<key>eyebrowsColor</key>
+			<string>171, 139, 75</string>
+			<key>hairColor</key>
+			<string>232, 201, 136</string>
+			<key>skinIds</key>
+			<dict>
+				<key>hair</key>
+				<string>15029</string>
+			</dict>
+		</dict>
+		<key>name</key>
+		<string>Soft Golden Curls</string>
+		<key>priceGems</key>
+		<string>30</string>
+		<key>profileId</key>
+		<string>70033</string>
+	</dict>
+	<dict>
+		<key>gender</key>
+		<string>f</string>
+		<key>look</key>
+		<dict>
+			<key>clothIds</key>
+			<dict/>
+			<key>eyebrowsColor</key>
+			<string>159, 110, 42</string>
+			<key>hairColor</key>
+			<string>253, 174, 196</string>
+			<key>skinIds</key>
+			<dict>
+				<key>hair</key>
+				<string>15042</string>
+			</dict>
+		</dict>
+		<key>priceGems</key>
+		<string>30</string>
+		<key>profileId</key>
+		<string>70034</string>
+	</dict>
+	<dict>
+		<key>gender</key>
+		<string>f</string>
+		<key>look</key>
+		<dict>
+			<key>clothIds</key>
+			<dict>
+				<key>earring</key>
+				<string>18039</string>
+			</dict>
+			<key>eyebrowsColor</key>
+			<string>120, 75, 28</string>
+			<key>hairColor</key>
+			<string>226, 50, 174</string>
+			<key>skinIds</key>
+			<dict>
+				<key>hair</key>
+				<string>15027</string>
+			</dict>
+		</dict>
+		<key>priceGems</key>
+		<string>30</string>
+		<key>profileId</key>
+		<string>70035</string>
+	</dict>
+	<dict>
+		<key>gender</key>
+		<string>f</string>
+		<key>look</key>
+		<dict>
+			<key>clothIds</key>
+			<dict/>
+			<key>eyebrowsColor</key>
+			<string>158, 98, 63</string>
+			<key>hairColor</key>
+			<string>203, 123, 80</string>
+			<key>skinIds</key>
+			<dict>
+				<key>hair</key>
+				<string>15004</string>
+			</dict>
+		</dict>
+		<key>priceGems</key>
+		<string>40</string>
+		<key>profileId</key>
+		<string>70036</string>
+	</dict>
+	<dict>
+		<key>gender</key>
+		<string>f</string>
+		<key>look</key>
+		<dict>
+			<key>clothIds</key>
+			<dict/>
+			<key>eyebrowsColor</key>
+			<string>125, 73, 29</string>
+			<key>hairColor</key>
+			<string>160, 76, 222</string>
+			<key>skinIds</key>
+			<dict>
+				<key>hair</key>
+				<string>15021</string>
+			</dict>
+		</dict>
+		<key>priceGems</key>
+		<string>40</string>
+		<key>profileId</key>
+		<string>70037</string>
+	</dict>
+	<dict>
+		<key>gender</key>
+		<string>f</string>
+		<key>look</key>
+		<dict>
+			<key>clothIds</key>
+			<dict/>
+			<key>eyebrowsColor</key>
+			<string>144, 105, 53</string>
+			<key>hairColor</key>
+			<string>210, 202, 197</string>
+			<key>skinIds</key>
+			<dict>
+				<key>hair</key>
+				<string>15028</string>
+			</dict>
+		</dict>
+		<key>priceGems</key>
+		<string>40</string>
+		<key>profileId</key>
+		<string>70038</string>
+	</dict>
+	<dict>
+		<key>gender</key>
+		<string>f</string>
+		<key>look</key>
+		<dict>
+			<key>clothIds</key>
+			<dict/>
+			<key>eyebrowsColor</key>
+			<string>144, 105, 53</string>
+			<key>hairColor</key>
+			<string>210, 202, 197</string>
+			<key>skinIds</key>
+			<dict>
+				<key>hair</key>
+				<string>15049</string>
+			</dict>
+		</dict>
+		<key>priceGems</key>
+		<string>40</string>
+		<key>profileId</key>
+		<string>70039</string>
+	</dict>
+	<dict>
+		<key>gender</key>
+		<string>f</string>
+		<key>look</key>
+		<dict>
+			<key>clothIds</key>
+			<dict/>
+			<key>eyebrowsColor</key>
+			<string>144, 105, 53</string>
+			<key>hairColor</key>
+			<string>237, 159, 177</string>
+			<key>skinIds</key>
+			<dict>
+				<key>hair</key>
+				<string>15001</string>
+			</dict>
+		</dict>
+		<key>priceGems</key>
+		<string>50</string>
+		<key>profileId</key>
+		<string>70040</string>
+	</dict>
+	<dict>
+		<key>gender</key>
+		<string>f</string>
+		<key>look</key>
+		<dict>
+			<key>clothIds</key>
+			<dict>
+				<key>earring</key>
+				<string>18039</string>
+			</dict>
+			<key>eyebrowsColor</key>
+			<string>58, 37, 18</string>
+			<key>hairColor</key>
+			<string>68, 44, 21</string>
+			<key>skinIds</key>
+			<dict>
+				<key>hair</key>
+				<string>15010</string>
+			</dict>
+		</dict>
+		<key>priceGems</key>
+		<string>50</string>
+		<key>profileId</key>
+		<string>70041</string>
+	</dict>
+	<dict>
+		<key>gender</key>
+		<string>f</string>
+		<key>look</key>
+		<dict>
+			<key>clothIds</key>
+			<dict>
+				<key>earring</key>
+				<string>18039</string>
+			</dict>
+			<key>eyebrowsColor</key>
+			<string>65, 42, 19</string>
+			<key>hairColor</key>
+			<string>84, 53, 24</string>
+			<key>skinIds</key>
+			<dict>
+				<key>hair</key>
+				<string>15015</string>
+			</dict>
+		</dict>
+		<key>priceGems</key>
+		<string>50</string>
+		<key>profileId</key>
+		<string>70042</string>
+	</dict>
+	<dict>
+		<key>category</key>
+		<string>2</string>
+		<key>description</key>
+		<string>Everyone is jealous of these soft curls!</string>
+		<key>gender</key>
+		<string>f</string>
+		<key>look</key>
+		<dict>
+			<key>clothIds</key>
+			<dict/>
+			<key>eyebrowsColor</key>
+			<string>46, 30, 15</string>
+			<key>hairColor</key>
+			<string>46, 30, 15</string>
+			<key>skinIds</key>
+			<dict>
+				<key>hair</key>
+				<string>15010</string>
+			</dict>
+		</dict>
+		<key>name</key>
+		<string>Voluminous Curls</string>
+		<key>priceGems</key>
+		<string>50</string>
+		<key>profileId</key>
+		<string>70043</string>
+	</dict>
+	<dict>
+		<key>gender</key>
+		<string>f</string>
+		<key>look</key>
+		<dict>
+			<key>clothIds</key>
+			<dict/>
+			<key>eyebrowsColor</key>
+			<string>89, 55, 24</string>
+			<key>hairColor</key>
+			<string>217, 105, 126</string>
+			<key>skinIds</key>
+			<dict>
+				<key>hair</key>
+				<string>15023</string>
+			</dict>
+		</dict>
+		<key>priceGems</key>
+		<string>50</string>
+		<key>profileId</key>
+		<string>70044</string>
+	</dict>
+	<dict>
+		<key>category</key>
+		<string>2</string>
+		<key>description</key>
+		<string>Hair the color of cotton candy, yum!</string>
+		<key>gender</key>
+		<string>f</string>
+		<key>look</key>
+		<dict>
+			<key>clothIds</key>
+			<dict/>
+			<key>eyebrowsColor</key>
+			<string>128, 77, 31</string>
+			<key>hairColor</key>
+			<string>226, 162, 170</string>
+			<key>skinIds</key>
+			<dict>
+				<key>hair</key>
+				<string>15073</string>
+			</dict>
+		</dict>
+		<key>name</key>
+		<string>Cotton Candy</string>
+		<key>priceGems</key>
+		<string>30</string>
+		<key>profileId</key>
+		<string>70045</string>
+	</dict>
+	<dict>
+		<key>gender</key>
+		<string>f</string>
+		<key>look</key>
+		<dict>
+			<key>clothIds</key>
+			<dict>
+				<key>earring</key>
+				<string>18000</string>
+			</dict>
+			<key>eyebrowsColor</key>
+			<string>59, 39, 19</string>
+			<key>hairColor</key>
+			<string>76, 38, 13</string>
+			<key>skinIds</key>
+			<dict>
+				<key>hair</key>
+				<string>15020</string>
+			</dict>
+		</dict>
+		<key>priceGems</key>
+		<string>10</string>
+		<key>profileId</key>
+		<string>70047</string>
+	</dict>
+	<dict>
+		<key>gender</key>
+		<string>f</string>
+		<key>look</key>
+		<dict>
+			<key>clothIds</key>
+			<dict>
+				<key>earring</key>
+				<string>18039</string>
+			</dict>
+			<key>eyebrowsColor</key>
+			<string>160, 133, 75</string>
+			<key>hairColor</key>
+			<string>209, 192, 135</string>
+			<key>skinIds</key>
+			<dict>
+				<key>hair</key>
+				<string>15052</string>
+			</dict>
+		</dict>
+		<key>priceGems</key>
+		<string>30</string>
+		<key>profileId</key>
+		<string>70048</string>
+	</dict>
+	<dict>
+		<key>gender</key>
+		<string>f</string>
+		<key>look</key>
+		<dict>
+			<key>clothIds</key>
+			<dict>
+				<key>earring</key>
+				<string>18041</string>
+			</dict>
+			<key>eyebrowsColor</key>
+			<string>167, 87, 46</string>
+			<key>hairColor</key>
+			<string>223, 116, 61</string>
+			<key>skinIds</key>
+			<dict>
+				<key>hair</key>
+				<string>15019</string>
+			</dict>
+		</dict>
+		<key>priceGems</key>
+		<string>50</string>
+		<key>profileId</key>
+		<string>70049</string>
+	</dict>
+	<dict>
+		<key>gender</key>
+		<string>f</string>
+		<key>look</key>
+		<dict>
+			<key>clothIds</key>
+			<dict>
+				<key>earring</key>
+				<string>18042</string>
+			</dict>
+			<key>eyebrowsColor</key>
+			<string>47, 29, 12</string>
+			<key>hairColor</key>
+			<string>64, 36, 13</string>
+			<key>skinIds</key>
+			<dict>
+				<key>hair</key>
+				<string>15020</string>
+			</dict>
+		</dict>
+		<key>priceGems</key>
+		<string>40</string>
+		<key>profileId</key>
+		<string>70050</string>
+	</dict>
+	<dict>
+		<key>gender</key>
+		<string>f</string>
+		<key>look</key>
+		<dict>
+			<key>clothIds</key>
+			<dict>
+				<key>earring</key>
+				<string>18045</string>
+			</dict>
+			<key>eyebrowsColor</key>
+			<string>73, 49, 19</string>
+			<key>hairColor</key>
+			<string>103, 67, 25</string>
+			<key>skinIds</key>
+			<dict>
+				<key>hair</key>
+				<string>15015</string>
+			</dict>
+		</dict>
+		<key>priceGems</key>
+		<string>20</string>
+		<key>profileId</key>
+		<string>70051</string>
+	</dict>
+	<dict>
+		<key>gender</key>
+		<string>f</string>
+		<key>look</key>
+		<dict>
+			<key>clothIds</key>
+			<dict/>
+			<key>eyebrowsColor</key>
+			<string>164, 135, 62</string>
+			<key>hairColor</key>
+			<string>219, 192, 109</string>
+			<key>skinIds</key>
+			<dict>
+				<key>hair</key>
+				<string>15059</string>
+			</dict>
+		</dict>
+		<key>priceGems</key>
+		<string>30</string>
+		<key>profileId</key>
+		<string>70052</string>
+	</dict>
+	<dict>
+		<key>gender</key>
+		<string>f</string>
+		<key>look</key>
+		<dict>
+			<key>clothIds</key>
+			<dict>
+				<key>hat</key>
+				<string>27052</string>
+			</dict>
+			<key>eyebrowsColor</key>
+			<string>161, 99, 45</string>
+			<key>hairColor</key>
+			<string>217, 132, 59</string>
+			<key>skinIds</key>
+			<dict>
+				<key>hair</key>
+				<string>15028</string>
+			</dict>
+		</dict>
+		<key>priceGems</key>
+		<string>30</string>
+		<key>profileId</key>
+		<string>70053</string>
+	</dict>
+	<dict>
+		<key>gender</key>
+		<string>f</string>
+		<key>look</key>
+		<dict>
+			<key>clothIds</key>
+			<dict>
+				<key>necklace</key>
+				<string>20097</string>
+			</dict>
+			<key>eyebrowsColor</key>
+			<string>37, 25, 10</string>
+			<key>hairColor</key>
+			<string>47, 31, 12</string>
+			<key>skinIds</key>
+			<dict>
+				<key>hair</key>
+				<string>15024</string>
+			</dict>
+		</dict>
+		<key>priceGems</key>
+		<string>10</string>
+		<key>profileId</key>
+		<string>70054</string>
+	</dict>
+	<dict>
+		<key>gender</key>
+		<string>f</string>
+		<key>look</key>
+		<dict>
+			<key>clothIds</key>
+			<dict/>
+			<key>eyebrowsColor</key>
+			<string>96, 66, 42</string>
+			<key>hairColor</key>
+			<string>139, 96, 59</string>
+			<key>skinIds</key>
+			<dict>
+				<key>hair</key>
+				<string>15014</string>
+			</dict>
+		</dict>
+		<key>priceGems</key>
+		<string>10</string>
+		<key>profileId</key>
+		<string>70055</string>
+	</dict>
+	<dict>
+		<key>gender</key>
+		<string>f</string>
+		<key>look</key>
+		<dict>
+			<key>clothIds</key>
+			<dict/>
+			<key>eyebrowsColor</key>
+			<string>64, 41, 33</string>
+			<key>hairColor</key>
+			<string>80, 51, 43</string>
+			<key>skinIds</key>
+			<dict>
+				<key>hair</key>
+				<string>15003</string>
+			</dict>
+		</dict>
+		<key>priceGems</key>
+		<string>10</string>
+		<key>profileId</key>
+		<string>70057</string>
+	</dict>
+	<dict>
+		<key>gender</key>
+		<string>f</string>
+		<key>look</key>
+		<dict>
+			<key>clothIds</key>
+			<dict/>
+			<key>eyebrowsColor</key>
+			<string>75, 58, 40</string>
+			<key>hairColor</key>
+			<string>211, 199, 161</string>
+			<key>skinIds</key>
+			<dict>
+				<key>hair</key>
+				<string>15044</string>
+			</dict>
+		</dict>
+		<key>priceGems</key>
+		<string>20</string>
+		<key>profileId</key>
+		<string>70058</string>
+	</dict>
+	<dict>
+		<key>gender</key>
+		<string>f</string>
+		<key>look</key>
+		<dict>
+			<key>clothIds</key>
+			<dict/>
+			<key>eyebrowsColor</key>
+			<string>181, 139, 114</string>
+			<key>hairColor</key>
+			<string>209, 149, 117</string>
+			<key>skinIds</key>
+			<dict>
+				<key>hair</key>
+				<string>15059</string>
+			</dict>
+		</dict>
+		<key>priceGems</key>
+		<string>20</string>
+		<key>profileId</key>
+		<string>70059</string>
+	</dict>
+	<dict>
+		<key>gender</key>
+		<string>f</string>
+		<key>look</key>
+		<dict>
+			<key>clothIds</key>
+			<dict/>
+			<key>eyebrowsColor</key>
+			<string>77, 59, 40</string>
+			<key>hairColor</key>
+			<string>255, 203, 231</string>
+			<key>skinIds</key>
+			<dict>
+				<key>hair</key>
+				<string>15051</string>
+			</dict>
+		</dict>
+		<key>priceGems</key>
+		<string>30</string>
+		<key>profileId</key>
+		<string>70060</string>
+	</dict>
+	<dict>
+		<key>gender</key>
+		<string>f</string>
+		<key>look</key>
+		<dict>
+			<key>clothIds</key>
+			<dict/>
+			<key>eyebrowsColor</key>
+			<string>63, 49, 35</string>
+			<key>hairColor</key>
+			<string>56, 0, 13</string>
+			<key>skinIds</key>
+			<dict>
+				<key>hair</key>
+				<string>15027</string>
+			</dict>
+		</dict>
+		<key>priceGems</key>
+		<string>30</string>
+		<key>profileId</key>
+		<string>70061</string>
+	</dict>
+	<dict>
+		<key>gender</key>
+		<string>f</string>
+		<key>look</key>
+		<dict>
+			<key>clothIds</key>
+			<dict/>
+			<key>eyebrowsColor</key>
+			<string>137, 105, 81</string>
+			<key>hairColor</key>
+			<string>217, 105, 126</string>
+			<key>skinIds</key>
+			<dict>
+				<key>hair</key>
+				<string>15023</string>
+			</dict>
+		</dict>
+		<key>priceGems</key>
+		<string>40</string>
+		<key>profileId</key>
+		<string>70062</string>
+	</dict>
+	<dict>
+		<key>gender</key>
+		<string>f</string>
+		<key>look</key>
+		<dict>
+			<key>clothIds</key>
+			<dict/>
+			<key>eyebrowsColor</key>
+			<string>84, 57, 39</string>
+			<key>hairColor</key>
+			<string>203, 123, 80</string>
+			<key>skinIds</key>
+			<dict>
+				<key>hair</key>
+				<string>15004</string>
+			</dict>
+		</dict>
+		<key>priceGems</key>
+		<string>40</string>
+		<key>profileId</key>
+		<string>70063</string>
+	</dict>
+	<dict>
+		<key>gender</key>
+		<string>f</string>
+		<key>look</key>
+		<dict>
+			<key>clothIds</key>
+			<dict>
+				<key>earring</key>
+				<string>18013</string>
+			</dict>
+			<key>eyebrowsColor</key>
+			<string>92, 56, 28</string>
+			<key>hairColor</key>
+			<string>152, 92, 49</string>
+			<key>skinIds</key>
+			<dict>
+				<key>hair</key>
+				<string>15052</string>
+			</dict>
+		</dict>
+		<key>priceGems</key>
+		<string>30</string>
+		<key>profileId</key>
+		<string>70064</string>
+	</dict>
+	<dict>
+		<key>gender</key>
+		<string>f</string>
+		<key>look</key>
+		<dict>
+			<key>clothIds</key>
+			<dict>
+				<key>earring</key>
+				<string>18041</string>
+			</dict>
+			<key>eyebrowsColor</key>
+			<string>122, 91, 37</string>
+			<key>hairColor</key>
+			<string>213, 189, 122</string>
+			<key>skinIds</key>
+			<dict>
+				<key>hair</key>
+				<string>15008</string>
+			</dict>
+		</dict>
+		<key>priceGems</key>
+		<string>20</string>
+		<key>profileId</key>
+		<string>70065</string>
+	</dict>
+	<dict>
+		<key>gender</key>
+		<string>f</string>
+		<key>look</key>
+		<dict>
+			<key>clothIds</key>
+			<dict>
+				<key>earring</key>
+				<string>18024</string>
+			</dict>
+			<key>eyebrowsColor</key>
+			<string>90, 36, 26</string>
+			<key>hairColor</key>
+			<string>124, 47, 31</string>
+			<key>skinIds</key>
+			<dict>
+				<key>hair</key>
+				<string>15045</string>
+			</dict>
+		</dict>
+		<key>priceGems</key>
+		<string>30</string>
+		<key>profileId</key>
+		<string>70066</string>
+	</dict>
+	<dict>
+		<key>gender</key>
+		<string>f</string>
+		<key>look</key>
+		<dict>
+			<key>clothIds</key>
+			<dict>
+				<key>earring</key>
+				<string>18041</string>
+			</dict>
+			<key>eyebrowsColor</key>
+			<string>119, 62, 33</string>
+			<key>hairColor</key>
+			<string>173, 86, 40</string>
+			<key>skinIds</key>
+			<dict>
+				<key>hair</key>
+				<string>15019</string>
+			</dict>
+		</dict>
+		<key>priceGems</key>
+		<string>30</string>
+		<key>profileId</key>
+		<string>70067</string>
+	</dict>
+	<dict>
+		<key>gender</key>
+		<string>f</string>
+		<key>look</key>
+		<dict>
+			<key>clothIds</key>
+			<dict>
+				<key>earring</key>
+				<string>18036</string>
+			</dict>
+			<key>eyebrowsColor</key>
+			<string>122, 91, 37</string>
+			<key>hairColor</key>
+			<string>197, 157, 114</string>
+			<key>skinIds</key>
+			<dict>
+				<key>hair</key>
+				<string>15010</string>
+			</dict>
+		</dict>
+		<key>priceGems</key>
+		<string>30</string>
+		<key>profileId</key>
+		<string>70068</string>
+	</dict>
+	<dict>
+		<key>gender</key>
+		<string>f</string>
+		<key>look</key>
+		<dict>
+			<key>clothIds</key>
+			<dict>
+				<key>earring</key>
+				<string>18039</string>
+			</dict>
+			<key>eyebrowsColor</key>
+			<string>57, 31, 18</string>
+			<key>hairColor</key>
+			<string>77, 40, 20</string>
+			<key>skinIds</key>
+			<dict>
+				<key>hair</key>
+				<string>15020</string>
+			</dict>
+		</dict>
+		<key>priceGems</key>
+		<string>30</string>
+		<key>profileId</key>
+		<string>70069</string>
+	</dict>
+	<dict>
+		<key>gender</key>
+		<string>f</string>
+		<key>look</key>
+		<dict>
+			<key>clothIds</key>
+			<dict>
+				<key>earring</key>
+				<string>18041</string>
+			</dict>
+			<key>eyebrowsColor</key>
+			<string>85, 52, 20</string>
+			<key>hairColor</key>
+			<string>107, 65, 19</string>
+			<key>skinIds</key>
+			<dict>
+				<key>hair</key>
+				<string>15003</string>
+			</dict>
+		</dict>
+		<key>priceGems</key>
+		<string>40</string>
+		<key>profileId</key>
+		<string>70070</string>
+	</dict>
+	<dict>
+		<key>category</key>
+		<string>0</string>
+		<key>description</key>
+		<string>Straight, dark hairstyle that gives you a little edge.</string>
+		<key>gender</key>
+		<string>f</string>
+		<key>look</key>
+		<dict>
+			<key>clothIds</key>
+			<dict/>
+			<key>eyebrowsColor</key>
+			<string>60, 36, 13</string>
+			<key>hairColor</key>
+			<string>70, 40, 13</string>
+			<key>skinIds</key>
+			<dict>
+				<key>hair</key>
+				<string>15048</string>
+			</dict>
+		</dict>
+		<key>name</key>
+		<string>Sleek Brunette</string>
+		<key>priceGems</key>
+		<string>0</string>
+		<key>profileId</key>
+		<string>70071</string>
+	</dict>
+	<dict>
+		<key>category</key>
+		<string>2</string>
+		<key>description</key>
+		<string>Long, blond curls that frame your face beautifully.</string>
+		<key>gender</key>
+		<string>f</string>
+		<key>look</key>
+		<dict>
+			<key>clothIds</key>
+			<dict/>
+			<key>eyebrowsColor</key>
+			<string>71, 54, 28</string>
+			<key>hairColor</key>
+			<string>250, 206, 136</string>
+			<key>skinIds</key>
+			<dict>
+				<key>hair</key>
+				<string>15029</string>
+			</dict>
+		</dict>
+		<key>name</key>
+		<string>Dreamy Curls</string>
+		<key>priceGems</key>
+		<string>30</string>
+		<key>profileId</key>
+		<string>70072</string>
+	</dict>
+	<dict>
+		<key>category</key>
+		<string>2</string>
+		<key>description</key>
+		<string>Everybody needs a little color in their life!</string>
+		<key>gender</key>
+		<string>f</string>
+		<key>look</key>
+		<dict>
+			<key>clothIds</key>
+			<dict/>
+			<key>eyebrowsColor</key>
+			<string>38, 29, 15</string>
+			<key>hairColor</key>
+			<string>30, 158, 162</string>
+			<key>skinIds</key>
+			<dict>
+				<key>hair</key>
+				<string>15055</string>
+			</dict>
+		</dict>
+		<key>name</key>
+		<string>Turquoise Curls</string>
+		<key>priceGems</key>
+		<string>10</string>
+		<key>profileId</key>
+		<string>70073</string>
+	</dict>
+	<dict>
+		<key>category</key>
+		<string>0</string>
+		<key>description</key>
+		<string>Straight, brown hair with bangs.</string>
+		<key>gender</key>
+		<string>f</string>
+		<key>look</key>
+		<dict>
+			<key>clothIds</key>
+			<dict/>
+			<key>eyebrowsColor</key>
+			<string>38, 29, 15</string>
+			<key>hairColor</key>
+			<string>169, 115, 35</string>
+			<key>skinIds</key>
+			<dict>
+				<key>hair</key>
+				<string>15002</string>
+			</dict>
+		</dict>
+		<key>name</key>
+		<string>Basic Brunette</string>
+		<key>priceGems</key>
+		<string>0</string>
+		<key>profileId</key>
+		<string>70074</string>
+	</dict>
+	<dict>
+		<key>category</key>
+		<string>2</string>
+		<key>description</key>
+		<string>Sleek, lilac hairstyle.</string>
+		<key>gender</key>
+		<string>f</string>
+		<key>look</key>
+		<dict>
+			<key>clothIds</key>
+			<dict/>
+			<key>eyebrowsColor</key>
+			<string>38, 29, 15</string>
+			<key>hairColor</key>
+			<string>169, 131, 147</string>
+			<key>skinIds</key>
+			<dict>
+				<key>hair</key>
+				<string>15012</string>
+			</dict>
+		</dict>
+		<key>name</key>
+		<string>Lilac Bob</string>
+		<key>priceGems</key>
+		<string>10</string>
+		<key>profileId</key>
+		<string>70075</string>
+	</dict>
+	<dict>
+		<key>gender</key>
+		<string>f</string>
+		<key>look</key>
+		<dict>
+			<key>clothIds</key>
+			<dict/>
+			<key>eyebrowsColor</key>
+			<string>51, 31, 18</string>
+			<key>hairColor</key>
+			<string>214, 176, 216</string>
+			<key>skinIds</key>
+			<dict>
+				<key>hair</key>
+				<string>15010</string>
+			</dict>
+		</dict>
+		<key>priceGems</key>
+		<string>20</string>
+		<key>profileId</key>
+		<string>70076</string>
+	</dict>
+	<dict>
+		<key>category</key>
+		<string>2</string>
+		<key>description</key>
+		<string>Keep it foxy with this amazing hair color!</string>
+		<key>gender</key>
+		<string>f</string>
+		<key>look</key>
+		<dict>
+			<key>clothIds</key>
+			<dict/>
+			<key>eyebrowsColor</key>
+			<string>51, 31, 18</string>
+			<key>hairColor</key>
+			<string>210, 202, 197</string>
+			<key>skinIds</key>
+			<dict>
+				<key>hair</key>
+				<string>15028</string>
+			</dict>
+		</dict>
+		<key>name</key>
+		<string>Silver Waves</string>
+		<key>priceGems</key>
+		<string>30</string>
+		<key>profileId</key>
+		<string>70077</string>
+	</dict>
+	<dict>
+		<key>gender</key>
+		<string>f</string>
+		<key>look</key>
+		<dict>
+			<key>clothIds</key>
+			<dict/>
+			<key>eyebrowsColor</key>
+			<string>51, 31, 18</string>
+			<key>hairColor</key>
+			<string>221, 106, 35</string>
+			<key>skinIds</key>
+			<dict>
+				<key>hair</key>
+				<string>15027</string>
+			</dict>
+		</dict>
+		<key>priceGems</key>
+		<string>10</string>
+		<key>profileId</key>
+		<string>70078</string>
+	</dict>
+	<dict>
+		<key>category</key>
+		<string>0</string>
+		<key>description</key>
+		<string>Take the plunge and get this bold haircut.</string>
+		<key>gender</key>
+		<string>f</string>
+		<key>look</key>
+		<dict>
+			<key>clothIds</key>
+			<dict/>
+			<key>eyebrowsColor</key>
+			<string>51, 31, 18</string>
+			<key>hairColor</key>
+			<string>203, 157, 41</string>
+			<key>skinIds</key>
+			<dict>
+				<key>hair</key>
+				<string>15011</string>
+			</dict>
+		</dict>
+		<key>name</key>
+		<string>Bold Cut</string>
+		<key>priceGems</key>
+		<string>0</string>
+		<key>profileId</key>
+		<string>70079</string>
+	</dict>
+	<dict>
+		<key>gender</key>
+		<string>f</string>
+		<key>look</key>
+		<dict>
+			<key>clothIds</key>
+			<dict/>
+			<key>eyebrowsColor</key>
+			<string>51, 31, 18</string>
+			<key>hairColor</key>
+			<string>68, 164, 192</string>
+			<key>skinIds</key>
+			<dict>
+				<key>hair</key>
+				<string>15025</string>
+			</dict>
+		</dict>
+		<key>priceGems</key>
+		<string>0</string>
+		<key>profileId</key>
+		<string>70080</string>
+	</dict>
+	<dict>
+		<key>gender</key>
+		<string>f</string>
+		<key>look</key>
+		<dict>
+			<key>clothIds</key>
+			<dict/>
+			<key>eyebrowsColor</key>
+			<string>22, 8, 9</string>
+			<key>hairColor</key>
+			<string>53, 13, 10</string>
+			<key>skinIds</key>
+			<dict>
+				<key>hair</key>
+				<string>15004</string>
+			</dict>
+		</dict>
+		<key>priceGems</key>
+		<string>30</string>
+		<key>profileId</key>
+		<string>70081</string>
+	</dict>
+	<dict>
+		<key>gender</key>
+		<string>f</string>
+		<key>look</key>
+		<dict>
+			<key>clothIds</key>
+			<dict/>
+			<key>eyebrowsColor</key>
+			<string>60, 36, 13</string>
+			<key>hairColor</key>
+			<string>201, 120, 88</string>
+			<key>skinIds</key>
+			<dict>
+				<key>hair</key>
+				<string>15009</string>
+			</dict>
+		</dict>
+		<key>priceGems</key>
+		<string>10</string>
+		<key>profileId</key>
+		<string>70082</string>
+	</dict>
+	<dict>
+		<key>gender</key>
+		<string>f</string>
+		<key>look</key>
+		<dict>
+			<key>clothIds</key>
+			<dict/>
+			<key>eyebrowsColor</key>
+			<string>60, 36, 13</string>
+			<key>hairColor</key>
+			<string>182, 24, 37</string>
+			<key>skinIds</key>
+			<dict>
+				<key>hair</key>
+				<string>15042</string>
+			</dict>
+		</dict>
+		<key>priceGems</key>
+		<string>20</string>
+		<key>profileId</key>
+		<string>70083</string>
+	</dict>
+	<dict>
+		<key>gender</key>
+		<string>f</string>
+		<key>look</key>
+		<dict>
+			<key>clothIds</key>
+			<dict/>
+			<key>eyebrowsColor</key>
+			<string>60, 36, 13</string>
+			<key>hairColor</key>
+			<string>99, 74, 49</string>
+			<key>skinIds</key>
+			<dict>
+				<key>hair</key>
+				<string>15051</string>
+			</dict>
+		</dict>
+		<key>priceGems</key>
+		<string>0</string>
+		<key>profileId</key>
+		<string>70084</string>
+	</dict>
+	<dict>
+		<key>gender</key>
+		<string>f</string>
+		<key>look</key>
+		<dict>
+			<key>clothIds</key>
+			<dict/>
+			<key>eyebrowsColor</key>
+			<string>60, 36, 13</string>
+			<key>hairColor</key>
+			<string>30, 101, 73</string>
+			<key>skinIds</key>
+			<dict>
+				<key>hair</key>
+				<string>15003</string>
+			</dict>
+		</dict>
+		<key>priceGems</key>
+		<string>0</string>
+		<key>profileId</key>
+		<string>70085</string>
+	</dict>
+	<dict>
+		<key>gender</key>
+		<string>f</string>
+		<key>look</key>
+		<dict>
+			<key>clothIds</key>
+			<dict/>
+			<key>eyebrowsColor</key>
+			<string>0, 8, 9</string>
+			<key>hairColor</key>
+			<string>94, 55, 28</string>
+			<key>skinIds</key>
+			<dict>
+				<key>hair</key>
+				<string>15015</string>
+			</dict>
+		</dict>
+		<key>priceGems</key>
+		<string>30</string>
+		<key>profileId</key>
+		<string>70086</string>
+	</dict>
+	<dict>
+		<key>category</key>
+		<string>2</string>
+		<key>description</key>
+		<string>This short hair makes you look cute as a button!</string>
+		<key>gender</key>
+		<string>f</string>
+		<key>look</key>
+		<dict>
+			<key>clothIds</key>
+			<dict/>
+			<key>eyebrowsColor</key>
+			<string>0, 8, 9</string>
+			<key>hairColor</key>
+			<string>223, 201, 147</string>
+			<key>skinIds</key>
+			<dict>
+				<key>hair</key>
+				<string>15051</string>
+			</dict>
+		</dict>
+		<key>name</key>
+		<string>Blonde Babe</string>
+		<key>priceGems</key>
+		<string>10</string>
+		<key>profileId</key>
+		<string>70087</string>
+	</dict>
+	<dict>
+		<key>gender</key>
+		<string>f</string>
+		<key>look</key>
+		<dict>
+			<key>clothIds</key>
+			<dict/>
+			<key>eyebrowsColor</key>
+			<string>0, 8, 9</string>
+			<key>hairColor</key>
+			<string>112, 0, 135</string>
+			<key>skinIds</key>
+			<dict>
+				<key>hair</key>
+				<string>15012</string>
+			</dict>
+		</dict>
+		<key>priceGems</key>
+		<string>0</string>
+		<key>profileId</key>
+		<string>70088</string>
+	</dict>
+	<dict>
+		<key>category</key>
+		<string>0</string>
+		<key>description</key>
+		<string>Straight brown hair with bangs.</string>
+		<key>gender</key>
+		<string>f</string>
+		<key>look</key>
+		<dict>
+			<key>clothIds</key>
+			<dict/>
+			<key>eyebrowsColor</key>
+			<string>0, 8, 9</string>
+			<key>hairColor</key>
+			<string>140, 116, 72</string>
+			<key>skinIds</key>
+			<dict>
+				<key>hair</key>
+				<string>15022</string>
+			</dict>
+		</dict>
+		<key>name</key>
+		<string>A Basic Cut</string>
+		<key>priceGems</key>
+		<string>0</string>
+		<key>profileId</key>
+		<string>70089</string>
+	</dict>
+	<dict>
+		<key>gender</key>
+		<string>f</string>
+		<key>look</key>
+		<dict>
+			<key>clothIds</key>
+			<dict/>
+			<key>eyebrowsColor</key>
+			<string>0, 8, 9</string>
+			<key>hairColor</key>
+			<string>115, 35, 34</string>
+			<key>skinIds</key>
+			<dict>
+				<key>hair</key>
+				<string>15048</string>
+			</dict>
+		</dict>
+		<key>priceGems</key>
+		<string>20</string>
+		<key>profileId</key>
+		<string>70090</string>
+	</dict>
+	<dict>
+		<key>category</key>
+		<string>2</string>
+		<key>description</key>
+		<string>Feel fierce in a stunning blonde lob.</string>
+		<key>gender</key>
+		<string>f</string>
+		<key>look</key>
+		<dict>
+			<key>clothIds</key>
+			<dict/>
+			<key>eyebrowsColor</key>
+			<string>84, 50, 30</string>
+			<key>hairColor</key>
+			<string>207, 185, 150</string>
+			<key>skinIds</key>
+			<dict>
+				<key>hair</key>
+				<string>15009</string>
+			</dict>
+		</dict>
+		<key>name</key>
+		<string>Sleek &amp; Straight</string>
+		<key>priceGems</key>
+		<string>20</string>
+		<key>profileId</key>
+		<string>70091</string>
+	</dict>
+	<dict>
+		<key>gender</key>
+		<string>f</string>
+		<key>look</key>
+		<dict>
+			<key>clothIds</key>
+			<dict/>
+			<key>eyebrowsColor</key>
+			<string>0, 8, 9</string>
+			<key>hairColor</key>
+			<string>84, 41, 16</string>
+			<key>skinIds</key>
+			<dict>
+				<key>hair</key>
+				<string>15027</string>
+			</dict>
+		</dict>
+		<key>priceGems</key>
+		<string>10</string>
+		<key>profileId</key>
+		<string>70092</string>
+	</dict>
+	<dict>
+		<key>gender</key>
+		<string>f</string>
+		<key>look</key>
+		<dict>
+			<key>clothIds</key>
+			<dict/>
+			<key>eyebrowsColor</key>
+			<string>0, 8, 9</string>
+			<key>hairColor</key>
+			<string>161, 74, 26</string>
+			<key>skinIds</key>
+			<dict>
+				<key>hair</key>
+				<string>15006</string>
+			</dict>
+		</dict>
+		<key>priceGems</key>
+		<string>0</string>
+		<key>profileId</key>
+		<string>70093</string>
+	</dict>
+	<dict>
+		<key>category</key>
+		<string>0</string>
+		<key>description</key>
+		<string>Sleek black hair is a classic.</string>
+		<key>gender</key>
+		<string>f</string>
+		<key>look</key>
+		<dict>
+			<key>clothIds</key>
+			<dict/>
+			<key>eyebrowsColor</key>
+			<string>0, 8, 9</string>
+			<key>hairColor</key>
+			<string>33, 27, 9</string>
+			<key>skinIds</key>
+			<dict>
+				<key>hair</key>
+				<string>15002</string>
+			</dict>
+		</dict>
+		<key>name</key>
+		<string>Mid-Length Black Hair</string>
+		<key>priceGems</key>
+		<string>0</string>
+		<key>profileId</key>
+		<string>70094</string>
+	</dict>
+	<dict>
+		<key>gender</key>
+		<string>f</string>
+		<key>look</key>
+		<dict>
+			<key>clothIds</key>
+			<dict/>
+			<key>eyebrowsColor</key>
+			<string>71, 54, 28</string>
+			<key>hairColor</key>
+			<string>232, 183, 127</string>
+			<key>skinIds</key>
+			<dict>
+				<key>hair</key>
+				<string>15028</string>
+			</dict>
+		</dict>
+		<key>priceGems</key>
+		<string>30</string>
+		<key>profileId</key>
+		<string>70095</string>
+	</dict>
+	<dict>
+		<key>gender</key>
+		<string>f</string>
+		<key>look</key>
+		<dict>
+			<key>clothIds</key>
+			<dict/>
+			<key>eyebrowsColor</key>
+			<string>71, 54, 28</string>
+			<key>hairColor</key>
+			<string>190, 0, 28</string>
+			<key>skinIds</key>
+			<dict>
+				<key>hair</key>
+				<string>15023</string>
+			</dict>
+		</dict>
+		<key>priceGems</key>
+		<string>20</string>
+		<key>profileId</key>
+		<string>70096</string>
+	</dict>
+	<dict>
+		<key>gender</key>
+		<string>f</string>
+		<key>look</key>
+		<dict>
+			<key>clothIds</key>
+			<dict/>
+			<key>eyebrowsColor</key>
+			<string>121, 93, 58</string>
+			<key>hairColor</key>
+			<string>82, 48, 1</string>
+			<key>skinIds</key>
+			<dict>
+				<key>hair</key>
+				<string>15055</string>
+			</dict>
+		</dict>
+		<key>priceGems</key>
+		<string>10</string>
+		<key>profileId</key>
+		<string>70097</string>
+	</dict>
+	<dict>
+		<key>category</key>
+		<string>0</string>
+		<key>description</key>
+		<string>Easy updo compliments your face.</string>
+		<key>gender</key>
+		<string>f</string>
+		<key>look</key>
+		<dict>
+			<key>clothIds</key>
+			<dict/>
+			<key>eyebrowsColor</key>
+			<string>121, 93, 58</string>
+			<key>hairColor</key>
+			<string>196, 109, 0</string>
+			<key>skinIds</key>
+			<dict>
+				<key>hair</key>
+				<string>15008</string>
+			</dict>
+		</dict>
+		<key>name</key>
+		<string>High Updo</string>
+		<key>priceGems</key>
+		<string>0</string>
+		<key>profileId</key>
+		<string>70098</string>
+	</dict>
+	<dict>
+		<key>category</key>
+		<string>0</string>
+		<key>description</key>
+		<string>Bright purple is obviously your favorite color.</string>
+		<key>gender</key>
+		<string>f</string>
+		<key>look</key>
+		<dict>
+			<key>clothIds</key>
+			<dict/>
+			<key>eyebrowsColor</key>
+			<string>121, 93, 58</string>
+			<key>hairColor</key>
+			<string>114, 42, 197</string>
+			<key>skinIds</key>
+			<dict>
+				<key>hair</key>
+				<string>15002</string>
+			</dict>
+		</dict>
+		<key>name</key>
+		<string>Straight Purple Hair</string>
+		<key>priceGems</key>
+		<string>0</string>
+		<key>profileId</key>
+		<string>70099</string>
+	</dict>
+	<dict>
+		<key>gender</key>
+		<string>f</string>
+		<key>look</key>
+		<dict>
+			<key>clothIds</key>
+			<dict/>
+			<key>eyebrowsColor</key>
+			<string>36, 25, 10</string>
+			<key>hairColor</key>
+			<string>47, 31, 12</string>
+			<key>skinIds</key>
+			<dict>
+				<key>hair</key>
+				<string>15029</string>
+			</dict>
+		</dict>
+		<key>priceGems</key>
+		<string>30</string>
+		<key>profileId</key>
+		<string>70100</string>
+	</dict>
+	<dict>
+		<key>gender</key>
+		<string>f</string>
+		<key>look</key>
+		<dict>
+			<key>clothIds</key>
+			<dict/>
+			<key>eyebrowsColor</key>
+			<string>107, 78, 41</string>
+			<key>hairColor</key>
+			<string>199, 190, 184</string>
+			<key>skinIds</key>
+			<dict>
+				<key>hair</key>
+				<string>15049</string>
+			</dict>
+		</dict>
+		<key>priceGems</key>
+		<string>20</string>
+		<key>profileId</key>
+		<string>70101</string>
+	</dict>
+	<dict>
+		<key>gender</key>
+		<string>f</string>
+		<key>look</key>
+		<dict>
+			<key>clothIds</key>
+			<dict/>
+			<key>eyebrowsColor</key>
+			<string>0, 8, 9</string>
+			<key>hairColor</key>
+			<string>127, 0, 2</string>
+			<key>skinIds</key>
+			<dict>
+				<key>hair</key>
+				<string>15059</string>
+			</dict>
+		</dict>
+		<key>priceGems</key>
+		<string>10</string>
+		<key>profileId</key>
+		<string>70102</string>
+	</dict>
+	<dict>
+		<key>gender</key>
+		<string>f</string>
+		<key>look</key>
+		<dict>
+			<key>clothIds</key>
+			<dict/>
+			<key>eyebrowsColor</key>
+			<string>60, 36, 13</string>
+			<key>hairColor</key>
+			<string>131, 219, 68</string>
+			<key>skinIds</key>
+			<dict>
+				<key>hair</key>
+				<string>15025</string>
+			</dict>
+		</dict>
+		<key>priceGems</key>
+		<string>0</string>
+		<key>profileId</key>
+		<string>70103</string>
+	</dict>
+	<dict>
+		<key>gender</key>
+		<string>f</string>
+		<key>look</key>
+		<dict>
+			<key>clothIds</key>
+			<dict/>
+			<key>eyebrowsColor</key>
+			<string>60, 36, 13</string>
+			<key>hairColor</key>
+			<string>127, 219, 208</string>
+			<key>skinIds</key>
+			<dict>
+				<key>hair</key>
+				<string>15010</string>
+			</dict>
+		</dict>
+		<key>priceGems</key>
+		<string>0</string>
+		<key>profileId</key>
+		<string>70104</string>
+	</dict>
+	<dict>
+		<key>gender</key>
+		<string>f</string>
+		<key>look</key>
+		<dict>
+			<key>clothIds</key>
+			<dict/>
+			<key>eyebrowsColor</key>
+			<string>42, 17, 14</string>
+			<key>hairColor</key>
+			<string>161, 36, 31</string>
+			<key>skinIds</key>
+			<dict>
+				<key>hair</key>
+				<string>15004</string>
+			</dict>
+		</dict>
+		<key>priceGems</key>
+		<string>30</string>
+		<key>profileId</key>
+		<string>70105</string>
+	</dict>
+	<dict>
+		<key>gender</key>
+		<string>f</string>
+		<key>look</key>
+		<dict>
+			<key>clothIds</key>
+			<dict/>
+			<key>eyebrowsColor</key>
+			<string>34, 24, 15</string>
+			<key>hairColor</key>
+			<string>137, 94, 37</string>
+			<key>skinIds</key>
+			<dict>
+				<key>hair</key>
+				<string>15028</string>
+			</dict>
+		</dict>
+		<key>priceGems</key>
+		<string>20</string>
+		<key>profileId</key>
+		<string>70106</string>
+	</dict>
+	<dict>
+		<key>gender</key>
+		<string>f</string>
+		<key>look</key>
+		<dict>
+			<key>clothIds</key>
+			<dict/>
+			<key>eyebrowsColor</key>
+			<string>68, 44, 44</string>
+			<key>hairColor</key>
+			<string>205, 187, 131</string>
+			<key>skinIds</key>
+			<dict>
+				<key>hair</key>
+				<string>15027</string>
+			</dict>
+		</dict>
+		<key>priceGems</key>
+		<string>10</string>
+		<key>profileId</key>
+		<string>70107</string>
+	</dict>
+	<dict>
+		<key>gender</key>
+		<string>f</string>
+		<key>look</key>
+		<dict>
+			<key>clothIds</key>
+			<dict/>
+			<key>eyebrowsColor</key>
+			<string>51, 32, 33</string>
+			<key>hairColor</key>
+			<string>112, 70, 27</string>
+			<key>skinIds</key>
+			<dict>
+				<key>hair</key>
+				<string>15031</string>
+			</dict>
+		</dict>
+		<key>priceGems</key>
+		<string>0</string>
+		<key>profileId</key>
+		<string>70108</string>
+	</dict>
+	<dict>
+		<key>gender</key>
+		<string>f</string>
+		<key>look</key>
+		<dict>
+			<key>clothIds</key>
+			<dict/>
+			<key>eyebrowsColor</key>
+			<string>51, 32, 33</string>
+			<key>hairColor</key>
+			<string>31, 114, 133</string>
+			<key>skinIds</key>
+			<dict>
+				<key>hair</key>
+				<string>15036</string>
+			</dict>
+		</dict>
+		<key>priceGems</key>
+		<string>0</string>
+		<key>profileId</key>
+		<string>70109</string>
+	</dict>
+	<dict>
+		<key>category</key>
+		<string>2</string>
+		<key>description</key>
+		<string>Spruce up your ponytail game with this voluminous choice!</string>
+		<key>gender</key>
+		<string>f</string>
+		<key>look</key>
+		<dict>
+			<key>clothIds</key>
+			<dict/>
+			<key>eyebrowsColor</key>
+			<string>52, 39, 3</string>
+			<key>hairColor</key>
+			<string>204, 117, 84</string>
+			<key>skinIds</key>
+			<dict>
+				<key>hair</key>
+				<string>15015</string>
+			</dict>
+		</dict>
+		<key>name</key>
+		<string>Voluminous Ponytail</string>
+		<key>priceGems</key>
+		<string>30</string>
+		<key>profileId</key>
+		<string>70110</string>
+	</dict>
+	<dict>
+		<key>gender</key>
+		<string>f</string>
+		<key>look</key>
+		<dict>
+			<key>clothIds</key>
+			<dict/>
+			<key>eyebrowsColor</key>
+			<string>118, 78, 40</string>
+			<key>hairColor</key>
+			<string>219, 192, 109</string>
+			<key>skinIds</key>
+			<dict>
+				<key>hair</key>
+				<string>15048</string>
+			</dict>
+		</dict>
+		<key>priceGems</key>
+		<string>20</string>
+		<key>profileId</key>
+		<string>70111</string>
+	</dict>
+	<dict>
+		<key>gender</key>
+		<string>f</string>
+		<key>look</key>
+		<dict>
+			<key>clothIds</key>
+			<dict/>
+			<key>eyebrowsColor</key>
+			<string>77, 59, 40</string>
+			<key>hairColor</key>
+			<string>255, 203, 231</string>
+			<key>skinIds</key>
+			<dict>
+				<key>hair</key>
+				<string>15055</string>
+			</dict>
+		</dict>
+		<key>priceGems</key>
+		<string>10</string>
+		<key>profileId</key>
+		<string>70112</string>
+	</dict>
+	<dict>
+		<key>gender</key>
+		<string>f</string>
+		<key>look</key>
+		<dict>
+			<key>clothIds</key>
+			<dict/>
+			<key>eyebrowsColor</key>
+			<string>52, 39, 3</string>
+			<key>hairColor</key>
+			<string>165, 117, 53</string>
+			<key>skinIds</key>
+			<dict>
+				<key>hair</key>
+				<string>15018</string>
+			</dict>
+		</dict>
+		<key>priceGems</key>
+		<string>0</string>
+		<key>profileId</key>
+		<string>70113</string>
+	</dict>
+	<dict>
+		<key>gender</key>
+		<string>f</string>
+		<key>look</key>
+		<dict>
+			<key>clothIds</key>
+			<dict/>
+			<key>eyebrowsColor</key>
+			<string>58, 37, 18</string>
+			<key>hairColor</key>
+			<string>68, 44, 21</string>
+			<key>skinIds</key>
+			<dict>
+				<key>hair</key>
+				<string>15006</string>
+			</dict>
+		</dict>
+		<key>priceGems</key>
+		<string>0</string>
+		<key>profileId</key>
+		<string>70114</string>
+	</dict>
+	<dict>
+		<key>gender</key>
+		<string>f</string>
+		<key>look</key>
+		<dict>
+			<key>clothIds</key>
+			<dict/>
+			<key>eyebrowsColor</key>
+			<string>88, 24, 23</string>
+			<key>hairColor</key>
+			<string>218, 61, 41</string>
+			<key>skinIds</key>
+			<dict>
+				<key>hair</key>
+				<string>15013</string>
+			</dict>
+		</dict>
+		<key>priceGems</key>
+		<string>10</string>
+		<key>profileId</key>
+		<string>70200</string>
+	</dict>
+	<dict>
+		<key>gender</key>
+		<string>f</string>
+		<key>look</key>
+		<dict>
+			<key>clothIds</key>
+			<dict/>
+			<key>eyebrowsColor</key>
+			<string>84, 57, 39</string>
+			<key>hairColor</key>
+			<string>203, 123, 80</string>
+			<key>skinIds</key>
+			<dict>
+				<key>hair</key>
+				<string>15002</string>
+			</dict>
+		</dict>
+		<key>priceGems</key>
+		<string>10</string>
+		<key>profileId</key>
+		<string>70201</string>
+	</dict>
+	<dict>
+		<key>gender</key>
+		<string>f</string>
+		<key>look</key>
+		<dict>
+			<key>clothIds</key>
+			<dict/>
+			<key>eyebrowsColor</key>
+			<string>84, 57, 39</string>
+			<key>hairColor</key>
+			<string>203, 123, 80</string>
+			<key>skinIds</key>
+			<dict>
+				<key>hair</key>
+				<string>15008</string>
+			</dict>
+		</dict>
+		<key>priceGems</key>
+		<string>20</string>
+		<key>profileId</key>
+		<string>70202</string>
+	</dict>
+	<dict>
+		<key>gender</key>
+		<string>f</string>
+		<key>look</key>
+		<dict>
+			<key>clothIds</key>
+			<dict/>
+			<key>eyebrowsColor</key>
+			<string>84, 57, 39</string>
+			<key>hairColor</key>
+			<string>203, 123, 80</string>
+			<key>skinIds</key>
+			<dict>
+				<key>hair</key>
+				<string>15009</string>
+			</dict>
+		</dict>
+		<key>priceGems</key>
+		<string>30</string>
+		<key>profileId</key>
+		<string>70203</string>
+	</dict>
+	<dict>
+		<key>gender</key>
+		<string>f</string>
+		<key>look</key>
+		<dict>
+			<key>clothIds</key>
+			<dict/>
+			<key>eyebrowsColor</key>
+			<string>84, 57, 39</string>
+			<key>hairColor</key>
+			<string>203, 123, 80</string>
+			<key>skinIds</key>
+			<dict>
+				<key>hair</key>
+				<string>15011</string>
+			</dict>
+		</dict>
+		<key>priceGems</key>
+		<string>20</string>
+		<key>profileId</key>
+		<string>70204</string>
+	</dict>
+	<dict>
+		<key>gender</key>
+		<string>f</string>
+		<key>look</key>
+		<dict>
+			<key>clothIds</key>
+			<dict/>
+			<key>eyebrowsColor</key>
+			<string>84, 57, 39</string>
+			<key>hairColor</key>
+			<string>203, 123, 80</string>
+			<key>skinIds</key>
+			<dict>
+				<key>hair</key>
+				<string>15012</string>
+			</dict>
+		</dict>
+		<key>priceGems</key>
+		<string>10</string>
+		<key>profileId</key>
+		<string>70205</string>
+	</dict>
+	<dict>
+		<key>gender</key>
+		<string>f</string>
+		<key>look</key>
+		<dict>
+			<key>clothIds</key>
+			<dict/>
+			<key>eyebrowsColor</key>
+			<string>84, 57, 39</string>
+			<key>hairColor</key>
+			<string>203, 123, 80</string>
+			<key>skinIds</key>
+			<dict>
+				<key>hair</key>
+				<string>15013</string>
+			</dict>
+		</dict>
+		<key>priceGems</key>
+		<string>40</string>
+		<key>profileId</key>
+		<string>70206</string>
+	</dict>
+	<dict>
+		<key>category</key>
+		<string>0</string>
+		<key>description</key>
+		<string>Beautiful wavy hair for a beautiful lady.</string>
+		<key>gender</key>
+		<string>f</string>
+		<key>look</key>
+		<dict>
+			<key>clothIds</key>
+			<dict/>
+			<key>eyebrowsColor</key>
+			<string>90, 53, 24</string>
+			<key>hairColor</key>
+			<string>119, 68, 30</string>
+			<key>skinIds</key>
+			<dict>
+				<key>hair</key>
+				<string>15052</string>
+			</dict>
+		</dict>
+		<key>name</key>
+		<string>Long Waves</string>
+		<key>priceGems</key>
+		<string>0</string>
+		<key>profileId</key>
+		<string>70207</string>
+	</dict>
+	<dict>
+		<key>category</key>
+		<string>0</string>
+		<key>description</key>
+		<string>Sweet blonde hairstyle perfect for you!</string>
+		<key>gender</key>
+		<string>f</string>
+		<key>look</key>
+		<dict>
+			<key>clothIds</key>
+			<dict/>
+			<key>eyebrowsColor</key>
+			<string>90, 67, 32</string>
+			<key>hairColor</key>
+			<string>250, 206, 136</string>
+			<key>skinIds</key>
+			<dict>
+				<key>hair</key>
+				<string>15055</string>
+			</dict>
+		</dict>
+		<key>name</key>
+		<string>Chic Blonde</string>
+		<key>priceGems</key>
+		<string>0</string>
+		<key>profileId</key>
+		<string>70208</string>
+	</dict>
+	<dict>
+		<key>category</key>
+		<string>0</string>
+		<key>description</key>
+		<string>Almost black hair to frame your face beautifully.</string>
+		<key>gender</key>
+		<string>f</string>
+		<key>look</key>
+		<dict>
+			<key>clothIds</key>
+			<dict/>
+			<key>eyebrowsColor</key>
+			<string>57, 33, 15</string>
+			<key>hairColor</key>
+			<string>64, 34, 16</string>
+			<key>skinIds</key>
+			<dict>
+				<key>hair</key>
+				<string>15020</string>
+			</dict>
+		</dict>
+		<key>name</key>
+		<string>Straight Dark Style</string>
+		<key>priceGems</key>
+		<string>0</string>
+		<key>profileId</key>
+		<string>70209</string>
+	</dict>
+	<dict>
+		<key>category</key>
+		<string>0</string>
+		<key>description</key>
+		<string>This modern hairstyle is a perfect look for you!</string>
+		<key>gender</key>
+		<string>f</string>
+		<key>look</key>
+		<dict>
+			<key>clothIds</key>
+			<dict/>
+			<key>eyebrowsColor</key>
+			<string>97, 59, 39</string>
+			<key>hairColor</key>
+			<string>255, 237, 204</string>
+			<key>skinIds</key>
+			<dict>
+				<key>hair</key>
+				<string>15055</string>
+			</dict>
+		</dict>
+		<key>name</key>
+		<string>Blonde Curls</string>
+		<key>priceGems</key>
+		<string>0</string>
+		<key>profileId</key>
+		<string>70115</string>
+	</dict>
+	<dict>
+		<key>category</key>
+		<string>2</string>
+		<key>description</key>
+		<string>Straight, dark hairstyle that gives you a little edge.</string>
+		<key>gender</key>
+		<string>f</string>
+		<key>look</key>
+		<dict>
+			<key>clothIds</key>
+			<dict/>
+			<key>eyebrowsColor</key>
+			<string>60, 36, 13</string>
+			<key>hairColor</key>
+			<string>70, 40, 13</string>
+			<key>skinIds</key>
+			<dict>
+				<key>hair</key>
+				<string>15048</string>
+			</dict>
+		</dict>
+		<key>name</key>
+		<string>Sleek Brunette</string>
+		<key>priceGems</key>
+		<string>10</string>
+		<key>profileId</key>
+		<string>70116</string>
+	</dict>
+</array>
+</plist>

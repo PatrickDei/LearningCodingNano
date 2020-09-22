@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<NEP>
+    <ResourceFolder advDevice="Custom">../Art/menus-hd</ResourceFolder>
+    <ResourceFolder advDevice="Custom">../Art/fonts</ResourceFolder>
+    <ResourceFolder advDevice="Custom">../DLC/menus</ResourceFolder>
+    <LinkMenu name="DebugButton" path="../GameData/Menu/DebugButton.plist"></LinkMenu>
+    <LinkMenu name="HudCrossPromo" path="../GameData/Menu/HudCrossPromo.plist"></LinkMenu>
+    <LinkMenu name="HudDailyChallenge" path="../GameData/Menu/HudDailyChallenge.plist"></LinkMenu>
+    <LinkMenu name="HudHeader" path="../GameData/Menu/HudHeader.plist"></LinkMenu>
+    <LinkMenu name="HudSpecialOffer" path="../GameData/Menu/HudSpecialOffer.plist"></LinkMenu>
+    <LinkMenu name="HudSpeedUp" path="../GameData/Menu/HudSpeedUp.plist"></LinkMenu>
+    <LinkMenu name="MainMenuFooter" path="../GameData/Menu/MainMenuFooter.plist"></LinkMenu>
+    <LinkMenu name="StoryPreviewFooter" path="../GameData/Menu/StoryPreviewFooter.plist"></LinkMenu>
+</NEP>

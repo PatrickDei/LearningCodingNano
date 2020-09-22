@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>name</key>
+		<string>Good Times</string>
+		<key>profileId</key>
+		<string>53000</string>
+		<key>reward</key>
+		<string>10</string>
+		<key>stickerIds</key>
+		<array>
+			<string>52001</string>
+			<string>52005</string>
+			<string>52004</string>
+			<string>52002</string>
+		</array>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>What the Future Holds</string>
+		<key>profileId</key>
+		<string>53001</string>
+		<key>reward</key>
+		<string>10</string>
+		<key>stickerIds</key>
+		<array>
+			<string>52000</string>
+			<string>52006</string>
+			<string>52007</string>
+			<string>52003</string>
+		</array>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Climbing the Ladder</string>
+		<key>profileId</key>
+		<string>53002</string>
+		<key>reward</key>
+		<string>10</string>
+		<key>stickerIds</key>
+		<array>
+			<string>52014</string>
+			<string>52016</string>
+			<string>52010</string>
+			<string>52013</string>
+		</array>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Out of the Blue</string>
+		<key>profileId</key>
+		<string>53003</string>
+		<key>reward</key>
+		<string>10</string>
+		<key>stickerIds</key>
+		<array>
+			<string>52015</string>
+			<string>52017</string>
+			<string>52012</string>
+			<string>52008</string>
+		</array>
+	</dict>
+</array>
+</plist>

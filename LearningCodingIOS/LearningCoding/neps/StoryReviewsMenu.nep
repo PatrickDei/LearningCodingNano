@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<NEP>
+    <ResourceFolder advDevice="Custom">../Art/menus-hd</ResourceFolder>
+    <LinkMenu name="StoryReviewCell" path="../GameData/Menu/StoryReviewCell.plist"></LinkMenu>
+    <LinkMenu name="StoryReviewEdit" path="../GameData/Menu/StoryReviewEdit.plist"></LinkMenu>
+    <LinkMenu name="StoryReviewsMenu" path="../GameData/Menu/StoryReviewsMenu.plist"></LinkMenu>
+</NEP>

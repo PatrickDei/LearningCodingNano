@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<NEP>
+    <ResourceFolder advDevice="Custom">../Art/menus-hd</ResourceFolder>
+    <LinkMenu name="LegalNoticeMenu" path="../GameData/Menu/LegalNoticeMenu.plist"></LinkMenu>
+    <LinkMenu name="PrivacyPolicyMenu" path="../GameData/Menu/PrivacyPolicyMenu.plist"></LinkMenu>
+</NEP>

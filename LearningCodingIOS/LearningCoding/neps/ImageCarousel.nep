@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<NEP>
+    <ResourceFolder advDevice="Custom">../Art/fonts</ResourceFolder>
+    <ResourceFolder advDevice="Custom">../Art/menus-hd</ResourceFolder>
+    <LinkMenu name="ImageCarousel" path="../GameData/Menu/ImageCarousel.plist"></LinkMenu>
+</NEP>

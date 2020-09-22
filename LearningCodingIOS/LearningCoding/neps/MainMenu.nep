@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<NEP>
+    <ResourceFolder advDevice="Custom">../Art/menus-hd</ResourceFolder>
+    <ResourceFolder advDevice="Custom">../Art/fonts</ResourceFolder>
+    <LinkMenu name="MainLayer" path="../GameData/Menu/MainLayer.plist"></LinkMenu>
+    <LinkMenu name="MainMenuLayer" path="../GameData/Menu/MainMenuLayer.plist"></LinkMenu>
+</NEP>

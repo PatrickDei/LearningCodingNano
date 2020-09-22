@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<NEP>
+    <ResourceFolder advDevice="Custom">../Art/menus-hd</ResourceFolder>
+    <LinkMenu name="AchievementCell" path="../GameData/Menu/AchievementCell.plist"></LinkMenu>
+    <LinkMenu name="AchievementsMenu" path="../GameData/Menu/AchievementsMenu.plist"></LinkMenu>
+    <LinkMenu name="FriendCell" path="../GameData/Menu/FriendCell.plist"></LinkMenu>
+    <LinkMenu name="FriendsMenu" path="../GameData/Menu/FriendsMenu.plist"></LinkMenu>
+    <LinkMenu name="InboxCell" path="../GameData/Menu/InboxCell.plist"></LinkMenu>
+    <LinkMenu name="InboxMenu" path="../GameData/Menu/InboxMenu.plist"></LinkMenu>
+    <LinkMenu name="MyBooksMenu" path="../GameData/Menu/MyBooksMenu.plist"></LinkMenu>
+    <LinkMenu name="ProfileMenu" path="../GameData/Menu/ProfileMenu.plist"></LinkMenu>
+    <LinkMenu name="ProfileScroll" path="../GameData/Menu/ProfileScroll.plist"></LinkMenu>
+</NEP>

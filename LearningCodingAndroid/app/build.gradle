@@ -1,0 +1,291 @@
+apply plugin: 'com.android.application'
+apply plugin: 'io.fabric'
+
+
+android {
+    compileSdkVersion 28
+    buildToolsVersion '28.0.0'
+    defaultConfig {
+        applicationId "org.nanobit.mystory"
+        minSdkVersion 15
+        targetSdkVersion 28
+        versionName "5.1"
+        versionCode Integer.valueOf(System.env.BUILD_NUMBER ?: 1)
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
+    }
+
+    externalNativeBuild {
+        ndkBuild {
+            path "jni/Android.mk"
+        }
+    }
+
+    configurations {
+        provided
+        defaultConfig {
+            ndk {
+                stl "c++_static"
+                ldLibs "log", "EGL", "android", "jnigraphics", "GLESv1_CM"
+                abiFilter 'armeabi-v7a'
+                cFlags "-fexceptions"
+            }
+        }
+    }
+
+    signingConfigs {
+        release {
+            storeFile file(String.valueOf(System.env.ANDROID_KEYSTORE))
+            storePassword System.env.ANDROID_STORE_PASSWORD
+            keyAlias System.env.ANDROID_KEY_ALIAS
+            keyPassword System.env.ANDROID_STORE_PASSWORD
+        }
+    }
+
+
+
+    buildTypes {
+        debug {
+            minifyEnabled false
+            jniDebuggable true
+            debuggable true
+
+            externalNativeBuild {
+                ndkBuild {
+                    cFlags "-DDEBUG=1", "-DCOCOS2D_DEBUG=1"
+                }
+            }
+        }
+
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+
+        }
+        flexion {
+            externalNativeBuild {
+                ndkBuild {
+                    cFlags "-DSUBSCRIPTIONS_DISABLED=1", "-DHIDE_AVAILABLE_VERSION=1", "-DFLEXION_BUILD=1"
+                }
+            }
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+
+    }
+
+    dexOptions {
+        jumboMode true
+        javaMaxHeapSize "4g"
+    }
+
+    flavorDimensions "serverOption"
+
+    productFlavors {
+        server {
+            dimension "serverOption"
+        }
+
+        noServer {
+            dimension "serverOption"
+            externalNativeBuild {
+                ndkBuild {
+                    cFlags "-DNO_SERVER=1"
+                }
+            }
+        }
+    }
+
+    sourceSets {
+        main {
+            manifest.srcFile 'AndroidManifest.xml'
+            java.srcDirs = ['src']
+            resources.srcDirs = ['src']
+            aidl.srcDirs = ['src']
+            renderscript.srcDirs = ['src']
+            res.srcDirs = ['res']
+            assets.srcDirs = ['../../StoryGameIOS/StoryGame/Art/animation', '../../StoryGameIOS/StoryGame/Art/common', '../../StoryGameIOS/StoryGame/Art/DearMona', '../../StoryGameIOS/StoryGame/Art/fonts', '../../StoryGameIOS/StoryGame/Art/items-hd', '../../StoryGameIOS/StoryGame/Art/menus-hd' , '../../StoryGameIOS/StoryGame/GameData', '../../StoryGameIOS/StoryGame/GameData/android',
+                              '../../StoryGameIOS/StoryGame/Art/animation/Dream', '../../StoryGameIOS/StoryGame/Art/soundEffects', '../../StoryGameIOS/StoryGame/Art/stickers',
+                              'loadingScene']
+            jniLibs.srcDirs = ['libs']
+            jni.srcDirs = ['jni', '../../StoryGameIOS/StoryGame/Classes']
+        }
+
+        noServer {
+            assets.srcDirs = ['../../StoryGameIOS/StoryAvenirNext-Bold_20_outline.fntGame/DLC', '../../StoryGameIOS/StoryGame/DLC/crosspromo']
+        }
+    }
+
+    // clear unnecessary files from assets
+    def toDelete = ['/ios/', '/loading-screen', '/Hollywood_stuff', '/abtests', '/android/']
+    applicationVariants.all { variant ->
+        String assetsFolder = variant.mergeAssets.outputDir
+        variant.mergeAssets.doLast {
+            toDelete.each {
+                def f = new File(assetsFolder + it)
+                if (f.isDirectory()) {
+                    f.deleteDir()
+                } else {
+                    f.delete()
+                }
+            }
+        }
+    }
+
+    afterEvaluate {
+        android.sourceSets.main.assets.srcDirs.each { println it }
+    }
+}
+
+crashlytics {
+    enableNdk true
+}
+
+dependencies {
+    implementation project(':cocos2dx')
+    androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+
+    implementation 'com.google.android.gms:play-services-games:15.0.1'
+    implementation 'com.android.support:multidex:1.0.3'
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation 'com.android.support:customtabs:28.0.0'
+    implementation 'com.google.firebase:firebase-core:16.0.3'
+    implementation 'com.google.firebase:firebase-messaging:17.3.1'
+    implementation 'com.google.android.gms:play-services-ads:15.0.1'
+
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    implementation 'org.apache.commons:commons-lang3:3.5'
+    testImplementation 'junit:junit:4.12'
+
+    // Helpshift
+    implementation 'com.android.support:design:28.0.0'
+    implementation 'com.android.support:recyclerview-v7:28.0.0'
+    implementation 'com.android.support:cardview-v7:28.0.0'
+    implementation 'com.helpshift:android-helpshift-aar:7.3.0'
+    // Fyber SDK
+    implementation 'com.fyber:fyber-sdk:8.22.0'
+    annotationProcessor 'com.fyber:fyber-sdk:8.22.0'
+
+    // Fyber Annotations
+    compileOnly 'com.fyber:fyber-annotations:1.3.0'
+    annotationProcessor 'com.fyber:fyber-annotations:1.3.0'
+    annotationProcessor 'com.fyber:fyber-annotations-compiler:1.5.0'
+
+    // AdMob Mediation
+    implementation ('com.fyber.mediation:admob:15.0.0-r2@aar') {
+        transitive = true
+    }
+    annotationProcessor 'com.fyber.mediation:admob:15.0.0-r2'
+
+    // AppLovin Mediation
+    implementation ('com.fyber.mediation:applovin:8.0.1-r1@aar') {
+        transitive = true
+    }
+    annotationProcessor 'com.fyber.mediation:applovin:8.0.1-r1'
+
+    // Facebook Mediation
+    implementation ('com.fyber.mediation:facebook:4.99.0-r1@aar') {
+        transitive = true
+    }
+    annotationProcessor 'com.fyber.mediation:facebook:4.99.0-r1'
+
+    // Facebook Audience Network SDK dependencies
+    implementation 'com.android.support:support-v4:28.0.0'
+    implementation 'com.android.support:recyclerview-v7:28.0.0'
+
+    // HyprMX Mediation
+    implementation ('com.fyber.mediation:hyprmx:4.3.0-r3@aar') {
+        transitive = true
+    }
+    annotationProcessor 'com.fyber.mediation:hyprmx:4.3.0-r3'
+
+    // IronSource Mediation
+    implementation ('com.fyber.mediation:ironsource:6.7.10-r1@aar') {
+        transitive = true
+    }
+    annotationProcessor 'com.fyber.mediation:ironsource:6.7.10-r1'
+
+    // Tapjoy Mediation
+    implementation 'com.fyber.mediation:tapjoy:12.0.0-r1@aar'
+    annotationProcessor 'com.fyber.mediation:tapjoy:12.0.0-r1'
+    implementation 'com.tapjoy:tapjoy-android-sdk:12.0.0@aar'
+
+    // UnityAds Mediation
+    implementation ('com.fyber.mediation:unityads:2.2.1-r1@aar') {
+        transitive = true
+    }
+    annotationProcessor 'com.fyber.mediation:unityads:2.2.1-r1'
+
+    // Vungle Mediation
+    implementation ('com.fyber.mediation:vungle:6.3.12-r1@aar') {
+        transitive = true
+    }
+    annotationProcessor 'com.fyber.mediation:vungle:6.3.12-r1'
+
+    //Bugfender
+    implementation 'com.bugfender.sdk:android:0.8.4'
+
+    // Crashlytics
+    implementation('com.crashlytics.sdk.android:crashlytics:2.9.3@aar') {
+        transitive = true
+    }
+    // NDK Kit
+    implementation('com.crashlytics.sdk.android:crashlytics-ndk:2.0.4@aar') {
+        transitive = true
+    }
+    // Adjust
+    implementation 'com.adjust.sdk:adjust-android:4.16.0'
+    implementation 'com.google.android.gms:play-services-analytics:16.0.4'
+
+
+    // facebook
+    implementation 'com.facebook.android:facebook-android-sdk:4.30.0'
+
+    //Soomla
+    implementation 'com.soomla:android-agent:4.0.0'
+    implementation 'com.soomla:admob-connector:4.0.1'
+    implementation 'com.soomla:applovin-connector:4.0.0'
+    implementation 'com.soomla:facebook-connector:4.0.2'
+    implementation 'com.soomla:fyber-connector:4.0.0'
+    implementation 'com.soomla:ironsource-connector:5.0.1'
+    implementation 'com.soomla:tapjoy-connector:4.0.0'
+    implementation 'com.soomla:unityads-connector:5.0.0'
+    implementation 'com.soomla:vungle-connector:5.0.0'
+    implementation 'com.soomla:hyprmx-connector:3.1.0'
+
+    // Play store referrer library
+    implementation 'com.android.installreferrer:installreferrer:1.0'
+
+    //Chartboost
+    implementation fileTree(dir: 'jars', include: '*.jar')
+}
+
+repositories {
+    jcenter()
+    maven {
+        name "Fyber's maven repo"
+        url "https://fyber.bintray.com/maven"
+    }
+    maven { url 'https://maven.fabric.io/public' }
+    maven {
+        url "https://assets.soom.la/maven"
+    }
+    flatDir dirs: 'aars'
+    mavenCentral()
+}
+
+apply plugin: 'com.google.gms.google-services'
+
+buildscript {
+    repositories {
+        maven { url 'http://download.safedk.com/maven' }
+    }
+    dependencies {
+        classpath "com.safedk:SafeDKGradlePlugin:1.8.11"
+    }
+}
+

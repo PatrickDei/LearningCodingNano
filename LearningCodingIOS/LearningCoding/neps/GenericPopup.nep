@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<NEP>
+    <ResourceFolder advDevice="Custom">../Art/menus-hd</ResourceFolder>
+    <LinkMenu name="GenericPopup" path="../GameData/Menu/GenericPopup.plist"></LinkMenu>
+    <LinkMenu name="RewardPopup" path="../GameData/Menu/RewardPopup.plist"></LinkMenu>
+</NEP>

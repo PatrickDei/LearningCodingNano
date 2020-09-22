@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<NEP>
+    <ResourceFolder advDevice="Custom">../Art/menus-hd</ResourceFolder>
+    <LinkMenu name="BookSlider" path="../GameData/Menu/BookSlider.plist"></LinkMenu>
+    <LinkMenu name="StartMenu" path="../GameData/Menu/StartMenu.plist"></LinkMenu>
+</NEP>

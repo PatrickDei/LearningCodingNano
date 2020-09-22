@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>gemsOrder</key>
+		<array>
+			<string>d_2</string>
+			<string>d1</string>
+			<string>d_2</string>
+			<string>d_3</string>
+			<string>d_4</string>
+		</array>
+		<key>gemsGain</key>
+		<dict>
+			<key>d_1</key>
+			<string>100</string>
+			<key>d_2</key>
+			<string>240</string>
+			<key>d_3</key>
+			<string>520</string>
+			<key>d_4</key>
+			<string>1100</string>
+			<key>d_6</key>
+			<string>2400</string>
+		</dict>
+		<key>userCategories</key>
+		<array>
+			<string>zombie</string>
+		</array>
+		<key>totalDaysDuration</key>
+		<string>1</string>
+		<key>displayMinDuration</key>
+		<string>15</string>
+		<key>timeoutMinDuration</key>
+		<string>1</string>
+		<key>profileId</key>
+		<string>56000</string>
+		<key>enabled</key>
+		<string>0</string>
+		<key>clientSideControl</key>
+		<dict>
+			<key>afterChapterRead</key>
+			<string>0</string>
+			<key>daysPlayed</key>
+			<string>0</string>
+		</dict>
+	</dict>
+</array>
+</plist>

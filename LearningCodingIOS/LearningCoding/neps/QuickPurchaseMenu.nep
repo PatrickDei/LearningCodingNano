@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<NEP>
+    <ResourceFolder advDevice="Custom">../Art/menus-hd</ResourceFolder>
+    <LinkMenu name="OneTimeOfferMenu" path="../GameData/Menu/OneTimeOfferMenu.plist"></LinkMenu>
+    <LinkMenu name="QuickPurchaseMenu" path="../GameData/Menu/QuickPurchaseMenu.plist"></LinkMenu>
+</NEP>

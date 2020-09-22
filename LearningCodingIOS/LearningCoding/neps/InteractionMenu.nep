@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<NEP>
+    <ResourceFolder advDevice="Custom">../Art/menus-hd</ResourceFolder>
+    <LinkMenu name="StartInteractionMenu" path="../GameData/Menu/StartInteractionMenu.plist"></LinkMenu>
+    <LinkMenu name="StickerRewardMenu" path="../GameData/Menu/StickerRewardMenu.plist"></LinkMenu>
+    <LinkMenu name="StickerTutorial" path="../GameData/Menu/StickerRewardTutorial.plist"></LinkMenu>
+</NEP>

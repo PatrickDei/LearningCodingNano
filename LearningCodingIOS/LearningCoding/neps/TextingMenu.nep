@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<NEP>
+    <ResourceFolder advDevice="Custom">../Art/menus-hd</ResourceFolder>
+    <ResourceFolder advDevice="Custom">../Art</ResourceFolder>
+    <LinkMenu name="TextingMenu" path="../GameData/Menu/TextingMenu.plist"></LinkMenu>
+    <LinkMenu name="TextingMenuFooter" path="../GameData/Menu/TextingMenuFooter.plist"></LinkMenu>
+</NEP>

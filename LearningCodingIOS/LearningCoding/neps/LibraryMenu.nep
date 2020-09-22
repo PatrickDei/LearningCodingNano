@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<NEP>
+    <ResourceFolder advDevice="Custom">../Art/menus-hd</ResourceFolder>
+    <ResourceFolder advDevice="Custom">../Art/fonts</ResourceFolder>
+    <ResourceFolder advDevice="Custom">../DLC/menus</ResourceFolder>
+    <LinkMenu name="LibraryMenu" path="../GameData/Menu/LibraryMenu.plist"></LinkMenu>
+</NEP>

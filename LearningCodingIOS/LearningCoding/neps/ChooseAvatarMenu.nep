@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<NEP>
+    <ResourceFolder advDevice="Custom">../Art/menus-hd</ResourceFolder>
+    <LinkMenu name="ChooseAvatarMenu" path="../GameData/Menu/ChooseAvatarMenu.plist"></LinkMenu>
+    <LinkMenu name="ChooseAvatarSkinMenu" path="../GameData/Menu/ChooseAvatarSkinMenu.plist"></LinkMenu>
+</NEP>

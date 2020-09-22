@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<NEP>
+    <ResourceFolder advDevice="Custom">../Art/menus-hd</ResourceFolder>
+    <LinkMenu name="FriendProfileMenu" path="../GameData/Menu/FriendProfileMenu.plist"></LinkMenu>
+    <LinkMenu name="FriendReviewCell" path="../GameData/Menu/FriendReviewCell.plist"></LinkMenu>
+    <LinkMenu name="FriendShelf" path="../GameData/Menu/FriendShelf.plist"></LinkMenu>
+</NEP>

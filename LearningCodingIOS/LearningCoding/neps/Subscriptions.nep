@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<NEP>
+    <ResourceFolder advDevice="Custom">../Art/menus-hd</ResourceFolder>
+    <LinkMenu name="SubscriptionFAQ" path="../GameData/Menu/SubscriptionFAQ.plist"></LinkMenu>
+    <LinkMenu name="SubscriptionHelp" path="../GameData/Menu/SubscriptionHelp.plist"></LinkMenu>
+    <LinkMenu name="SubscriptionHelpiOS" path="../GameData/Menu/SubscriptionHelpiOS.plist"></LinkMenu>
+    <LinkMenu name="SubscriptionMenu" path="../GameData/Menu/SubscriptionMenu.plist"></LinkMenu>
+</NEP>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<NEP>
+    <ResourceFolder advDevice="Custom">../Art/menus-hd</ResourceFolder>
+    <LinkMenu name="TicketSpeedUpPopup" path="../GameData/Menu/TicketSpeedUpPopup.plist"></LinkMenu>
+    <LinkMenu name="TicketSpeedUpPopupV2" path="../GameData/Menu/TicketSpeedUpPopupv2.plist"></LinkMenu>
+</NEP>

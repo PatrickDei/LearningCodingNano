@@ -1,0 +1,42 @@
+
+.DS_Store
+.externalNativeBuild
+
+# Android studio
+.idea/
+/.idea/workspace.xml
+captures/
+*.iml
+./libs/
+
+# Gradle
+.gradle/
+build/
+local.properties
+
+# NDK
+obj/
+
+# generated files
+bin/
+gen/
+out/
+app/*.apk
+
+# Python compile files
+*.pyc
+
+# OSX files
+.DS_Store
+
+# Cocos2d
+assets/
+
+# Nanobit
+android/src/org/nanobit/mystory/StardroidConfig.java
+
+.safedk/
+
+# fastlane specific stuff
+fastlane/README.md
+fastlane/report.xml

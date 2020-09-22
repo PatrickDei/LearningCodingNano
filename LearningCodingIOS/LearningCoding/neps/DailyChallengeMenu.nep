@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<NEP>
+    <ResourceFolder advDevice="Custom">../Art/menus-hd</ResourceFolder>
+    <LinkMenu name="DailyChallengeCell" path="../GameData/Menu/DailyChallengeCell.plist"></LinkMenu>
+    <LinkMenu name="DailyChallengeMenu" path="../GameData/Menu/DailyChallengeMenu.plist"></LinkMenu>
+</NEP>

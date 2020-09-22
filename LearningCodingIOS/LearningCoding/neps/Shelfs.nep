@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<NEP>
+    <ResourceFolder advDevice="Custom">../Art/fonts</ResourceFolder>
+    <ResourceFolder advDevice="Custom">../Art/menus-hd</ResourceFolder>
+    <LinkMenu name="Bookcase" path="../GameData/Menu/Bookcase.plist"></LinkMenu>
+    <LinkMenu name="bookCell" path="../GameData/Menu/bookCell.plist"></LinkMenu>
+    <LinkMenu name="emptyCell" path="../GameData/Menu/emptyCell.plist"></LinkMenu>
+    <LinkMenu name="GenreMenu" path="../GameData/Menu/GenreMenu.plist"></LinkMenu>
+    <LinkMenu name="LibraryMenu" path="../GameData/Menu/LibraryMenu.plist"></LinkMenu>
+    <LinkMenu name="MainMenuShelfNode" path="../GameData/Menu/MainMenuShelfNode.plist"></LinkMenu>
+</NEP>

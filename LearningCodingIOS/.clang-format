@@ -1,0 +1,25 @@
+AllowShortFunctionsOnASingleLine: true
+AlignTrailingComments: true
+AllowShortIfStatementsOnASingleLine: false
+ColumnLimit: 120
+SpaceBeforeParens: Never
+UseTab: Never
+# BreakBeforeBraces: Linux
+IndentWidth: 4
+IndentCaseLabels: true
+Standard: Auto
+SpacesInParentheses: false
+BreakBeforeBraces: Custom
+BraceWrapping:
+ AfterClass: true
+ AfterControlStatement: false
+ AfterEnum: false
+ AfterFunction: true
+ AfterNamespace: true
+ AfterObjCDeclaration: false
+ AfterStruct: false
+ AfterUnion: false
+ BeforeCatch: false
+ BeforeElse: false
+ IndentBraces: false
+
