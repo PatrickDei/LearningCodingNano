@@ -17,17 +17,14 @@ public:
     float positionX;
     float positionY;
     
-    //CCSprite* ballImage;
-    
-    Ball(float x, float y) : friction(0.85), positionX(x), positionY(y) {
+    Ball(float x, float y) : friction(0.9), positionX(x), positionY(y) {
         printf("\nadded ball with x: %f y: %f", x, y);
     }
     
     ~Ball(){
         printf("destructor called");
     }
-        
-    void updatePosition();
+    
     
     float getVelocityX() const;
     void setVelocityX(float _velocityX);
@@ -35,16 +32,19 @@ public:
     float getVelocityY() const;
     void setVelocityY(float _velocityY);
     
+    void updatePosition();
+    
     CCPoint getPositionOfBall();
     
     void setAppropriatePosition(int direction, float size);
+    
+    
     
 private:
     float velocityX;
     float velocityY;
     
     float friction;
-    
 };
 
 #endif /* Ball_hpp */

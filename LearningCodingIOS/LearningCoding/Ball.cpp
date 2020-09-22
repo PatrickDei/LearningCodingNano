@@ -32,7 +32,6 @@ CCPoint Ball::getPositionOfBall(){
 void Ball::updatePosition(){
     positionX = positionX + velocityX * friction;
     positionY = positionY + velocityY * friction;
-    printf("updated");
     
     //slow the ball down
     velocityX *= friction;

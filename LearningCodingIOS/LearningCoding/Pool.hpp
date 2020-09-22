@@ -49,6 +49,8 @@ private:
     
     CCPoint prevPosition;
     
+    std::vector<Ball*> balls;
+
     
     
     void setTheBalls();
@@ -56,11 +58,7 @@ private:
     bool ccTouchBegan(CCTouch *pTouch, CCEvent *pEvent) override;
     
     void ccTouchEnded(CCTouch *pTouch, CCEvent *pEvent) override;
-    
-    void oneTick(float dt);
-    
-    std::vector<Ball*> balls;
-    
+
     bool whiteBallIsTapped(CCPoint touch);
     
     void checkForEdgeCollision(Ball* b);

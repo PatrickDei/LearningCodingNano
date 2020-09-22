@@ -56,11 +56,12 @@ bool Pool::ccTouchBegan(CCTouch *pTouch, CCEvent *pEvent){
 //this is the stuff
 void Pool::update(float dt){
     for(int i = 0; i < balls.size(); i++){
-        calculatePosition(i);
+        if(balls[i]->getVelocityX() > 0.0001 || balls[i]->getVelocityY() > 0.0001)
+            calculatePosition(i);
         balls[i]->updatePosition();
         this->getChildByTag(i)->setPosition(balls[i]->getPositionOfBall());
         checkForEdgeCollision(balls[i]);
-        printf("\nthis is dt: %f", dt);
+        
     }
 }
 
@@ -141,7 +142,6 @@ void Pool::calculatePosition(int indexOfBall){
         CCPoint positionInPath = balls[indexOfBall]->getPositionOfBall();
         positionInPath.x += balls[indexOfBall]->getVelocityX() / i;
         positionInPath.y += balls[indexOfBall]->getVelocityY() / i;
-
         //check if any ball is in that position
         for(int j = 0; j < balls.size(); j++){
             if(distance(positionInPath, balls[j]->getPositionOfBall()) <= ballSize * ballScale - 1 && j != indexOfBall){
@@ -169,6 +169,7 @@ void Pool::exchangeVelocities(int indexA, int indexB){
     //get the angle of the white ball (before impact @alpha) and the red ball (after impact @beta)
     //float alpha = tan(balls[indexA]->getVelocityY() / balls[indexA]->getVelocityX());
     float beta = tan(yDistance / xDistance);
+    printf("\nindexs 1: %d 2: %d\nx: %f y: %f", indexA, indexB, xDistance, yDistance);
     //now for the velocities
     float x2 = balls[indexA]->getVelocityY() / atan(beta);
     float x3 = balls[indexA]->getVelocityX() - x2;
@@ -176,7 +177,7 @@ void Pool::exchangeVelocities(int indexA, int indexB){
     float y2 = x2 * atan(beta);
     float y3 = balls[indexA]->getVelocityY() - y2;
     
-    printf("\n\nwhite (before): x: %f y: %f\nwhite (after): x: %f y: %f\nred (after): x: %f y: %f\n\n", balls[indexA]->getVelocityX(), balls[indexA]->getVelocityY(), x3, y3, x2, y2);
+    //printf("\nwhite (before): x: %f y: %f\nwhite (after): x: %f y: %f\nred (after): x: %f y: %f\n", balls[indexA]->getVelocityX(), balls[indexA]->getVelocityY(), x3, y3, x2, y2);
     
     //give them proper velocities
     balls[indexA]->setVelocityX(x3);
