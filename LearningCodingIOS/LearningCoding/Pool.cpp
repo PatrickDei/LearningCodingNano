@@ -7,6 +7,8 @@
 
 #include "Pool.hpp"
 
+#define pi 3.141592654
+
 CCScene* Pool::scene(){
     CCScene *scene = CCScene::create();
     
@@ -41,6 +43,7 @@ bool Pool::init(){
     setTouchEnabled(true);
     
     this->scheduleUpdate();
+    //printf("\n%f\n%f\n%f\n%f\n%f", tan(pi), atan(4 * pi / 3), atan(3.14159) * 180 / pi, atan(2 * pi / 3), atan(2) * 180 / pi);
     
     return true;
 }
@@ -61,8 +64,16 @@ void Pool::update(float dt){
         balls[i]->updatePosition();
         this->getChildByTag(i)->setPosition(balls[i]->getPositionOfBall());
         checkForEdgeCollision(balls[i]);
-        
+        //clearOutBalls(balls);
     }
+}
+
+void Pool::clearOutBalls(std::vector<Ball> balls){
+    bool canInitiate = true;
+    for(auto b : balls)
+        if(b.getVelocityY() > 0.0001 || b.getVelocityX() > 0.0001)
+            canInitiate = false;
+    //if(can)
 }
 
 void Pool::checkForEdgeCollision(Ball* b){
@@ -164,17 +175,46 @@ void Pool::exchangeVelocities(int indexA, int indexB){
     //first i need the angle between the two balls (their centers)
     CCPoint whiteBallCenter = balls[indexA]->getPositionOfBall();
     CCPoint redBallCenter = balls[indexB]->getPositionOfBall();
+    
     float xDistance = redBallCenter.x - whiteBallCenter.x;
     float yDistance = redBallCenter.y - whiteBallCenter.y;
+    //float xDistance = balls[indexA]->getVelocityX() - balls[indexB]->getVelocityX();
+    //float yDistance = balls[indexA]->getVelocityY() - balls[indexB]->getVelocityY();
+
+
+    /*if(xDistance < 1)
+        xDistance = 1;
+    if(yDistance < 1)
+        yDistance = 1;*/
     //get the angle of the white ball (before impact @alpha) and the red ball (after impact @beta)
-    //float alpha = tan(balls[indexA]->getVelocityY() / balls[indexA]->getVelocityX());
-    float beta = tan(yDistance / xDistance);
-    printf("\nindexs 1: %d 2: %d\nx: %f y: %f", indexA, indexB, xDistance, yDistance);
-    //now for the velocities
-    float x2 = balls[indexA]->getVelocityY() / atan(beta);
-    float x3 = balls[indexA]->getVelocityX() - x2;
+    float alpha = atan(balls[indexA]->getVelocityY() / balls[indexA]->getVelocityX());
+    float beta = atan(yDistance / xDistance);
+    //prvi kvadrant
+    if(xDistance < 0 && yDistance > 0)
+        beta += pi;
+    //treci kvadrant
+    if(xDistance < 0 && yDistance < 0)
+        beta += pi;
+    //cetvrti kvadrant
+    if(xDistance > 0 && yDistance < 0)
+        beta += 2 * pi;
     
-    float y2 = x2 * atan(beta);
+    float gamma;
+    if(alpha < beta)
+        gamma = beta + pi / 2;
+    else
+        gamma = beta - pi / 2;
+    //printf("\nindexs 1: %d 2: %d\nx: %f y: %f", indexA, indexB, xDistance, yDistance);
+    printf("\n%f\n", beta * 180 / pi);
+    //now for the velocities
+    
+    
+    
+    
+    
+    float x3 = /*balls[indexA]->getVelocityX() - x2*/ (balls[indexA]->getVelocityY() - balls[indexA]->getVelocityX() * tan(beta)) / (tan(gamma) - tan(beta));
+    float x2 = balls[indexA]->getVelocityX() - x3;
+    float y2 = x2 * tan(beta);
     float y3 = balls[indexA]->getVelocityY() - y2;
     
     //printf("\nwhite (before): x: %f y: %f\nwhite (after): x: %f y: %f\nred (after): x: %f y: %f\n", balls[indexA]->getVelocityX(), balls[indexA]->getVelocityY(), x3, y3, x2, y2);

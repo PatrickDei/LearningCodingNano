@@ -68,6 +68,8 @@ private:
     float distance(CCPoint posA, CCPoint posB);
     
     void exchangeVelocities(int indexA, int indexB);
+    
+    void clearOutBalls(std::vector<Ball> balls);
 };
 
 #endif /* Pool_hpp */
