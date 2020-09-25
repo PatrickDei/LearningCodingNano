@@ -59,7 +59,7 @@ bool Pool::ccTouchBegan(CCTouch *pTouch, CCEvent *pEvent){
 //this is the stuff
 void Pool::update(float dt){
     for(int i = 0; i < balls.size(); i++){
-        if(balls[i]->getVelocityX() > 0.0001 || balls[i]->getVelocityY() > 0.0001)
+        if(balls[i]->getVelocityX() != 0 || balls[i]->getVelocityY() != 0)
             calculatePosition(i);
         balls[i]->updatePosition();
         this->getChildByTag(i)->setPosition(balls[i]->getPositionOfBall());
@@ -198,14 +198,16 @@ void Pool::exchangeVelocities(int indexA, int indexB){
     //cetvrti kvadrant
     if(xDistance > 0 && yDistance < 0)
         beta += 2 * pi;
-    
+    if(balls[indexA]->getVelocityX() < 0 && balls[indexA]->getVelocityY() < 0)
+        alpha += pi;
+        
     float gamma;
     if(alpha < beta)
         gamma = beta + pi / 2;
     else
         gamma = beta - pi / 2;
     //printf("\nindexs 1: %d 2: %d\nx: %f y: %f", indexA, indexB, xDistance, yDistance);
-    printf("\n%f\n", beta * 180 / pi);
+    printf("\n%f\n", alpha * 180 / pi);
     //now for the velocities
     
     
