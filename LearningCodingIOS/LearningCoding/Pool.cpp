@@ -43,7 +43,6 @@ bool Pool::init(){
     setTouchEnabled(true);
     
     this->scheduleUpdate();
-    //printf("\n%f\n%f\n%f\n%f\n%f", tan(pi), atan(4 * pi / 3), atan(3.14159) * 180 / pi, atan(2 * pi / 3), atan(2) * 180 / pi);
     
     return true;
 }
@@ -54,37 +53,36 @@ bool Pool::ccTouchBegan(CCTouch *pTouch, CCEvent *pEvent){
     return false;
 }
 
+bool Pool::whiteBallIsTapped(CCPoint touch){
+    float distance;
+    distance = sqrt(pow(balls.front()->getPositionOfBall().x - touch.x, 2) + pow(balls.front()->getPositionOfBall().y - touch.y, 2));
+    return (distance <= ballSize * ballScale) ? true : false;
+}
 
 
-//this is the stuff
+
+
 void Pool::update(float dt){
     for(int i = 0; i < balls.size(); i++){
+        checkForEdgeCollision(i);
         if(balls[i]->getVelocityX() != 0 || balls[i]->getVelocityY() != 0)
             calculatePosition(i);
         balls[i]->updatePosition();
         this->getChildByTag(i)->setPosition(balls[i]->getPositionOfBall());
-        checkForEdgeCollision(balls[i]);
-        //clearOutBalls(balls);
     }
 }
 
-void Pool::clearOutBalls(std::vector<Ball> balls){
-    bool canInitiate = true;
-    for(auto b : balls)
-        if(b.getVelocityY() > 0.0001 || b.getVelocityX() > 0.0001)
-            canInitiate = false;
-    //if(can)
-}
-
-void Pool::checkForEdgeCollision(Ball* b){
-    if(b->getPositionOfBall().x <= tableSize.width / 11 * imageScale || b->getPositionOfBall().x >= (tableSize.width - tableSize.width / 11) * imageScale){
-        b->setAppropriatePosition(1, tableSize.width * imageScale);
-        b->setVelocityX(-b->getVelocityX());
+void Pool::checkForEdgeCollision(int index){
+    if(inTableHole(index))
+        this->removeChild(this->getChildByTag(index));
+    if(balls[index]->getPositionOfBall().x <= tableSize.width / 11 * imageScale || balls[index]->getPositionOfBall().x >= (tableSize.width - tableSize.width / 11) * imageScale){
+        balls[index]->setAppropriatePosition(1, tableSize.width * imageScale);
+        balls[index]->setVelocityX(-balls[index]->getVelocityX());
     }
         
-    if(b->getPositionOfBall().y <= tableSize.height / 6 * imageScale || b->getPositionOfBall().y >= (tableSize.height - tableSize.height / 6) * imageScale){
-        b->setAppropriatePosition(2, tableSize.height * imageScale);
-        b->setVelocityY(-b->getVelocityY());
+    if(balls[index]->getPositionOfBall().y <= tableSize.height / 6 * imageScale || balls[index]->getPositionOfBall().y >= (tableSize.height - tableSize.height / 6) * imageScale){
+        balls[index]->setAppropriatePosition(2, tableSize.height * imageScale);
+        balls[index]->setVelocityY(-balls[index]->getVelocityY());
     }
 }
 
@@ -92,13 +90,10 @@ void Pool::ccTouchEnded(CCTouch *pTouch, CCEvent *pEvent){
     CCPoint touch = pTouch->getLocation();
     balls.front()->setVelocityX(balls.front()->positionX - touch.x);
     balls.front()->setVelocityY(balls.front()->positionY - touch.y);
-    
 }
 
-bool Pool::whiteBallIsTapped(CCPoint touch){
-    float distance;
-    distance = sqrt(pow(balls.front()->getPositionOfBall().x - touch.x, 2) + pow(balls.front()->getPositionOfBall().y - touch.y, 2));
-    return (distance <= ballSize * ballScale) ? true : false;
+bool Pool::inTableHole(int index){
+    return false;
 }
 
 void Pool::setTheBalls(){
@@ -157,8 +152,8 @@ void Pool::calculatePosition(int indexOfBall){
         for(int j = 0; j < balls.size(); j++){
             if(distance(positionInPath, balls[j]->getPositionOfBall()) <= ballSize * ballScale - 1 && j != indexOfBall){
                 //set ball position to the one before this
-                balls[indexOfBall]->positionX = savePosition.x;
-                balls[indexOfBall]->positionY = savePosition.y;
+                //balls[indexOfBall]->positionX = savePosition.x;
+                //balls[indexOfBall]->positionY = savePosition.y;
                 //exchange velocities
                 exchangeVelocities(indexOfBall, j);
             }
@@ -178,14 +173,7 @@ void Pool::exchangeVelocities(int indexA, int indexB){
     
     float xDistance = redBallCenter.x - whiteBallCenter.x;
     float yDistance = redBallCenter.y - whiteBallCenter.y;
-    //float xDistance = balls[indexA]->getVelocityX() - balls[indexB]->getVelocityX();
-    //float yDistance = balls[indexA]->getVelocityY() - balls[indexB]->getVelocityY();
 
-
-    /*if(xDistance < 1)
-        xDistance = 1;
-    if(yDistance < 1)
-        yDistance = 1;*/
     //get the angle of the white ball (before impact @alpha) and the red ball (after impact @beta)
     float alpha = atan(balls[indexA]->getVelocityY() / balls[indexA]->getVelocityX());
     float beta = atan(yDistance / xDistance);
@@ -206,20 +194,14 @@ void Pool::exchangeVelocities(int indexA, int indexB){
         gamma = beta + pi / 2;
     else
         gamma = beta - pi / 2;
-    //printf("\nindexs 1: %d 2: %d\nx: %f y: %f", indexA, indexB, xDistance, yDistance);
-    printf("\n%f\n", alpha * 180 / pi);
+    
     //now for the velocities
-    
-    
-    
-    
-    
-    float x3 = /*balls[indexA]->getVelocityX() - x2*/ (balls[indexA]->getVelocityY() - balls[indexA]->getVelocityX() * tan(beta)) / (tan(gamma) - tan(beta));
+    float x3 = (balls[indexA]->getVelocityY() - balls[indexA]->getVelocityX() * tan(beta)) / (tan(gamma) - tan(beta));
     float x2 = balls[indexA]->getVelocityX() - x3;
     float y2 = x2 * tan(beta);
     float y3 = balls[indexA]->getVelocityY() - y2;
     
-    //printf("\nwhite (before): x: %f y: %f\nwhite (after): x: %f y: %f\nred (after): x: %f y: %f\n", balls[indexA]->getVelocityX(), balls[indexA]->getVelocityY(), x3, y3, x2, y2);
+    printf("\nwhite (before): x: %f y: %f\nwhite (after): x: %f y: %f\nred (after): x: %f y: %f\n", balls[indexA]->getVelocityX(), balls[indexA]->getVelocityY(), x3, y3, x2, y2);
     
     //give them proper velocities
     balls[indexA]->setVelocityX(x3);
@@ -227,4 +209,15 @@ void Pool::exchangeVelocities(int indexA, int indexB){
     
     balls[indexB]->setVelocityX(x2);
     balls[indexB]->setVelocityY(y2);
+    
+    //little fallback method for balls entering each other
+    /*if(x2 == 0 && x3 == 0 && y2 == 0 && y3 == 0)
+        //balls[indexA]->setVelocityX(10);
+        clearOutBalls(indexA, indexB);*/
 }
+
+/*void Pool::clearOutBalls(int i, int j){
+    float xDistance = balls[i]->positionX - balls[j]->positionX;
+    float yDistance = balls[i]->positionY - balls[j]->positionY;
+    
+}*/

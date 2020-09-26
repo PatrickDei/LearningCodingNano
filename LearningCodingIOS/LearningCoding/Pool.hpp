@@ -61,7 +61,7 @@ private:
 
     bool whiteBallIsTapped(CCPoint touch);
     
-    void checkForEdgeCollision(Ball* b);
+    void checkForEdgeCollision(int index);
     
     void calculatePosition(int indexOfBall);
     
@@ -69,7 +69,9 @@ private:
     
     void exchangeVelocities(int indexA, int indexB);
     
-    void clearOutBalls(std::vector<Ball> balls);
+    void clearOutBalls(int i, int j);
+    
+    bool inTableHole(int index);
 };
 
 #endif /* Pool_hpp */
