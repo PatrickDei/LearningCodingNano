@@ -37,7 +37,14 @@ bool Pool::init(){
     
     tableSize = table->getContentSize();
     
+    numOfScoredballs = 0;
+    consecutive = 1;
+    
     setTheBalls();
+    
+    score = CCLabelTTF::create(std::to_string(numOfScoredballs).c_str(), "Arial", 50);
+    score->setPosition(ccp(windowSize.width / 2, windowSize.height - score->getContentSize().height));
+    this->addChild(score);
     
     setTouchMode(kCCTouchesOneByOne);
     setTouchEnabled(true);
@@ -73,16 +80,19 @@ void Pool::update(float dt){
 }
 
 void Pool::checkForEdgeCollision(int index){
-    if(inTableHole(index))
-        this->removeChild(this->getChildByTag(index));
+    
     if(balls[index]->getPositionOfBall().x <= tableSize.width / 11 * imageScale || balls[index]->getPositionOfBall().x >= (tableSize.width - tableSize.width / 11) * imageScale){
-        balls[index]->setAppropriatePosition(1, tableSize.width * imageScale);
-        balls[index]->setVelocityX(-balls[index]->getVelocityX());
+        if(!inTableHole(index, 0)){
+            balls[index]->setAppropriatePosition(1, tableSize.width * imageScale);
+            balls[index]->setVelocityX(-balls[index]->getVelocityX());
+        }
     }
         
     if(balls[index]->getPositionOfBall().y <= tableSize.height / 6 * imageScale || balls[index]->getPositionOfBall().y >= (tableSize.height - tableSize.height / 6) * imageScale){
-        balls[index]->setAppropriatePosition(2, tableSize.height * imageScale);
-        balls[index]->setVelocityY(-balls[index]->getVelocityY());
+        if(!inTableHole(index, 1)){
+            balls[index]->setAppropriatePosition(2, tableSize.height * imageScale);
+            balls[index]->setVelocityY(-balls[index]->getVelocityY());
+        }
     }
 }
 
@@ -92,8 +102,57 @@ void Pool::ccTouchEnded(CCTouch *pTouch, CCEvent *pEvent){
     balls.front()->setVelocityY(balls.front()->positionY - touch.y);
 }
 
-bool Pool::inTableHole(int index){
+
+
+//tableSize * image scale fix
+
+
+
+bool Pool::inTableHole(int index, int direction){
+    if(abs(balls[index]->positionX - tableSize.width * imageScale / 2) <= 20){
+        if(balls[index]->positionY <= tableSize.height * imageScale / 11 || balls[index]->positionY <= tableSize.height - tableSize.height * imageScale / 11)
+            addToScoreboard(balls[index]);
+        return true;
+    }
+    if(abs(balls[index]->positionX - tableSize.width * imageScale / 11) <= 20 && (abs(balls[index]->positionY - tableSize.height * imageScale / 6) <= 20 || abs(-balls[index]->positionY + tableSize.height * imageScale - tableSize.height * imageScale / 6) <= 20)){
+        if(balls[index]->positionX < tableSize.width * imageScale / 11 || balls[index]->positionY < tableSize.height * imageScale / 11 || balls[index]->positionY >= tableSize.height - tableSize.height * imageScale / 11)
+            addToScoreboard(balls[index]);
+        return true;
+    }
+    if(abs(balls[index]->positionX - (tableSize.width * imageScale - tableSize.width * imageScale / 11)) <= 20 && (abs(balls[index]->positionY - tableSize.height * imageScale / 6) <= 20 || abs(-balls[index]->positionY + tableSize.height * imageScale - tableSize.height * imageScale / 6) <= 20)){
+        if(balls[index]->positionX > (tableSize.width * imageScale - tableSize.width * imageScale / 11) || balls[index]->positionY < tableSize.height * imageScale / 11 || balls[index]->positionY >= tableSize.height - tableSize.height * imageScale / 11)
+            addToScoreboard(balls[index]);
+        return true;
+    }
     return false;
+}
+
+void Pool::addToScoreboard(Ball* b){
+    if(b->getPositionOfBall().x == balls[11]->getPositionOfBall().x && b->getPositionOfBall().y == balls[11]->getPositionOfBall().y && numOfScoredballs != 14){
+        score->setString("game over");
+        b->setVelocityX(0);
+        b->setVelocityY(0);
+        b->positionX = ballSize + ballScale * ballSize * numOfScoredballs++;
+        b->positionY = windowSize.height / 2;
+        b->scored = true;
+    }
+    else if(b->getPositionOfBall().x == balls.front()->getPositionOfBall().x && b->getPositionOfBall().y == balls.front()->getPositionOfBall().y){
+        consecutive = 1;
+        b->positionX = tableSize.width * imageScale * 3 / 4;
+        b->positionY = tableSize.height * imageScale / 2;
+        b->setVelocityX(0);
+        b->setVelocityY(0);
+    }
+    else{
+        b->setVelocityX(0);
+        b->setVelocityY(0);
+        b->positionX = ballSize + ballScale * ballSize * numOfScoredballs++;
+        b->positionY = windowSize.height / 2;
+        b->scored = true;
+        int scoreSoFar = atoi(score->getString());
+        score->setString(std::to_string(scoreSoFar + consecutive).c_str());
+        consecutive++;
+    }
 }
 
 void Pool::setTheBalls(){
@@ -201,7 +260,7 @@ void Pool::exchangeVelocities(int indexA, int indexB){
     float y2 = x2 * tan(beta);
     float y3 = balls[indexA]->getVelocityY() - y2;
     
-    printf("\nwhite (before): x: %f y: %f\nwhite (after): x: %f y: %f\nred (after): x: %f y: %f\n", balls[indexA]->getVelocityX(), balls[indexA]->getVelocityY(), x3, y3, x2, y2);
+    //printf("\nwhite (before): x: %f y: %f\nwhite (after): x: %f y: %f\nred (after): x: %f y: %f\n", balls[indexA]->getVelocityX(), balls[indexA]->getVelocityY(), x3, y3, x2, y2);
     
     //give them proper velocities
     balls[indexA]->setVelocityX(x3);
@@ -209,15 +268,4 @@ void Pool::exchangeVelocities(int indexA, int indexB){
     
     balls[indexB]->setVelocityX(x2);
     balls[indexB]->setVelocityY(y2);
-    
-    //little fallback method for balls entering each other
-    /*if(x2 == 0 && x3 == 0 && y2 == 0 && y3 == 0)
-        //balls[indexA]->setVelocityX(10);
-        clearOutBalls(indexA, indexB);*/
 }
-
-/*void Pool::clearOutBalls(int i, int j){
-    float xDistance = balls[i]->positionX - balls[j]->positionX;
-    float yDistance = balls[i]->positionY - balls[j]->positionY;
-    
-}*/

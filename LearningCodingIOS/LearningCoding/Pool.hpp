@@ -50,6 +50,13 @@ private:
     CCPoint prevPosition;
     
     std::vector<Ball*> balls;
+    
+    int numOfScoredballs;
+    
+    CCLabelTTF* score;
+    
+    int consecutive;
+
 
     
     
@@ -71,7 +78,11 @@ private:
     
     void clearOutBalls(int i, int j);
     
-    bool inTableHole(int index);
+    bool inTableHole(int index, int direction);
+    
+    void addToScoreboard(Ball* b);
+    
+    void resetGame();
 };
 
 #endif /* Pool_hpp */

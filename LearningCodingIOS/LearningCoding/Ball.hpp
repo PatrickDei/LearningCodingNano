@@ -17,7 +17,9 @@ public:
     float positionX;
     float positionY;
     
-    Ball(float x, float y) : friction(0.9), positionX(x), positionY(y) {
+    bool scored;
+    
+    Ball(float x, float y) : friction(0.9), positionX(x), positionY(y), scored(false) {
         printf("\nadded ball with x: %f y: %f", x, y);
     }
     

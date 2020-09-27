@@ -40,20 +40,22 @@ void Ball::updatePosition(){
 
 
 void Ball::setAppropriatePosition(int direction, float size){
-    if(direction == 1){
-        /*float howManyPixelsBehind = positionX - size / 11;
-        //move it upwards for an appropriate amount
-        positionY = (velocityY * positionX)
-        //set it back*/
-        if(positionX > size / 11)
-            positionX = size - size / 11 - 1;
-        else
-            positionX = size / 11 + 1;
-    }
-    else{
-        if(positionY > size / 6)
-            positionY = size - size / 6 - 1;
-        else
-            positionY = size / 6 + 1;
+    if(!scored){
+        if(direction == 1){
+            /*float howManyPixelsBehind = positionX - size / 11;
+            //move it upwards for an appropriate amount
+            positionY = (velocityY * positionX)
+            //set it back*/
+            if(positionX > size / 11)
+                positionX = size - size / 11 - 1;
+            else
+                positionX = size / 11 + 1;
+        }
+        else{
+            if(positionY > size / 6)
+                positionY = size - size / 6 - 1;
+            else
+                positionY = size / 6 + 1;
+        }
     }
 }
