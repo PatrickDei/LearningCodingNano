@@ -15,6 +15,10 @@ public:
     // a selector callback
     void menuCloseCallback(CCObject* pSender);
     
+    void returnToMainMenu(){
+        cocos2d::CCDirector::sharedDirector()->replaceScene(scene());
+    }
+    
     // implement the "static node()" method manually
     CREATE_FUNC(HelloWorld);
 };

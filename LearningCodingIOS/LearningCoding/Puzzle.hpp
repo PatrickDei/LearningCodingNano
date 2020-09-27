@@ -26,11 +26,11 @@ public:
     }
     static CCScene* scene();
     
-    void returnToMainMenu(){
+    /*void returnToMainMenu(){
         for(auto p : puzzlePieces)
             delete p;
         CCDirector::sharedDirector()->replaceScene(HelloWorld::scene());
-    }
+    }*/
     
     CREATE_FUNC(Puzzle);
 

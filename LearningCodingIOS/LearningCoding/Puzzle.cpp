@@ -7,6 +7,7 @@
 
 #include "Puzzle.hpp"
 #include <algorithm>
+#include "Games.hpp"
 
 
 bool Puzzle::init(){
@@ -18,16 +19,10 @@ bool Puzzle::init(){
     CCSprite* puzzleImage = CCSprite::create("HelloWorld.png");
     
     windowSize = CCDirector::sharedDirector()->getVisibleSize();
-    Puzzle::imageSize = puzzleImage->getContentSize();
+    imageSize = puzzleImage->getContentSize();
     
     //backbutton menu
-    CCMenuItemImage* backButtonImage = CCMenuItemImage::create("button_close.png", "button_close_selected.png");
-    CCMenuItemToggle* backButton = CCMenuItemToggle::createWithTarget(this, menu_selector(Puzzle::returnToMainMenu), backButtonImage, NULL);
-    
-    backButton->setPosition(ccp(backButton->getContentSize().width / 2, windowSize.height - backButton->getContentSize().height / 2));
-    CCMenu* menu = CCMenu::create(backButton, NULL);
-    menu->setPosition(CCPointZero);
-    this->addChild(menu);
+    this->addChild(createBackButton(this, windowSize));
     
     
     //main scale for everything
@@ -71,12 +66,11 @@ bool Puzzle::init(){
     CCLabelTTF* shuffleButtonLabel = CCLabelTTF::create("Shuffle", "Arial", 24);
     shuffleButtonLabel->setPosition(ccp(shuffleButton->getContentSize().width / 2, shuffleButton->getContentSize().height / 2));
     shuffleButton->addChild(shuffleButtonLabel);
-    shuffleButton->setPosition(ccp(0, windowSize.height / 3 * 4));
+    shuffleButton->setPosition(ccp(windowSize.width / 2, windowSize.height / 4 * 3));
     shuffleButton->setScale(3);
     CCMenu* shuffleMenu = CCMenu::create(shuffleButton, NULL);
     shuffleMenu->setPosition(CCPointZero);
     this->addChild(shuffleMenu, 2);
-    
     
     setTouchMode(kCCTouchesOneByOne);
     setTouchEnabled(true);
@@ -198,7 +192,6 @@ bool Puzzle::checkForWin(){
 
 void Puzzle::startOfAnimationFunc(){
     setTouchEnabled(false);
-    printf("disabledtouch");
     //overloaded operator =
     PuzzlePiece* temp = puzzlePieces[selectedIndex];
     puzzlePieces[selectedIndex] = puzzlePieces[swapIndex];
@@ -207,5 +200,4 @@ void Puzzle::startOfAnimationFunc(){
 
 void Puzzle::endOfAnimationFunc(){
     setTouchEnabled(true);
-    printf("enabledtouch");
 }

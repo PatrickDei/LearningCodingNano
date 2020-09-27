@@ -6,6 +6,7 @@
 //
 
 #include "Pool.hpp"
+#include "Games.hpp"
 
 #define pi 3.141592654
 
@@ -25,6 +26,8 @@ bool Pool::init(){
     }
     
     windowSize = CCDirector::sharedDirector()->getVisibleSize();
+    
+    this->addChild(createBackButton(this, windowSize));
     
     CCSprite* table = CCSprite::create("pool_table.png");
     

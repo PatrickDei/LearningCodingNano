@@ -12,6 +12,8 @@
 #include "cocos2d.h"
 #include "HelloWorldScene.h"
 #include <vector>
+#include "Games.hpp"
+
 
 USING_NS_CC;
 
@@ -25,10 +27,6 @@ public:
     }
     
     static CCScene* scene();
-    
-    void returnToMainMenu(){
-        CCDirector::sharedDirector()->replaceScene(HelloWorld::scene());
-    }
 
     CREATE_FUNC(PolygonDraw);
 
@@ -49,9 +47,7 @@ protected:
     bool shapeIsCompleted;
     
     bool isLatestShapeFinished;
-
-    CCMenuItemToggle* saveButton;
-
+    
     
     
     void drawDot();

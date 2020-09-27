@@ -25,11 +25,6 @@ public:
     
     static CCScene* scene();
     
-    void returnToMainMenu(){
-           CCDirector::sharedDirector()->replaceScene(HelloWorld::scene());
-
-    }
-    
     CREATE_FUNC(PolygonManipulation);
     
 

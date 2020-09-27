@@ -25,20 +25,16 @@ bool PolygonManipulation::init(){
     
     CCSize screenSize = CCDirector::sharedDirector()->getVisibleSize();
     
-    CCMenuItemImage* backButtonImage = CCMenuItemImage::create("button_close.png", "button_close_selected.png");
-    CCMenuItemToggle* backButton = CCMenuItemToggle::createWithTarget(this, menu_selector(PolygonManipulation::returnToMainMenu), backButtonImage, NULL);
-    backButton->setPosition(ccp(backButton->getContentSize().width / 2, screenSize.height - backButton->getContentSize().height / 2));
-    
-    CCMenu* menu = CCMenu::create(backButton, NULL);
-    menu->setPosition(CCPointZero);
-    this->addChild(menu);
+    this->addChild(createBackButton(this, screenSize));
     
     PolygonDraw::loadButtonFunc();
     
-    setTouchMode(kCCTouchesOneByOne);
-    setTouchEnabled(true);
     numOfDotsBeforeShape = 0;
     shapeIndex = 0;
+    
+    setTouchMode(kCCTouchesOneByOne);
+    setTouchEnabled(true);
+    
     return true;
 }
 

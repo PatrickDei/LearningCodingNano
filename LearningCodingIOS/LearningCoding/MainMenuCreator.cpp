@@ -17,7 +17,6 @@ void scaleButtons (CCMenuItemToggle* item1, CCMenuItemToggle* item2, CCMenuItemT
     item4->setScale(MENU_SCALE);
 }
 
-
 void positionItems (int numberOfCells, float height, CCMenuItemToggle* item1, CCMenuItemToggle* item2, CCMenuItemToggle* item3, CCMenuItemToggle* item4){
     int offset = calculateOffset(height);
     

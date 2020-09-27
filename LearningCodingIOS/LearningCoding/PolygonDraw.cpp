@@ -7,7 +7,6 @@
 
 #include "PolygonDraw.hpp"
 #include <math.h>
-
 #include <string>
 
 CCScene* PolygonDraw::scene(){
@@ -27,24 +26,18 @@ bool PolygonDraw::init(){
     
     CCSize screenSize = CCDirector::sharedDirector()->getVisibleSize();
     
-    CCMenuItemImage* backButtonImage = CCMenuItemImage::create("button_close.png", "button_close_selected.png");
-    CCMenuItemToggle* backButton = CCMenuItemToggle::createWithTarget(this, menu_selector(PolygonDraw::returnToMainMenu), backButtonImage, NULL);
-    backButton->setPosition(ccp(backButton->getContentSize().width / 2, screenSize.height - backButton->getContentSize().height / 2));
+    this->addChild(createBackButton(this, screenSize));
     
     
-    
-    CCMenuItemImage* save = CCMenuItemImage::create("BtnBg.png", "BtnBgSelected.png");
-    CCMenuItemImage* load = CCMenuItemImage::create("BtnBg.png", "BtnBgSelected.png");
-    CCMenuItemImage* del = CCMenuItemImage::create("BtnBg.png", "BtnBgSelected.png");
-    saveButton = CCMenuItemToggle::createWithTarget(this, menu_selector(PolygonDraw::saveButtonFunc), save, NULL);
-    CCMenuItemToggle* loadButton = CCMenuItemToggle::createWithTarget(this, menu_selector(PolygonDraw::loadButtonFunc), load, NULL);
-    CCMenuItemToggle* delButton = CCMenuItemToggle::createWithTarget(this, menu_selector(PolygonDraw::delButtonFunc), del, NULL);
+    CCMenuItemToggle* saveButton = CCMenuItemToggle::createWithTarget(this, menu_selector(PolygonDraw::saveButtonFunc), getButtonImage(), NULL);
+    CCMenuItemToggle* loadButton = CCMenuItemToggle::createWithTarget(this, menu_selector(PolygonDraw::loadButtonFunc), getButtonImage(), NULL);
+    CCMenuItemToggle* delButton = CCMenuItemToggle::createWithTarget(this, menu_selector(PolygonDraw::delButtonFunc), getButtonImage(), NULL);
     
     saveButton->setPosition(ccp(screenSize.width / 4, saveButton->getContentSize().height));
     loadButton->setPosition(ccp(screenSize.width / 2, saveButton->getContentSize().height));
     delButton->setPosition(ccp(screenSize.width / 4 * 3, saveButton->getContentSize().height));
 
-    CCMenu* menu = CCMenu::create(saveButton, loadButton, delButton, backButton, NULL);
+    CCMenu* menu = CCMenu::create(saveButton, loadButton, delButton, NULL);
     menu->setPosition(CCPointZero);
     this->addChild(menu);
 
@@ -62,7 +55,7 @@ bool PolygonDraw::init(){
 
 bool PolygonDraw::ccTouchBegan(CCTouch *pTouch, CCEvent *pEvent){
     //limited the screen above the buttons
-    if(pTouch->getLocation().y > saveButton->getContentSize().height){
+    if(pTouch->getLocation().y > 100){
         points.push_back(pTouch->getLocation());
         
         shapeIsCompleted = isCompleted();
@@ -125,12 +118,6 @@ void PolygonDraw::drawVertex(){
     }
     this->addChild(line, 1, points.size());
 }
-
-
-
-
-
-
 
 void PolygonDraw::setAllToGreen(){
     for(int i = sumOfPoints; i < points.size() - 1; i++){
@@ -227,7 +214,7 @@ void PolygonDraw::delButtonFunc(){
     dotsInShape.push_back(0);
     sumOfPoints = 0;
         
-    CCUserDefault::sharedUserDefault()->purgeSharedUserDefault();
+    //CCUserDefault::sharedUserDefault()->purgeSharedUserDefault();
 }
 
 void PolygonDraw::drawFromData(){

@@ -26,10 +26,6 @@ public:
     
     static CCScene* scene();
     
-    void returnToMainMenu(){
-           CCDirector::sharedDirector()->replaceScene(HelloWorld::scene());
-    }
-    
     virtual void update(float dt) override;
     
     CREATE_FUNC(Pool);
