@@ -19,9 +19,7 @@ public:
     
     bool scored;
     
-    Ball(float x, float y) : friction(0.9), positionX(x), positionY(y), scored(false) {
-        printf("\nadded ball with x: %f y: %f", x, y);
-    }
+    Ball(float x, float y) : friction(0.9), positionX(x), positionY(y), scored(false) {}
     
     ~Ball(){
         printf("destructor called");
