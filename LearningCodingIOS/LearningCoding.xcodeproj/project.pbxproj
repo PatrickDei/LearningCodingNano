@@ -384,6 +384,7 @@
 		BD51F7E1208A15FD009D7D39 /* Animation.c in Sources */ = {isa = PBXBuildFile; fileRef = BD51F7C4208A15FC009D7D39 /* Animation.c */; };
 		BD56779120A0A4470094EE80 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = BD56778F20A0A4460094EE80 /* Reachability.m */; };
 		BD7DE45B20A56E9C00AB97F6 /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BD7DE45A20A56E9C00AB97F6 /* libicucore.tbd */; };
+		C90F8D7D25225B7F000665AB /* BilliardsMenu.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C90F8D7B25225B7F000665AB /* BilliardsMenu.cpp */; };
 		C94434D02503E04300307820 /* MainMenuCreator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C94434CE2503E04300307820 /* MainMenuCreator.cpp */; };
 		C94434D32505124A00307820 /* Games.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C94434D12505124A00307820 /* Games.cpp */; };
 		C94434D62505132D00307820 /* Puzzle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C94434D42505132D00307820 /* Puzzle.cpp */; };
@@ -1228,6 +1229,8 @@
 		BD56778F20A0A4460094EE80 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		BD56779020A0A4470094EE80 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		BD7DE45A20A56E9C00AB97F6 /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
+		C90F8D7B25225B7F000665AB /* BilliardsMenu.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = BilliardsMenu.cpp; sourceTree = "<group>"; };
+		C90F8D7C25225B7F000665AB /* BilliardsMenu.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = BilliardsMenu.hpp; sourceTree = "<group>"; };
 		C94434CE2503E04300307820 /* MainMenuCreator.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = MainMenuCreator.cpp; sourceTree = "<group>"; };
 		C94434CF2503E04300307820 /* MainMenuCreator.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = MainMenuCreator.hpp; sourceTree = "<group>"; };
 		C94434D12505124A00307820 /* Games.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Games.cpp; sourceTree = "<group>"; };
@@ -2774,6 +2777,8 @@
 				C9F27EC62506CDC600705D89 /* Pool.cpp */,
 				C9667A6F2516786700129110 /* Ball.hpp */,
 				C9667A6E2516786700129110 /* Ball.cpp */,
+				C90F8D7C25225B7F000665AB /* BilliardsMenu.hpp */,
+				C90F8D7B25225B7F000665AB /* BilliardsMenu.cpp */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -3222,6 +3227,7 @@
 				12B376E81E42075100EABC29 /* CCScrollView.cpp in Sources */,
 				12AE093A1E40E83D007827AB /* CCTMXTiledMap.cpp in Sources */,
 				12B376E61E42075100EABC29 /* CCEditBoxImplNone.cpp in Sources */,
+				C90F8D7D25225B7F000665AB /* BilliardsMenu.cpp in Sources */,
 				12AE06921E40E83A007827AB /* ccFPSImages.c in Sources */,
 				BD51F7DA208A15FD009D7D39 /* Event.c in Sources */,
 				12AE068C1E40E83A007827AB /* CCCamera.cpp in Sources */,

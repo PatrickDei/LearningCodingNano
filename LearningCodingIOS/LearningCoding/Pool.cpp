@@ -7,6 +7,7 @@
 
 #include "Pool.hpp"
 #include "Games.hpp"
+#include "BilliardsMenu.hpp"
 
 #define pi 3.141592654
 
@@ -24,6 +25,9 @@ bool Pool::init(){
     if (!CCLayer::init()){
         return false;
     }
+    
+    //BilliardsMenu* billiardsMenu = BilliardsMenu::create();
+    //this->addChild(billiardsMenu);
     
     windowSize = CCDirector::sharedDirector()->getVisibleSize();
     
