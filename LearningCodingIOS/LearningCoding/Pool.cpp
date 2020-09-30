@@ -26,9 +26,10 @@ bool Pool::init(){
         return false;
     }
     
-    //BilliardsMenu* billiardsMenu = BilliardsMenu::create();
-    //this->addChild(billiardsMenu);
-    
+    BilliardsMenu* billiardsMenu = BilliardsMenu::create();
+    billiardsMenu->setZOrder(2);
+    this->addChild(billiardsMenu);
+        
     windowSize = CCDirector::sharedDirector()->getVisibleSize();
     
     this->addChild(createBackButton(this, windowSize));

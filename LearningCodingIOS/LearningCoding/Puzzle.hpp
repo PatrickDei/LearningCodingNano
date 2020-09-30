@@ -42,15 +42,11 @@ private:
     
     CCSize imageSize;
     
-    CCSize windowSize;
-    
     int swapIndex;
     
     int selectedIndex;
     
     
-    
-    float scaleMainImage(CCSize windowSize, CCSize imageSize);
     
     void shufflePieces();
 

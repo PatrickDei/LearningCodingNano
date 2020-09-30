@@ -136,6 +136,7 @@ void PolygonDraw::redrawLines(int index){
 }
 
 void PolygonDraw::saveButtonFunc(){
+    dotsInShape.push_back(0);
     int helpSum = 0;
     //num of shapes
     CCUserDefault::sharedUserDefault()->setIntegerForKey("numOfShapes", (dotsInShape.back() == 0) ? dotsInShape.size() - 1 : dotsInShape.size());
@@ -166,6 +167,7 @@ void PolygonDraw::saveButtonFunc(){
 }
 
 void PolygonDraw::loadButtonFunc(){
+    delButtonFunc();
     dotsInShape.clear();
     int helpSum = 0;
     int numOfshapes = CCUserDefault::sharedUserDefault()->getIntegerForKey("numOfShapes");

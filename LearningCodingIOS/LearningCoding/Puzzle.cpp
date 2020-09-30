@@ -18,7 +18,7 @@ bool Puzzle::init(){
     //adjustment for resolutions
     CCSprite* puzzleImage = CCSprite::create("HelloWorld.png");
     
-    windowSize = CCDirector::sharedDirector()->getVisibleSize();
+    CCSize windowSize = CCDirector::sharedDirector()->getVisibleSize();
     imageSize = puzzleImage->getContentSize();
     
     //backbutton menu
@@ -26,7 +26,7 @@ bool Puzzle::init(){
     
     
     //main scale for everything
-    mainImageScale = scaleMainImage(windowSize, imageSize);
+    mainImageScale = windowSize.width / imageSize.width;
     
     //implementation for flexible number of pieces
     puzzleWidth = imageSize.width / NUM_OF_HORIZONTAL_PIECES;
@@ -39,11 +39,6 @@ bool Puzzle::init(){
             //setting up the puzzle pieces
             CCSprite* puzzlePiece = CCSprite::create("HelloWorld.png", CCRect(i * puzzleWidth, j * puzzleHeight, puzzleWidth, puzzleHeight));
             puzzlePiece->setAnchorPoint(CCPointZero);
-            puzzlePiece->setPosition(ccp(i * puzzleWidth * mainImageScale,
-                                         //place on top
-                                         imageSize.height * mainImageScale * ((NUM_OF_VERTICAL_PIECES - 1) / NUM_OF_VERTICAL_PIECES)
-                                         //nextpieces go lower
-                                         - j * puzzleHeight * mainImageScale));
             puzzlePiece->setScale(mainImageScale);
             this->addChild(puzzlePiece);
             PuzzlePiece* puzzleForVector = new PuzzlePiece(i * NUM_OF_HORIZONTAL_PIECES + j, puzzlePiece);
@@ -72,10 +67,10 @@ bool Puzzle::init(){
     shuffleMenu->setPosition(CCPointZero);
     this->addChild(shuffleMenu, 2);
     
+    selectedPuzzle = false;
+    
     setTouchMode(kCCTouchesOneByOne);
     setTouchEnabled(true);
-    
-    selectedPuzzle = false;
     
     return true;
 }
@@ -106,33 +101,26 @@ void Puzzle::shufflePieces(){
     }
 }
 
-
-float Puzzle::scaleMainImage(CCSize windowSize, CCSize imageSize){
-    return windowSize.width / imageSize.width;
-}
-
 bool Puzzle::ccTouchBegan(CCTouch *pTouch, CCEvent *pEvent){
-    CCPoint touch = pTouch->getLocation();
     
+    CCPoint touch = pTouch->getLocation();
     if(tappedImage(touch)){
         
         selectedIndex = getPuzzlePieceIndex(touch);
-        
         //@selectedPuzzle just says if its turn 1 or turn 2
         if(!selectedPuzzle){
             swapIndex = selectedIndex;
-            
             selectedPuzzle = true;
         }
         else{
-                swapPieces();
+            swapPieces();
                 
-                if(checkForWin()){
-                    CCLabelTTF* winText = CCLabelTTF::create("You won!", "Arial", 64);
-                    winText->setPosition(ccp(windowSize.width /2, imageSize.height * 3 / 2 * mainImageScale));
-                    this->addChild(winText, 1, 1);
-                }
-                selectedPuzzle = false;
+            if(checkForWin()){
+                CCLabelTTF* winText = CCLabelTTF::create("You won!", "Arial", 64);
+                winText->setPosition(ccp(CCDirector::sharedDirector()->getVisibleSize().width /2, imageSize.height * 3 / 2 * mainImageScale));
+                this->addChild(winText, 1, 1);
+            }
+            selectedPuzzle = false;
         }
     }
     return true;

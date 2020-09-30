@@ -23,7 +23,21 @@ public:
     virtual cocos2d::SEL_MenuHandler getHandleForSelector( std::string handleName) override;
     virtual cocos2d::CCObject* getTarget() override;
     
+    bool ccTouchBegan(CCTouch *pTouch, CCEvent *pEvent) override{
+        return true;
+    }
+
+    void increaseNumOfBalls();
+    
+    void decreaseNumOfBalls();
+    
+    void updateLabel(std::string labelString);
+    
     CREATE_FUNC(BilliardsMenu);
+    
+    
+private:
+    int numOfBalls;
 };
 
 #endif /* BilliardsMenu_hpp */

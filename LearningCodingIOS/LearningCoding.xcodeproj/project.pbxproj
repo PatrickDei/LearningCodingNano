@@ -385,6 +385,7 @@
 		BD56779120A0A4470094EE80 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = BD56778F20A0A4460094EE80 /* Reachability.m */; };
 		BD7DE45B20A56E9C00AB97F6 /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BD7DE45A20A56E9C00AB97F6 /* libicucore.tbd */; };
 		C90F8D7D25225B7F000665AB /* BilliardsMenu.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C90F8D7B25225B7F000665AB /* BilliardsMenu.cpp */; };
+		C90F8D8125245FEE000665AB /* BilliardSetup.plist in Resources */ = {isa = PBXBuildFile; fileRef = C90F8D8025245FEE000665AB /* BilliardSetup.plist */; };
 		C94434D02503E04300307820 /* MainMenuCreator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C94434CE2503E04300307820 /* MainMenuCreator.cpp */; };
 		C94434D32505124A00307820 /* Games.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C94434D12505124A00307820 /* Games.cpp */; };
 		C94434D62505132D00307820 /* Puzzle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C94434D42505132D00307820 /* Puzzle.cpp */; };
@@ -1231,6 +1232,7 @@
 		BD7DE45A20A56E9C00AB97F6 /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
 		C90F8D7B25225B7F000665AB /* BilliardsMenu.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = BilliardsMenu.cpp; sourceTree = "<group>"; };
 		C90F8D7C25225B7F000665AB /* BilliardsMenu.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = BilliardsMenu.hpp; sourceTree = "<group>"; };
+		C90F8D8025245FEE000665AB /* BilliardSetup.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = BilliardSetup.plist; path = Resources/BilliardSetup.plist; sourceTree = "<group>"; };
 		C94434CE2503E04300307820 /* MainMenuCreator.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = MainMenuCreator.cpp; sourceTree = "<group>"; };
 		C94434CF2503E04300307820 /* MainMenuCreator.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = MainMenuCreator.hpp; sourceTree = "<group>"; };
 		C94434D12505124A00307820 /* Games.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Games.cpp; sourceTree = "<group>"; };
@@ -2720,6 +2722,7 @@
 		12F9BAC21CEC651A001AD81C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				C90F8D8025245FEE000665AB /* BilliardSetup.plist */,
 				8E3F35CA2278A20F000C0932 /* ipad */,
 				8E3F35C82278A20F000C0932 /* ipadhd */,
 				8E3F35C92278A20F000C0932 /* iphone */,
@@ -3139,6 +3142,7 @@
 				12EA8A921D94164B006F10FD /* SourceSansPro-Semibold.ttf in Resources */,
 				22234AC32209A0D3003009B8 /* Agane-65(Bold)sign.ttf in Resources */,
 				22234AC92209A0D3003009B8 /* Agane-55(roman)sign.ttf in Resources */,
+				C90F8D8125245FEE000665AB /* BilliardSetup.plist in Resources */,
 				12F9C10F1CEC6709001AD81C /* README.txt in Resources */,
 				22234ABD2209A0D3003009B8 /* Agane-45(light).ttf in Resources */,
 				12B377771E42088D00EABC29 /* json_internalmap.inl in Resources */,

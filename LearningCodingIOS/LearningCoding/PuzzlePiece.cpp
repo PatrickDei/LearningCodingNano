@@ -19,7 +19,7 @@ void PuzzlePiece::setPositionIndex(int index){
 void PuzzlePiece::setAppropriatePosition(int index, float puzzleWidth, float mainImageScale, CCSize imageSize, float puzzleHeight){
     int i = index / NUM_OF_HORIZONTAL_PIECES;
     int j = index - i * NUM_OF_HORIZONTAL_PIECES;
-    this->puzzlePieceImage->setPosition(ccp(i * puzzleWidth * mainImageScale, imageSize.height * mainImageScale * 3 / 4 - j * puzzleHeight * mainImageScale));
+    this->puzzlePieceImage->setPosition(ccp(i * puzzleWidth * mainImageScale, imageSize.height * mainImageScale - j * puzzleHeight * mainImageScale - puzzleHeight * mainImageScale));
 }
 
 
