@@ -6,27 +6,21 @@
 //
 
 #include "Ball.hpp"
+#include "Pool.hpp"
 
-float Ball::getVelocityX() const{
-    return velocityX;
+void Ball::addBallToScoreboard(float scale, int numOfScoredBalls){
+    this->setVelocityX(0);
+    this->setVelocityY(0);
+    this->positionX = this->sizeOfObject + scale * this->sizeOfObject * numOfScoredBalls;
+    this->positionY = CCDirector::sharedDirector()->getVisibleSize().height / 2;
+    this->scored = true;
 }
 
-void Ball::setVelocityX(float _velocityX){
-    velocityX = (_velocityX < 300) ? _velocityX : 300;
-}
-
-
-float Ball::getVelocityY() const{
-    return velocityY;
-}
-
-void Ball::setVelocityY(float _velocityY){
-    velocityY = (_velocityY < 300) ? _velocityY : 300;
-}
-
-CCPoint Ball::getPositionOfBall(){
-    CCPoint point = CCPoint(positionX, positionY);
-    return point;
+void Ball::resetWhiteBall(CCSize tableSize, float imageScale){
+    this->positionX = tableSize.width * imageScale * 3 / 4;
+    this->positionY = tableSize.height * imageScale / 2;
+    this->setVelocityX(0);
+    this->setVelocityY(0);
 }
 
 void Ball::updatePosition(){

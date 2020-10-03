@@ -9,13 +9,11 @@
 #define Moveable_hpp
 
 #include "MovingDelegate.hpp"
-
-class MovingDelegate;
+#include "MyObject.hpp"
 
 class Moveable : public MovingDelegate{
 protected:
-    
-    virtual void calcPosition(){}
+    virtual void calculateVelocities(MyObject* obj1, MyObject* obj2) override;
 };
 
 #endif /* Moveable_hpp */

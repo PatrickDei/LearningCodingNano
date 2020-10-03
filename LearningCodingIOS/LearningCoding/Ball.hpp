@@ -17,32 +17,19 @@ USING_NS_CC;
 
 class Ball : public MyObject{
 public:
-    /*float positionX;
-    float positionY;*/
-    
     bool scored;
     
     Ball(float x, float y, float size) : friction(0.9), MyObject(new Collideable(), new Moveable(), x, y, size), scored(false) {}
     
-    
-    float getVelocityX() const;
-    void setVelocityX(float _velocityX);
-    
-    float getVelocityY() const;
-    void setVelocityY(float _velocityY);
-    
     void updatePosition();
-    
-    CCPoint getPositionOfBall();
-    
+        
     void setAppropriatePosition(int direction, float size);
     
+    void addBallToScoreboard(float scale, int numOfScoredBalls);
     
+    void resetWhiteBall(CCSize tableSize, float imageScale);
     
 private:
-    float velocityX;
-    float velocityY;
-    
     float friction;
 };
 

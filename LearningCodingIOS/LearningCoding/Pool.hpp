@@ -43,8 +43,6 @@ private:
     
     float ballSize;
     
-    CCPoint prevPosition;
-    
     std::vector<Ball*> balls;
     
     int numOfScoredballs;
@@ -66,19 +64,13 @@ private:
     
     void checkForEdgeCollision(int index);
     
-    void calculatePosition(int indexOfBall);
-    
-    float distance(CCPoint posA, CCPoint posB);
-    
-    void exchangeVelocities(int indexA, int indexB);
-    
-    void clearOutBalls(int i, int j);
+    void handleCollisions(int indexOfBall);
     
     bool inTableHole(int index, int direction);
     
     void addToScoreboard(Ball* b);
     
-    void resetGame();
+    static void resetGame();
 };
 
 #endif /* Pool_hpp */

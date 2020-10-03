@@ -13,9 +13,11 @@
 
 USING_NS_CC;
 
+class MyObject;
+
 class MovingDelegate : public CCLayer{
 public:
-    virtual void calcPosition() = 0;
+    virtual void calculateVelocities(MyObject* obj1, MyObject* obj2) = 0;
 };
 
 #endif /* MovingDelegate_hpp */
