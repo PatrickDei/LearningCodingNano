@@ -10,20 +10,19 @@
 
 #include <stdio.h>
 #include "cocos2d.h"
+#include "MyObject.hpp"
+#include "Moveable.hpp"
+#include "Collideable.hpp"
 USING_NS_CC;
 
-class Ball : public CCLayer{
+class Ball : public MyObject{
 public:
-    float positionX;
-    float positionY;
+    /*float positionX;
+    float positionY;*/
     
     bool scored;
     
-    Ball(float x, float y) : friction(0.9), positionX(x), positionY(y), scored(false) {}
-    
-    ~Ball(){
-        printf("destructor called");
-    }
+    Ball(float x, float y, float size) : friction(0.9), MyObject(new Collideable(), new Moveable(), x, y, size), scored(false) {}
     
     
     float getVelocityX() const;

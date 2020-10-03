@@ -110,7 +110,7 @@
 					<key>class</key>
 					<string>LabelTTF</string>
 					<key>content</key>
-					<string>1</string>
+					<string>15</string>
 					<key>fontSize</key>
 					<string>30</string>
 					<key>localizable</key>
@@ -118,7 +118,7 @@
 					<key>name</key>
 					<string>ballNumber</string>
 					<key>posAbs</key>
-					<string>132.098,277.24</string>
+					<string>126.633,276.716</string>
 					<key>posRel</key>
 					<string>0,0</string>
 					<key>sizeAbs</key>
@@ -247,7 +247,7 @@
 							<key>class</key>
 							<string>MenuItemImage</string>
 							<key>name</key>
-							<string>quitGame</string>
+							<string>quitButton</string>
 							<key>normal</key>
 							<string>button_blue.png</string>
 							<key>normalSize</key>
@@ -265,6 +265,57 @@
 							<key>sizeRel</key>
 							<string>0,0</string>
 						</dict>
+						<dict>
+							<key>children</key>
+							<array>
+								<dict>
+									<key>class</key>
+									<string>Sprite</string>
+									<key>image</key>
+									<string>button_close.png</string>
+									<key>imageSize</key>
+									<string>84,84</string>
+									<key>posAbs</key>
+									<string>26.5744,26.1536</string>
+									<key>posRel</key>
+									<string>0,0</string>
+									<key>sizeAbs</key>
+									<string>84,84</string>
+									<key>sizeRel</key>
+									<string>0,0</string>
+								</dict>
+							</array>
+							<key>class</key>
+							<string>MenuItemImage</string>
+							<key>disabled</key>
+							<string>close_border.png</string>
+							<key>disabledSize</key>
+							<string>134,134</string>
+							<key>name</key>
+							<string>backButton</string>
+							<key>normal</key>
+							<string>close_border.png</string>
+							<key>normalSize</key>
+							<string>134,134</string>
+							<key>posAbs</key>
+							<string>417.635,349.369</string>
+							<key>posRel</key>
+							<string>0,0</string>
+							<key>scaleX</key>
+							<string>0.65</string>
+							<key>scaleY</key>
+							<string>0.65</string>
+							<key>selected</key>
+							<string>close_border.png</string>
+							<key>selectedSize</key>
+							<string>134,134</string>
+							<key>selector</key>
+							<string>backGame</string>
+							<key>sizeAbs</key>
+							<string>134,134</string>
+							<key>sizeRel</key>
+							<string>0,0</string>
+						</dict>
 					</array>
 					<key>class</key>
 					<string>Menu</string>
@@ -278,6 +329,119 @@
 					<string>500,480</string>
 					<key>sizeRel</key>
 					<string>0,0</string>
+				</dict>
+				<dict>
+					<key>children</key>
+					<array>
+						<dict>
+							<key>children</key>
+							<array>
+								<dict>
+									<key>class</key>
+									<string>Sprite</string>
+									<key>image</key>
+									<string>white_ball.png</string>
+									<key>imageSize</key>
+									<string>64,64</string>
+									<key>posAbs</key>
+									<string>0,0</string>
+									<key>posRel</key>
+									<string>0,0</string>
+									<key>sizeAbs</key>
+									<string>64,64</string>
+									<key>sizeRel</key>
+									<string>0,0</string>
+								</dict>
+							</array>
+							<key>class</key>
+							<string>MenuItem</string>
+							<key>name</key>
+							<string>whiteColor</string>
+							<key>posAbs</key>
+							<string>47.6233,132.745</string>
+							<key>posRel</key>
+							<string>0,0</string>
+							<key>selector</key>
+							<string>selectedWhite</string>
+							<key>sizeAbs</key>
+							<string>64,64</string>
+							<key>sizeRel</key>
+							<string>0,0</string>
+						</dict>
+						<dict>
+							<key>children</key>
+							<array>
+								<dict>
+									<key>class</key>
+									<string>Sprite</string>
+									<key>color</key>
+									<string>255,255,0</string>
+									<key>image</key>
+									<string>white_ball.png</string>
+									<key>imageSize</key>
+									<string>64,64</string>
+									<key>posAbs</key>
+									<string>0,0</string>
+									<key>posRel</key>
+									<string>0,0</string>
+									<key>sizeAbs</key>
+									<string>64,64</string>
+									<key>sizeRel</key>
+									<string>0,0</string>
+								</dict>
+							</array>
+							<key>class</key>
+							<string>MenuItem</string>
+							<key>name</key>
+							<string>yellowColor</string>
+							<key>posAbs</key>
+							<string>126.447,129.693</string>
+							<key>posRel</key>
+							<string>0,0</string>
+							<key>selector</key>
+							<string>selectedYellow</string>
+							<key>sizeAbs</key>
+							<string>64,64</string>
+							<key>sizeRel</key>
+							<string>0,0</string>
+						</dict>
+					</array>
+					<key>class</key>
+					<string>Menu</string>
+					<key>name</key>
+					<string>colorMenu</string>
+					<key>posAbs</key>
+					<string>0,0</string>
+					<key>posRel</key>
+					<string>0,0</string>
+					<key>sizeAbs</key>
+					<string>500,480</string>
+					<key>sizeRel</key>
+					<string>0,0</string>
+				</dict>
+				<dict>
+					<key>class</key>
+					<string>LabelTTF</string>
+					<key>content</key>
+					<string>Select color of white ball</string>
+					<key>fontSize</key>
+					<string>25</string>
+					<key>hAlignment</key>
+					<string>center</string>
+					<key>localizable</key>
+					<string>0</string>
+					<key>name</key>
+					<string>color</string>
+					<key>posAbs</key>
+					<string>58.0359,206.419</string>
+					<key>posRel</key>
+					<string>0,0</string>
+					<key>sizeAbs</key>
+					<string>0,0</string>
+					<key>sizeRel</key>
+					<string>0,0</string>
+					<key>vAlignment</key>
+					<string>center</string>
 				</dict>
 			</array>
 			<key>class</key>

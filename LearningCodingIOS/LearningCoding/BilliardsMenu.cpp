@@ -6,9 +6,13 @@
 //
 
 #include "BilliardsMenu.hpp"
+#include "Pool.hpp"
 
+ccColor3B BilliardsMenu::colorOfWhiteBall = ccc3(255, 255, 255);
 bool BilliardsMenu::init(){
     numOfBalls = 15;
+    setMenuItemsInMap();
+    selectedWhite();
     
     setTouchMode(kCCTouchesOneByOne);
     setTouchEnabled(true);
@@ -21,6 +25,8 @@ bool BilliardsMenu::init(){
     NCLDeviceNodeManager* manager = new NCLDeviceNodeManager("BilliardSetup.plist", settings);
 
     CCNode *rootNode = manager->getCCNode("rootNode");
+    
+    rootNode->setPosition(ccp(CCDirector::sharedDirector()->getVisibleSize().width / 2 - rootNode->getContentSize().width / 2, CCDirector::sharedDirector()->getVisibleSize().height / 2 - rootNode->getContentSize().height / 2));
 
     this->addChild(rootNode, 1, 2);
         
@@ -29,14 +35,32 @@ bool BilliardsMenu::init(){
 
 
 cocos2d::SEL_MenuHandler BilliardsMenu::getHandleForSelector(std::string handleName){
-    if(handleName == "increaseNumOfBalls")
-        return menu_selector(BilliardsMenu::increaseNumOfBalls);
-    else
-        return menu_selector(BilliardsMenu::decreaseNumOfBalls);
+    return menuItemsMap.find(handleName)->second;
 }
 
 cocos2d::CCObject* BilliardsMenu::getTarget(){
     return this;
+}
+
+void BilliardsMenu::setMenuItemsInMap(){
+    menuItemsMap["increaseNumOfBalls"] = menu_selector(BilliardsMenu::increaseNumOfBalls);
+    menuItemsMap["decreaseNumOfBalls"] = menu_selector(BilliardsMenu::decreaseNumOfBalls);
+
+    menuItemsMap["backGame"] = menu_selector(BilliardsMenu::closeMenu);
+    menuItemsMap["playGame"] = menu_selector(BilliardsMenu::playGame);
+    menuItemsMap["quitGame"] = menu_selector(HelloWorld::returnToMainMenu);
+    
+    menuItemsMap["selectedWhite"] = menu_selector(BilliardsMenu::selectedWhite);
+    menuItemsMap["selectedYellow"] = menu_selector(BilliardsMenu::selectedYellow);
+
+}
+
+void BilliardsMenu::closeMenu(){
+    this->removeFromParentAndCleanup(true);
+}
+
+void BilliardsMenu::playGame(){
+    this->removeFromParentAndCleanup(true);
 }
 
 void BilliardsMenu::increaseNumOfBalls(){
@@ -59,4 +83,12 @@ void BilliardsMenu::updateLabel(std::string labelString){
     label->setAnchorPoint(CCPointZero);
     this->getChildByTag(2)->removeChildByTag(50);
     this->getChildByTag(2)->addChild(label, 1, 50);
+}
+
+void BilliardsMenu::selectedWhite(){
+    colorOfWhiteBall = ccc3(255, 255, 255);
+}
+
+void BilliardsMenu::selectedYellow(){
+    colorOfWhiteBall = ccc3(255, 255, 0);
 }

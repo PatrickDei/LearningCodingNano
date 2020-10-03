@@ -10,6 +10,7 @@
 
 #include <stdio.h>
 #include "cocos2d.h"
+#include "HelloWorldScene.h"
 #include "NanoCocosLoader/NCLDeviceNodeManager.h"
 #include "NanoCocosLoader/NCLDeviceInfo.h"
 #include "NanoCocosLoader/NCLResponder.h"
@@ -26,18 +27,33 @@ public:
     bool ccTouchBegan(CCTouch *pTouch, CCEvent *pEvent) override{
         return true;
     }
+    
+    CREATE_FUNC(BilliardsMenu);
+    
+    static _ccColor3B colorOfWhiteBall;
+    
+private:
+    int numOfBalls;
+    
+    std::map<std::string, SEL_MenuHandler> menuItemsMap;
+    
+    void setMenuItemsInMap();
 
+    void updateLabel(std::string labelString);
+    
     void increaseNumOfBalls();
     
     void decreaseNumOfBalls();
     
-    void updateLabel(std::string labelString);
+    void selectedWhite();
     
-    CREATE_FUNC(BilliardsMenu);
+    void selectedYellow();
+
     
     
-private:
-    int numOfBalls;
+    void closeMenu();
+    
+    void playGame();
 };
 
 #endif /* BilliardsMenu_hpp */

@@ -170,7 +170,8 @@ void Pool::setTheBalls(){
     
     ballScale = (windowSize.width / 20) / whiteBall->getContentSize().width;
     
-    Ball* b = new Ball(tableSize.width * imageScale * 3 / 4, tableSize.height * imageScale / 2);
+    Ball* b = new Ball(tableSize.width * imageScale * 3 / 4, tableSize.height * imageScale / 2, whiteBall->getContentSize().width * ballScale);
+    whiteBall->setColor(BilliardsMenu::colorOfWhiteBall);
     balls.push_back(b);
 
     whiteBall->setPosition(balls.front()->getPositionOfBall());
@@ -190,7 +191,7 @@ void Pool::setTheBalls(){
             
             
             if(i == 3 && j == 1){
-                Ball* b = new Ball(200 + (6 - i) * rowOffset * ballScale, initialOffset + startPosition + j * ballSize * ballScale);
+                Ball* b = new Ball(200 + (6 - i) * rowOffset * ballScale, initialOffset + startPosition + j * ballSize * ballScale, whiteBall->getContentSize().width * ballScale);
                 balls.push_back(b);
 
                 blackBall->setPosition(balls.back()->getPositionOfBall());
@@ -199,7 +200,7 @@ void Pool::setTheBalls(){
             }
             else{
                 CCSprite* redBall = CCSprite::create("red_ball.png");
-                Ball* b = new Ball(200 + (6 - i) * rowOffset * ballScale, initialOffset + startPosition + j * ballSize * ballScale);
+                Ball* b = new Ball(200 + (6 - i) * rowOffset * ballScale, initialOffset + startPosition + j * ballSize * ballScale, whiteBall->getContentSize().width * ballScale);
                 balls.push_back(b);
                 redBall->setPosition(balls.back()->getPositionOfBall());
                 redBall->setScale(ballScale);
@@ -217,7 +218,8 @@ void Pool::calculatePosition(int indexOfBall){
         positionInPath.y += balls[indexOfBall]->getVelocityY() / i;
         //check if any ball is in that position
         for(int j = 0; j < balls.size(); j++){
-            if(distance(positionInPath, balls[j]->getPositionOfBall()) <= ballSize * ballScale - 1 && j != indexOfBall){
+            if(j != indexOfBall)
+            if(/*balls[indexOfBall]->isInCollision(balls[j], balls[indexOfBall])*/distance(positionInPath, balls[j]->getPositionOfBall()) <= ballSize * ballScale - 1 && j != indexOfBall){
                 //set ball position to the one before this
                 //balls[indexOfBall]->positionX = savePosition.x;
                 //balls[indexOfBall]->positionY = savePosition.y;
@@ -268,7 +270,7 @@ void Pool::exchangeVelocities(int indexA, int indexB){
     float y2 = x2 * tan(beta);
     float y3 = balls[indexA]->getVelocityY() - y2;
     
-    //printf("\nwhite (before): x: %f y: %f\nwhite (after): x: %f y: %f\nred (after): x: %f y: %f\n", balls[indexA]->getVelocityX(), balls[indexA]->getVelocityY(), x3, y3, x2, y2);
+    printf("\nwhite (before): x: %f y: %f\nwhite (after): x: %f y: %f\nred (after): x: %f y: %f\n", balls[indexA]->getVelocityX(), balls[indexA]->getVelocityY(), x3, y3, x2, y2);
     
     //give them proper velocities
     balls[indexA]->setVelocityX(x3);
