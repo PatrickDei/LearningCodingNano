@@ -25,7 +25,7 @@ public:
         
     void setAppropriatePosition(int direction, float size);
     
-    void addBallToScoreboard(float scale, int numOfScoredBalls);
+    void addBallToScoreboard(int numOfScoredBalls);
     
     void resetWhiteBall(CCSize tableSize, float imageScale);
     

@@ -395,6 +395,8 @@
 		C94434D32505124A00307820 /* Games.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C94434D12505124A00307820 /* Games.cpp */; };
 		C94434D62505132D00307820 /* Puzzle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C94434D42505132D00307820 /* Puzzle.cpp */; };
 		C9667A702516786700129110 /* Ball.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C9667A6E2516786700129110 /* Ball.cpp */; };
+		C98613F2252A4770003E847A /* Wall.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C98613F0252A4770003E847A /* Wall.cpp */; };
+		C98613F5252A695C003E847A /* Immoveable.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C98613F3252A695C003E847A /* Immoveable.cpp */; };
 		C9F27EC22506CDA100705D89 /* PolygonDraw.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C9F27EC02506CDA100705D89 /* PolygonDraw.cpp */; };
 		C9F27EC52506CDB200705D89 /* PolygonManipulation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C9F27EC32506CDB200705D89 /* PolygonManipulation.cpp */; };
 		C9F27EC82506CDC600705D89 /* Pool.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C9F27EC62506CDC600705D89 /* Pool.cpp */; };
@@ -1256,6 +1258,10 @@
 		C94434D52505132D00307820 /* Puzzle.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Puzzle.hpp; sourceTree = "<group>"; };
 		C9667A6E2516786700129110 /* Ball.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Ball.cpp; sourceTree = "<group>"; };
 		C9667A6F2516786700129110 /* Ball.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Ball.hpp; sourceTree = "<group>"; };
+		C98613F0252A4770003E847A /* Wall.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Wall.cpp; sourceTree = "<group>"; };
+		C98613F1252A4770003E847A /* Wall.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Wall.hpp; sourceTree = "<group>"; };
+		C98613F3252A695C003E847A /* Immoveable.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Immoveable.cpp; sourceTree = "<group>"; };
+		C98613F4252A695C003E847A /* Immoveable.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Immoveable.hpp; sourceTree = "<group>"; };
 		C9F27EC02506CDA100705D89 /* PolygonDraw.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = PolygonDraw.cpp; sourceTree = "<group>"; };
 		C9F27EC12506CDA100705D89 /* PolygonDraw.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = PolygonDraw.hpp; sourceTree = "<group>"; };
 		C9F27EC32506CDB200705D89 /* PolygonManipulation.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = PolygonManipulation.cpp; sourceTree = "<group>"; };
@@ -2795,6 +2801,8 @@
 				C9F27EC72506CDC600705D89 /* Pool.hpp */,
 				C9667A6E2516786700129110 /* Ball.cpp */,
 				C9667A6F2516786700129110 /* Ball.hpp */,
+				C98613F0252A4770003E847A /* Wall.cpp */,
+				C98613F1252A4770003E847A /* Wall.hpp */,
 				C90F8D7B25225B7F000665AB /* BilliardsMenu.cpp */,
 				C90F8D7C25225B7F000665AB /* BilliardsMenu.hpp */,
 				C92DAF1425273966002088D7 /* CollisionDelegate.cpp */,
@@ -2807,6 +2815,8 @@
 				C92DAF1E25273C07002088D7 /* MyObject.hpp */,
 				C92DAF2025273D0E002088D7 /* Moveable.cpp */,
 				C92DAF2125273D0E002088D7 /* Moveable.hpp */,
+				C98613F3252A695C003E847A /* Immoveable.cpp */,
+				C98613F4252A695C003E847A /* Immoveable.hpp */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -3284,6 +3294,7 @@
 				12AE09281E40E83D007827AB /* CCTexture2D.cpp in Sources */,
 				12AE06DA1E40E83B007827AB /* CCLabelBMFont.cpp in Sources */,
 				12AE06C01E40E83A007827AB /* mat3.c in Sources */,
+				C98613F2252A4770003E847A /* Wall.cpp in Sources */,
 				12AE09401E40E83D007827AB /* CCTouchDispatcher.cpp in Sources */,
 				12B376B81E42075100EABC29 /* CDAudioManager.m in Sources */,
 				47D4DBCA1CF341890074F3C8 /* StarryParticles.cpp in Sources */,
@@ -3404,6 +3415,7 @@
 				12B3770E1E42075100EABC29 /* CCSkeletonAnimation.cpp in Sources */,
 				12AE091C1E40E83D007827AB /* CCUserDefaultAndroid.cpp in Sources */,
 				12AE06D21E40E83B007827AB /* vec4.c in Sources */,
+				C98613F5252A695C003E847A /* Immoveable.cpp in Sources */,
 				12B376EE1E42075100EABC29 /* CCTableViewCell.cpp in Sources */,
 				12F9C1231CEC6709001AD81C /* cpHashSet.c in Sources */,
 				12AE09261E40E83D007827AB /* CCTextFieldTTF.cpp in Sources */,

@@ -10,7 +10,6 @@
 
 ccColor3B BilliardsMenu::colorOfWhiteBall = ccc3(255, 255, 255);
 bool BilliardsMenu::init(){
-    numOfBalls = 15;
     setMenuItemsInMap();
     selectedWhite();
     
@@ -52,7 +51,10 @@ void BilliardsMenu::setMenuItemsInMap(){
     
     menuItemsMap["selectedWhite"] = menu_selector(BilliardsMenu::selectedWhite);
     menuItemsMap["selectedYellow"] = menu_selector(BilliardsMenu::selectedYellow);
-
+    menuItemsMap["selectedRed"] = menu_selector(BilliardsMenu::selectedRed);
+    menuItemsMap["selectedCyan"] = menu_selector(BilliardsMenu::selectedCyan);
+    menuItemsMap["selectedBlue"] = menu_selector(BilliardsMenu::selectedBlue);
+    menuItemsMap["selectedMagenta"] = menu_selector(BilliardsMenu::selectedMagenta);
 }
 
 void BilliardsMenu::closeMenu(){
@@ -60,6 +62,7 @@ void BilliardsMenu::closeMenu(){
 }
 
 void BilliardsMenu::playGame(){
+    Pool::gameRestart = true;
     this->removeFromParentAndCleanup(true);
 }
 
@@ -91,4 +94,20 @@ void BilliardsMenu::selectedWhite(){
 
 void BilliardsMenu::selectedYellow(){
     colorOfWhiteBall = ccc3(255, 255, 0);
+}
+
+void BilliardsMenu::selectedRed(){
+    colorOfWhiteBall = ccc3(255, 0, 0);
+}
+
+void BilliardsMenu::selectedCyan(){
+    colorOfWhiteBall = ccc3(0, 255, 255);
+}
+
+void BilliardsMenu::selectedBlue(){
+    colorOfWhiteBall = ccc3(0, 0, 255);
+}
+
+void BilliardsMenu::selectedMagenta(){
+    colorOfWhiteBall = ccc3(255, 0, 255);
 }

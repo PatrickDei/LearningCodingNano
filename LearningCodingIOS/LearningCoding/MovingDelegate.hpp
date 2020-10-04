@@ -17,7 +17,9 @@ class MyObject;
 
 class MovingDelegate : public CCLayer{
 public:
-    virtual void calculateVelocities(MyObject* obj1, MyObject* obj2) = 0;
+    virtual void calculateVelocities(MyObject* obj1, MyObject* obj2){}
+    
+    virtual void bounce(MyObject* wall, MyObject* ball){}
 };
 
 #endif /* MovingDelegate_hpp */

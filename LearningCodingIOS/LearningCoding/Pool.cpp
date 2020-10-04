@@ -21,6 +21,9 @@ CCScene* Pool::scene(){
     return scene;
 }
 
+bool Pool::gameRestart = false;
+int BilliardsMenu::numOfBalls = 15;
+
 bool Pool::init(){
     if (!CCLayer::init()){
         return false;
@@ -78,13 +81,16 @@ bool Pool::whiteBallIsTapped(CCPoint touch){
 
 
 void Pool::update(float dt){
-    for(int i = 0; i < balls.size(); i++){
-        checkForEdgeCollision(i);
-        if(balls[i]->getVelocityX() != 0 || balls[i]->getVelocityY() != 0)
-            handleCollisions(i);
-        balls[i]->updatePosition();
-        this->getChildByTag(i)->setPosition(balls[i]->getPos());
-    }
+    if(!gameRestart)
+        for(int i = 0; i < balls.size(); i++){
+            checkForEdgeCollision(i);
+            if(balls[i]->getVelocityX() != 0 || balls[i]->getVelocityY() != 0)
+                handleCollisions(i);
+            balls[i]->updatePosition();
+            this->getChildByTag(i)->setPosition(balls[i]->getPos());
+        }
+    else
+        resetGame();
 }
 
 void Pool::checkForEdgeCollision(int index){
@@ -136,14 +142,14 @@ bool Pool::inTableHole(int index, int direction){
 void Pool::addToScoreboard(Ball* b){
     if(b->getPos().x == balls[11]->getPos().x && b->getPos().y == balls[11]->getPos().y && numOfScoredballs != 14){
         score->setString("game over");
-        b->addBallToScoreboard(ballScale, numOfScoredballs++);
+        b->addBallToScoreboard(numOfScoredballs++);
     }
     else if(b->getPos().x == balls.front()->getPos().x && b->getPos().y == balls.front()->getPos().y){
         consecutive = 1;
         b->resetWhiteBall(tableSize, imageScale);
     }
     else{
-        b->addBallToScoreboard(ballScale, numOfScoredballs++);
+        b->addBallToScoreboard(numOfScoredballs++);
         score->setString(std::to_string(atoi(score->getString()) + consecutive).c_str());
         consecutive++;
     }
@@ -168,13 +174,15 @@ void Pool::setTheBalls(){
     float rowOffset = sqrt(pow(ballSize, 2) - pow(ballSize / 2, 2));
     float startPosition = tableSize.height * imageScale / 2 - 2 * ballSize * ballScale;
     
-    
+    int totalBalls = 0;
     
     for(int i = 5; i >= 1 ; i--){
         float initialOffset = (5 * ballSize / 2 - (i * ballSize / 2)) * ballScale;
         
         for(int j = 0; j < i ; j++){
             
+            if(totalBalls == BilliardsMenu::numOfBalls)
+                return;
             
             if(i == 3 && j == 1){
                 Ball* b = new Ball(200 + (6 - i) * rowOffset * ballScale, initialOffset + startPosition + j * ballSize * ballScale, whiteBall->getContentSize().width * ballScale);
@@ -192,6 +200,7 @@ void Pool::setTheBalls(){
                 redBall->setScale(ballScale);
                 this->addChild(redBall, 1, tagIndex++);
             }
+            totalBalls++;
         }
     }
 }
@@ -205,5 +214,16 @@ void Pool::handleCollisions(int indexOfBall){
 }
 
 void Pool::resetGame(){
+    for(int i = 0; i < balls.size(); i++)
+        this->removeChildByTag(i, true);
     
+    balls.clear();
+    
+    numOfScoredballs = 0;
+    consecutive = 1;
+    
+    setTheBalls();
+    
+    score->setValue(numOfScoredballs);
+    gameRestart = false;
 }

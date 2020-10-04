@@ -19,3 +19,8 @@ bool Collideable::isInCollision(MyObject* obj1, MyObject* obj2){
     }
     return false;
 }
+
+bool Collideable::wallCollision(MyObject* wall, MyObject* ball){
+    //to-do
+    return true;
+}

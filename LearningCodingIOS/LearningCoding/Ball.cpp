@@ -8,10 +8,10 @@
 #include "Ball.hpp"
 #include "Pool.hpp"
 
-void Ball::addBallToScoreboard(float scale, int numOfScoredBalls){
+void Ball::addBallToScoreboard(int numOfScoredBalls){
     this->setVelocityX(0);
     this->setVelocityY(0);
-    this->positionX = this->sizeOfObject + scale * this->sizeOfObject * numOfScoredBalls;
+    this->positionX = this->sizeOfObject + this->sizeOfObject * numOfScoredBalls;
     this->positionY = CCDirector::sharedDirector()->getVisibleSize().height / 2;
     this->scored = true;
 }

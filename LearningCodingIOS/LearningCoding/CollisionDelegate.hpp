@@ -18,6 +18,8 @@ class MyObject;
 class CollisionDelegate : public CCLayer{
 public:
     virtual bool isInCollision(MyObject* obj1, MyObject* obj2) = 0;
+    
+    virtual bool wallCollision(MyObject* wall, MyObject* ball) = 0;
 };
 
 #endif /* CollisionDelegate_hpp */

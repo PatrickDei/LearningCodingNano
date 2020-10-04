@@ -15,6 +15,8 @@ class MyObject;
 class Collideable : public CollisionDelegate{
 public:
     virtual bool isInCollision(MyObject* obj1, MyObject* obj2) override;
+    
+    virtual bool wallCollision(MyObject* wall, MyObject* ball) override;
 };
 
 #endif /* Collideable_hpp */

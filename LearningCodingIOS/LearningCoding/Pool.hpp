@@ -30,6 +30,8 @@ public:
     
     CREATE_FUNC(Pool);
     
+    static bool gameRestart;
+    
     
 private:
     
@@ -70,7 +72,7 @@ private:
     
     void addToScoreboard(Ball* b);
     
-    static void resetGame();
+    void resetGame();
 };
 
 #endif /* Pool_hpp */

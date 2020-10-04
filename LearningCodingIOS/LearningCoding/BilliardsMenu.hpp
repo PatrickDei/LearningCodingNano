@@ -32,9 +32,9 @@ public:
     
     static _ccColor3B colorOfWhiteBall;
     
+    static int numOfBalls;
+
 private:
-    int numOfBalls;
-    
     std::map<std::string, SEL_MenuHandler> menuItemsMap;
     
     void setMenuItemsInMap();
@@ -46,11 +46,12 @@ private:
     void decreaseNumOfBalls();
     
     void selectedWhite();
-    
     void selectedYellow();
+    void selectedRed();
+    void selectedCyan();
+    void selectedBlue();
+    void selectedMagenta();
 
-    
-    
     void closeMenu();
     
     void playGame();

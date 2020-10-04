@@ -6,7 +6,6 @@
 //
 
 #include "Moveable.hpp"
-#include "MyObject.hpp"
 
 #define pi 3.141592654
 

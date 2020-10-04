@@ -17,7 +17,7 @@
 					<key>name</key>
 					<string>background</string>
 					<key>posAbs</key>
-					<string>0,0</string>
+					<string>-0.246094,0</string>
 					<key>posRel</key>
 					<string>0,0</string>
 					<key>scaleX</key>
@@ -358,7 +358,7 @@
 							<key>name</key>
 							<string>whiteColor</string>
 							<key>posAbs</key>
-							<string>47.6233,132.745</string>
+							<string>40.8124,127.579</string>
 							<key>posRel</key>
 							<string>0,0</string>
 							<key>selector</key>
@@ -395,11 +395,161 @@
 							<key>name</key>
 							<string>yellowColor</string>
 							<key>posAbs</key>
-							<string>126.447,129.693</string>
+							<string>117.258,127.285</string>
 							<key>posRel</key>
 							<string>0,0</string>
 							<key>selector</key>
 							<string>selectedYellow</string>
+							<key>sizeAbs</key>
+							<string>64,64</string>
+							<key>sizeRel</key>
+							<string>0,0</string>
+							<key>tag</key>
+							<string>5</string>
+						</dict>
+						<dict>
+							<key>children</key>
+							<array>
+								<dict>
+									<key>class</key>
+									<string>Sprite</string>
+									<key>color</key>
+									<string>255,0,0</string>
+									<key>image</key>
+									<string>white_ball.png</string>
+									<key>imageSize</key>
+									<string>64,64</string>
+									<key>posAbs</key>
+									<string>0,0</string>
+									<key>posRel</key>
+									<string>0,0</string>
+									<key>sizeAbs</key>
+									<string>64,64</string>
+									<key>sizeRel</key>
+									<string>0,0</string>
+								</dict>
+							</array>
+							<key>class</key>
+							<string>MenuItem</string>
+							<key>name</key>
+							<string>redColor</string>
+							<key>posAbs</key>
+							<string>187.255,125.862</string>
+							<key>posRel</key>
+							<string>0,0</string>
+							<key>selector</key>
+							<string>selectedRed</string>
+							<key>sizeAbs</key>
+							<string>64,64</string>
+							<key>sizeRel</key>
+							<string>0,0</string>
+						</dict>
+						<dict>
+							<key>children</key>
+							<array>
+								<dict>
+									<key>class</key>
+									<string>Sprite</string>
+									<key>color</key>
+									<string>0,255,255</string>
+									<key>image</key>
+									<string>white_ball.png</string>
+									<key>imageSize</key>
+									<string>64,64</string>
+									<key>posAbs</key>
+									<string>0,0</string>
+									<key>posRel</key>
+									<string>0,0</string>
+									<key>sizeAbs</key>
+									<string>64,64</string>
+									<key>sizeRel</key>
+									<string>0,0</string>
+								</dict>
+							</array>
+							<key>class</key>
+							<string>MenuItem</string>
+							<key>name</key>
+							<string>cyanColor</string>
+							<key>posAbs</key>
+							<string>258.763,127.214</string>
+							<key>posRel</key>
+							<string>0,0</string>
+							<key>selector</key>
+							<string>selectedCyan</string>
+							<key>sizeAbs</key>
+							<string>64,64</string>
+							<key>sizeRel</key>
+							<string>0,0</string>
+						</dict>
+						<dict>
+							<key>children</key>
+							<array>
+								<dict>
+									<key>class</key>
+									<string>Sprite</string>
+									<key>color</key>
+									<string>0,0,255</string>
+									<key>image</key>
+									<string>white_ball.png</string>
+									<key>imageSize</key>
+									<string>64,64</string>
+									<key>posAbs</key>
+									<string>0,0</string>
+									<key>posRel</key>
+									<string>0,0</string>
+									<key>sizeAbs</key>
+									<string>64,64</string>
+									<key>sizeRel</key>
+									<string>0,0</string>
+								</dict>
+							</array>
+							<key>class</key>
+							<string>MenuItem</string>
+							<key>name</key>
+							<string>blueColor</string>
+							<key>posAbs</key>
+							<string>329.942,126.751</string>
+							<key>posRel</key>
+							<string>0,0</string>
+							<key>selector</key>
+							<string>selectedBlue</string>
+							<key>sizeAbs</key>
+							<string>64,64</string>
+							<key>sizeRel</key>
+							<string>0,0</string>
+						</dict>
+						<dict>
+							<key>children</key>
+							<array>
+								<dict>
+									<key>class</key>
+									<string>Sprite</string>
+									<key>color</key>
+									<string>255,0,255</string>
+									<key>image</key>
+									<string>white_ball.png</string>
+									<key>imageSize</key>
+									<string>64,64</string>
+									<key>posAbs</key>
+									<string>0,0</string>
+									<key>posRel</key>
+									<string>0,0</string>
+									<key>sizeAbs</key>
+									<string>64,64</string>
+									<key>sizeRel</key>
+									<string>0,0</string>
+								</dict>
+							</array>
+							<key>class</key>
+							<string>MenuItem</string>
+							<key>name</key>
+							<string>magentaColor</string>
+							<key>posAbs</key>
+							<string>400.803,125.103</string>
+							<key>posRel</key>
+							<string>0,0</string>
+							<key>selector</key>
+							<string>selectedMagenta</string>
 							<key>sizeAbs</key>
 							<string>64,64</string>
 							<key>sizeRel</key>
@@ -442,6 +592,28 @@
 					<string>0,0</string>
 					<key>vAlignment</key>
 					<string>center</string>
+				</dict>
+				<dict>
+					<key>class</key>
+					<string>Sprite</string>
+					<key>image</key>
+					<string>color_box.png</string>
+					<key>imageSize</key>
+					<string>320,320</string>
+					<key>name</key>
+					<string>box</string>
+					<key>posAbs</key>
+					<string>27.5787,118.063</string>
+					<key>posRel</key>
+					<string>0,0</string>
+					<key>scaleX</key>
+					<string>0.272931</string>
+					<key>scaleY</key>
+					<string>0.262043</string>
+					<key>sizeAbs</key>
+					<string>320,320</string>
+					<key>sizeRel</key>
+					<string>0,0</string>
 				</dict>
 			</array>
 			<key>class</key>
