@@ -22,17 +22,32 @@ public:
     
     float sizeOfObject;
     
+    CCPoint point1;
+    CCPoint point2;
+    
     CollisionDelegate* collideable;
     MovingDelegate* moveable;
     
     MyObject(CollisionDelegate* c, MovingDelegate* m, float x, float y, float size) : collideable(c), moveable(m), positionX(x), positionY(y), sizeOfObject(size){}
     
+    MyObject(CollisionDelegate* c, MovingDelegate* m, CCPoint one, CCPoint two) : collideable(c), moveable(m), point1(one), point2(two){}
+    
     bool isInCollision(MyObject* obj1, MyObject* obj2){
-        return (collideable->isInCollision(obj1, obj2)) ? true : false;
+        return collideable->isInCollision(obj1, obj2);
     }
     
     void calculateVelocities(MyObject* obj1, MyObject* obj2){
         moveable->calculateVelocities(obj1, obj2);
+    }
+    
+    bool wallCollision(MyObject* wall, MyObject* ball){
+        return collideable->wallCollision(wall, ball);
+    }
+    
+    void bounce(MyObject* wall, MyObject* ball){
+        printf("bouncecall");
+        moveable->bounce(wall, ball);
+        printf("1");
     }
     
     CCPoint getPos(){

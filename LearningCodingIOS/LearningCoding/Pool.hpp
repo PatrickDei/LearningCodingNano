@@ -12,6 +12,7 @@
 #include "cocos2d.h"
 #include "HelloWorldScene.h"
 #include "Ball.hpp"
+#include "Wall.hpp"
 #include <math.h>
 
 using namespace cocos2d;
@@ -47,6 +48,8 @@ private:
     
     std::vector<Ball*> balls;
     
+    std::vector<Wall*> walls;
+    
     int numOfScoredballs;
     
     CCLabelTTF* score;
@@ -57,6 +60,10 @@ private:
     
     
     void setTheBalls();
+    
+    void setTheWalls();
+    
+    void createWalls(std::vector<CCPoint> points);
     
     bool ccTouchBegan(CCTouch *pTouch, CCEvent *pEvent) override;
     

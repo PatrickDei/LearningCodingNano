@@ -17,6 +17,8 @@ public:
     virtual bool isInCollision(MyObject* obj1, MyObject* obj2) override;
     
     virtual bool wallCollision(MyObject* wall, MyObject* ball) override;
+    
+    float distanceBetweenPoints(CCPoint one, CCPoint two);
 };
 
 #endif /* Collideable_hpp */

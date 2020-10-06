@@ -13,7 +13,7 @@ bool Collideable::isInCollision(MyObject* obj1, MyObject* obj2){
         CCPoint positionInPath = obj1->getPos();
         positionInPath.x += obj1->getVelocityX() / i;
         positionInPath.y += obj1->getVelocityY() / i;
-        float distance = sqrt(pow(positionInPath.x - obj2->positionX, 2) + pow(positionInPath.y - obj2->positionY, 2));
+        float distance = distanceBetweenPoints(positionInPath, obj2->getPos());
             if(distance <= obj1->sizeOfObject - 1)
                 return true;
     }
@@ -21,6 +21,19 @@ bool Collideable::isInCollision(MyObject* obj1, MyObject* obj2){
 }
 
 bool Collideable::wallCollision(MyObject* wall, MyObject* ball){
-    //to-do
-    return true;
+    for(int i = 50; i > 0; i--){
+        CCPoint positionInPath = wall->point1;
+        positionInPath.x += (wall->point2.x - wall->point1.x) / i;
+        positionInPath.y += (wall->point2.y - wall->point1.y) / i;
+        float distance = distanceBetweenPoints(positionInPath, ball->getPos());
+        if(distance <= ball->sizeOfObject / 2 - 1)
+            return true;
+    }
+    return false;
+}
+
+float Collideable::distanceBetweenPoints(CCPoint one, CCPoint two){
+    float distance;
+    distance = sqrt(pow(one.x - two.x, 2) + pow(one.y - two.y, 2));
+    return distance;
 }

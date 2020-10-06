@@ -61,7 +61,8 @@ bool Pool::init(){
     setTouchEnabled(true);
     
     this->scheduleUpdate();
-    
+    setTheWalls();
+
     return true;
 }
 
@@ -95,7 +96,7 @@ void Pool::update(float dt){
 
 void Pool::checkForEdgeCollision(int index){
     
-    if(balls[index]->getPos().x <= tableSize.width / 11 * imageScale || balls[index]->getPos().x >= (tableSize.width - tableSize.width / 11) * imageScale){
+    /*if(balls[index]->getPos().x <= tableSize.width / 11 * imageScale || balls[index]->getPos().x >= (tableSize.width - tableSize.width / 11) * imageScale){
         if(!inTableHole(index, 0)){
             balls[index]->setAppropriatePosition(1, tableSize.width * imageScale);
             balls[index]->setVelocityX(-balls[index]->getVelocityX());
@@ -107,7 +108,10 @@ void Pool::checkForEdgeCollision(int index){
             balls[index]->setAppropriatePosition(2, tableSize.height * imageScale);
             balls[index]->setVelocityY(-balls[index]->getVelocityY());
         }
-    }
+    }*/
+    for(auto w : walls)
+        if(balls[index]->wallCollision(w, balls[index]))
+            balls[index]->bounce(w, balls[index]);
 }
 
 void Pool::ccTouchEnded(CCTouch *pTouch, CCEvent *pEvent){
@@ -152,6 +156,44 @@ void Pool::addToScoreboard(Ball* b){
         b->addBallToScoreboard(numOfScoredballs++);
         score->setString(std::to_string(atoi(score->getString()) + consecutive).c_str());
         consecutive++;
+    }
+}
+
+void Pool::setTheWalls(){
+    tableSize.width *= imageScale;
+    tableSize.height *= imageScale;
+    std::vector<CCPoint> points;
+    points.push_back(CCPoint(tableSize.width / 11 + 20, tableSize.height / 6 - ballSize / 2));
+    points.push_back(CCPoint(tableSize.width / 2 - 30, tableSize.height / 6 - ballSize / 2));
+
+    points.push_back(CCPoint(tableSize.width / 2 + 30, tableSize.height / 6 - ballSize / 2));
+    points.push_back(CCPoint(tableSize.width - (tableSize.width / 11 + 20), tableSize.height / 6 - ballSize / 2));
+
+    points.push_back(CCPoint(tableSize.width - tableSize.width / 11 + ballSize / 2, tableSize.height / 6 + 20));
+    points.push_back(CCPoint(tableSize.width - tableSize.width / 11 + ballSize / 2, tableSize.height - (tableSize.height / 6 + 20)));
+
+    points.push_back(CCPoint(tableSize.width - (tableSize.width / 11 + 20), tableSize.height - tableSize.height / 6 + ballSize / 2));
+    points.push_back(CCPoint(tableSize.width / 2 + 30, tableSize.height - tableSize.height / 6 + ballSize / 2));
+
+    points.push_back(CCPoint(tableSize.width / 2 - 30, tableSize.height - tableSize.height / 6 + ballSize / 2));
+    points.push_back(CCPoint(tableSize.width / 11 + 20, tableSize.height - tableSize.height / 6 + ballSize / 2));
+    
+    points.push_back(CCPoint(tableSize.width / 11 - ballSize / 2, tableSize.height / 6 + 20));
+    points.push_back(CCPoint(tableSize.width / 11 - ballSize / 2, tableSize.height - (tableSize.height / 6 + 20)));
+    
+    tableSize.width /= imageScale;
+    tableSize.height /= imageScale;
+    
+    createWalls(points);
+}
+
+void Pool::createWalls(std::vector<CCPoint> points){
+    for(int i = 0; i < points.size(); i+=2){
+        Wall* w = new Wall(points[i], points[i + 1]);
+        CCDrawNode* line = CCDrawNode::create();
+        line->drawSegment(points[i], points[i + 1], 5, ccc4f(1, 1, 1, 1));
+        this->addChild(line);
+        walls.push_back(w);
     }
 }
 

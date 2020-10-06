@@ -13,7 +13,6 @@
 
 class Immoveable : public MovingDelegate{
 protected:
-    
     virtual void bounce(MyObject* wall, MyObject* ball) override;
 };
 
