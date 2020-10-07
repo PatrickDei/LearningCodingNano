@@ -45,9 +45,7 @@ public:
     }
     
     void bounce(MyObject* wall, MyObject* ball){
-        printf("bouncecall");
         moveable->bounce(wall, ball);
-        printf("1");
     }
     
     CCPoint getPos(){

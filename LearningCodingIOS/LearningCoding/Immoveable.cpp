@@ -8,6 +8,5 @@
 #include "Immoveable.hpp"
 
 void Immoveable::bounce(MyObject* wall, MyObject* ball){
-    printf("real bunce");
     ball->setVelocityY(-ball->getVelocityY());
 }

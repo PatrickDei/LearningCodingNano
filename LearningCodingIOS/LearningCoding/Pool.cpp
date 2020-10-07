@@ -111,7 +111,7 @@ void Pool::checkForEdgeCollision(int index){
     }*/
     for(auto w : walls)
         if(balls[index]->wallCollision(w, balls[index]))
-            balls[index]->bounce(w, balls[index]);
+            w->bounce(w, balls[index]);
 }
 
 void Pool::ccTouchEnded(CCTouch *pTouch, CCEvent *pEvent){
