@@ -75,7 +75,7 @@ private:
     
     void handleCollisions(int indexOfBall);
     
-    bool inTableHole(int index, int direction);
+    bool inTableHole(int index);
     
     void addToScoreboard(Ball* b);
     

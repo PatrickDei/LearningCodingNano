@@ -110,8 +110,11 @@ void Pool::checkForEdgeCollision(int index){
         }
     }*/
     for(auto w : walls)
-        if(balls[index]->wallCollision(w, balls[index]))
+        if(balls[index]->wallCollision(w, balls[index])){
             w->bounce(w, balls[index]);
+            if(!inTableHole(index))
+                balls[index]->setAppropriatePosition(imageScale, tableSize);
+        }
 }
 
 void Pool::ccTouchEnded(CCTouch *pTouch, CCEvent *pEvent){
@@ -124,7 +127,7 @@ void Pool::ccTouchEnded(CCTouch *pTouch, CCEvent *pEvent){
 
 //tableSize * image scale fix
 
-bool Pool::inTableHole(int index, int direction){
+bool Pool::inTableHole(int index){
     if(abs(balls[index]->positionX - tableSize.width * imageScale / 2) <= 20){
         if(balls[index]->positionY <= tableSize.height * imageScale / 11 || balls[index]->positionY <= tableSize.height - tableSize.height * imageScale / 11)
             addToScoreboard(balls[index]);
@@ -181,6 +184,9 @@ void Pool::setTheWalls(){
     points.push_back(CCPoint(tableSize.width / 11 - ballSize / 2, tableSize.height / 6 + 20));
     points.push_back(CCPoint(tableSize.width / 11 - ballSize / 2, tableSize.height - (tableSize.height / 6 + 20)));
     
+    points.push_back(CCPoint(50, 100));
+    points.push_back(CCPoint(100, 50));
+    
     tableSize.width /= imageScale;
     tableSize.height /= imageScale;
     
@@ -195,6 +201,8 @@ void Pool::createWalls(std::vector<CCPoint> points){
         this->addChild(line);
         walls.push_back(w);
     }
+    //float psi = atan(abs(walls[6]->point1.y - walls[6]->point2.y) / abs(walls[6]->point1.x - walls[6]->point2.x));
+    //printf("%f", psi * 180 / 3.141592654);
 }
 
 void Pool::setTheBalls(){

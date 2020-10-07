@@ -23,7 +23,7 @@ public:
     
     void updatePosition();
         
-    void setAppropriatePosition(int direction, float size);
+    void setAppropriatePosition(float scale, CCSize size);
     
     void addBallToScoreboard(int numOfScoredBalls);
     
