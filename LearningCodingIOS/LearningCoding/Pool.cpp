@@ -184,8 +184,8 @@ void Pool::setTheWalls(){
     points.push_back(CCPoint(tableSize.width / 11 - ballSize / 2, tableSize.height / 6 + 20));
     points.push_back(CCPoint(tableSize.width / 11 - ballSize / 2, tableSize.height - (tableSize.height / 6 + 20)));
     
-    points.push_back(CCPoint(50, 100));
-    points.push_back(CCPoint(100, 50));
+    points.push_back(CCPoint(100, 250));
+    points.push_back(CCPoint(200, 350));
     
     tableSize.width /= imageScale;
     tableSize.height /= imageScale;
@@ -201,8 +201,6 @@ void Pool::createWalls(std::vector<CCPoint> points){
         this->addChild(line);
         walls.push_back(w);
     }
-    //float psi = atan(abs(walls[6]->point1.y - walls[6]->point2.y) / abs(walls[6]->point1.x - walls[6]->point2.x));
-    //printf("%f", psi * 180 / 3.141592654);
 }
 
 void Pool::setTheBalls(){

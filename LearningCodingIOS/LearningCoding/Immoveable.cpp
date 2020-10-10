@@ -17,7 +17,6 @@ void Immoveable::bounce(MyObject* wall, MyObject* ball){
         alpha += pi;
     else if(ball->getVelocityY() < 0)
         alpha += 2 * pi;
-    printf("\n%f %f", fi * 180 / pi, alpha * 180 / pi);
     //float psi = pi / 2 - alpha - fi;
     
     //float exitAngle = fi + pi / 2 - psi;
@@ -29,7 +28,13 @@ void Immoveable::bounce(MyObject* wall, MyObject* ball){
     
     float x = sqrt(pow(hipothenuse, 2) - pow(sizeOfYVelocity * ball->getVelocityX(), 2));
     float y = sqrt(pow(hipothenuse, 2) - pow(x, 2));
+    printf("\nfi: %f alpha: %f psi: %f, size: %f, hipothenuse: %f\nx. %f y: %f\n%f", fi * 180 / pi, alpha * 180 / pi, exitAngle * 180 / pi, sizeOfYVelocity, hipothenuse, x, y, ball->getVelocityX());
     
+    if(exitAngle > pi || exitAngle < 0)
+        y = -y;
+    if(exitAngle > pi / 2 || exitAngle < -pi / 2)
+        x = -x;
+
     ball->setVelocityY(y);
     ball->setVelocityX(x);
 }
