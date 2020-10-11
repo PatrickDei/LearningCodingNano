@@ -17,7 +17,7 @@
 					<key>name</key>
 					<string>background</string>
 					<key>posAbs</key>
-					<string>-0.246094,0</string>
+					<string>-0.492188,0</string>
 					<key>posRel</key>
 					<string>0,0</string>
 					<key>scaleX</key>
@@ -110,7 +110,7 @@
 					<key>class</key>
 					<string>LabelTTF</string>
 					<key>content</key>
-					<string>15</string>
+					<string></string>
 					<key>fontSize</key>
 					<string>30</string>
 					<key>localizable</key>
@@ -129,30 +129,6 @@
 					<string>50</string>
 					<key>vAlignment</key>
 					<string>bottom</string>
-				</dict>
-				<dict>
-					<key>class</key>
-					<string>LabelTTF</string>
-					<key>content</key>
-					<string>BILLIARDS</string>
-					<key>fontSize</key>
-					<string>50</string>
-					<key>hAlignment</key>
-					<string>center</string>
-					<key>localizable</key>
-					<string>0</string>
-					<key>name</key>
-					<string>title</string>
-					<key>posAbs</key>
-					<string>125.819,336.067</string>
-					<key>posRel</key>
-					<string>0,0</string>
-					<key>sizeAbs</key>
-					<string>0,0</string>
-					<key>sizeRel</key>
-					<string>0,0</string>
-					<key>vAlignment</key>
-					<string>center</string>
 				</dict>
 				<dict>
 					<key>children</key>
@@ -260,6 +236,8 @@
 							<string>0.751089</string>
 							<key>scaleY</key>
 							<string>0.697123</string>
+							<key>selector</key>
+							<string>quitGame</string>
 							<key>sizeAbs</key>
 							<string>260,90</string>
 							<key>sizeRel</key>
@@ -614,6 +592,30 @@
 					<string>320,320</string>
 					<key>sizeRel</key>
 					<string>0,0</string>
+				</dict>
+				<dict>
+					<key>class</key>
+					<string>LabelTTF</string>
+					<key>content</key>
+					<string>BILLIARDS</string>
+					<key>fontSize</key>
+					<string>50</string>
+					<key>hAlignment</key>
+					<string>center</string>
+					<key>localizable</key>
+					<string>0</string>
+					<key>name</key>
+					<string>title</string>
+					<key>posAbs</key>
+					<string>125.819,336.067</string>
+					<key>posRel</key>
+					<string>0,0</string>
+					<key>sizeAbs</key>
+					<string>0,0</string>
+					<key>sizeRel</key>
+					<string>0,0</string>
+					<key>vAlignment</key>
+					<string>center</string>
 				</dict>
 			</array>
 			<key>class</key>

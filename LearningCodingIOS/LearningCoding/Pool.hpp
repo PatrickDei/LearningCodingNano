@@ -33,7 +33,6 @@ public:
     
     static bool gameRestart;
     
-    
 private:
     
     float imageScale;
@@ -62,13 +61,10 @@ private:
     void setTheBalls();
     
     void setTheWalls();
-    
     void createWalls(std::vector<CCPoint> points);
     
     bool ccTouchBegan(CCTouch *pTouch, CCEvent *pEvent) override;
-    
     void ccTouchEnded(CCTouch *pTouch, CCEvent *pEvent) override;
-
     bool whiteBallIsTapped(CCPoint touch);
     
     void checkForEdgeCollision(int index);

@@ -21,8 +21,9 @@ CCScene* Pool::scene(){
     return scene;
 }
 
+
 bool Pool::gameRestart = false;
-int BilliardsMenu::numOfBalls = 15;
+int BilliardsMenu::numOfBalls = 1;
 
 bool Pool::init(){
     if (!CCLayer::init()){
@@ -52,7 +53,8 @@ bool Pool::init(){
     consecutive = 1;
     
     setTheBalls();
-    
+    setTheWalls();
+
     score = CCLabelTTF::create(std::to_string(numOfScoredballs).c_str(), "Arial", 50);
     score->setPosition(ccp(windowSize.width / 2, windowSize.height - score->getContentSize().height));
     this->addChild(score);
@@ -61,7 +63,6 @@ bool Pool::init(){
     setTouchEnabled(true);
     
     this->scheduleUpdate();
-    setTheWalls();
 
     return true;
 }
@@ -72,12 +73,17 @@ bool Pool::ccTouchBegan(CCTouch *pTouch, CCEvent *pEvent){
     return false;
 }
 
+void Pool::ccTouchEnded(CCTouch *pTouch, CCEvent *pEvent){
+    CCPoint touch = pTouch->getLocation();
+    balls.front()->setVelocityX(balls.front()->positionX - touch.x);
+    balls.front()->setVelocityY(balls.front()->positionY - touch.y);
+}
+
 bool Pool::whiteBallIsTapped(CCPoint touch){
     float distance;
     distance = sqrt(pow(balls.front()->getPos().x - touch.x, 2) + pow(balls.front()->getPos().y - touch.y, 2));
     return (distance <= ballSize * ballScale) ? true : false;
 }
-
 
 
 
@@ -94,21 +100,9 @@ void Pool::update(float dt){
         resetGame();
 }
 
+
+
 void Pool::checkForEdgeCollision(int index){
-    
-    /*if(balls[index]->getPos().x <= tableSize.width / 11 * imageScale || balls[index]->getPos().x >= (tableSize.width - tableSize.width / 11) * imageScale){
-        if(!inTableHole(index, 0)){
-            balls[index]->setAppropriatePosition(1, tableSize.width * imageScale);
-            balls[index]->setVelocityX(-balls[index]->getVelocityX());
-        }
-    }
-        
-    if(balls[index]->getPos().y <= tableSize.height / 6 * imageScale || balls[index]->getPos().y >= (tableSize.height - tableSize.height / 6) * imageScale){
-        if(!inTableHole(index, 1)){
-            balls[index]->setAppropriatePosition(2, tableSize.height * imageScale);
-            balls[index]->setVelocityY(-balls[index]->getVelocityY());
-        }
-    }*/
     for(auto w : walls)
         if(balls[index]->wallCollision(w, balls[index])){
             w->bounce(w, balls[index]);
@@ -117,16 +111,7 @@ void Pool::checkForEdgeCollision(int index){
         }
 }
 
-void Pool::ccTouchEnded(CCTouch *pTouch, CCEvent *pEvent){
-    CCPoint touch = pTouch->getLocation();
-    balls.front()->setVelocityX(balls.front()->positionX - touch.x);
-    balls.front()->setVelocityY(balls.front()->positionY - touch.y);
-}
-
-
-
 //tableSize * image scale fix
-
 bool Pool::inTableHole(int index){
     if(abs(balls[index]->positionX - tableSize.width * imageScale / 2) <= 20){
         if(balls[index]->positionY <= tableSize.height * imageScale / 11 || balls[index]->positionY <= tableSize.height - tableSize.height * imageScale / 11)
@@ -184,8 +169,12 @@ void Pool::setTheWalls(){
     points.push_back(CCPoint(tableSize.width / 11 - ballSize / 2, tableSize.height / 6 + 20));
     points.push_back(CCPoint(tableSize.width / 11 - ballSize / 2, tableSize.height - (tableSize.height / 6 + 20)));
     
-    points.push_back(CCPoint(100, 250));
-    points.push_back(CCPoint(200, 350));
+    points.push_back(CCPoint(190, 150));
+    points.push_back(CCPoint(290, 250));
+    
+    
+    points.push_back(CCPoint(490, 100));
+    points.push_back(CCPoint(540, 250));
     
     tableSize.width /= imageScale;
     tableSize.height /= imageScale;

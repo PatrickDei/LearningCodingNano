@@ -10,9 +10,9 @@
 
 ccColor3B BilliardsMenu::colorOfWhiteBall = ccc3(255, 255, 255);
 bool BilliardsMenu::init(){
-    setMenuItemsInMap();
-    selectedWhite();
     
+    setMenuItemsInMap();
+
     setTouchMode(kCCTouchesOneByOne);
     setTouchEnabled(true);
 
@@ -21,12 +21,18 @@ bool BilliardsMenu::init(){
     settings.imageScale = settings.deviceScale;
     settings.fontScale = settings.deviceScale;
     settings.responder = this;
-    NCLDeviceNodeManager* manager = new NCLDeviceNodeManager("BilliardSetup.plist", settings);
+    manager = new NCLDeviceNodeManager("BilliardSetup.plist", settings);
 
     CCNode *rootNode = manager->getCCNode("rootNode");
     
+    box = dynamic_cast<CCSprite*>(manager->getCCNode("box"));
+    ballNumber = dynamic_cast<CCLabelTTF*>(manager->getCCNode("ballNumber"));
+    ballNumber->setString(std::to_string(numOfBalls).c_str());
+
     rootNode->setPosition(ccp(CCDirector::sharedDirector()->getVisibleSize().width / 2 - rootNode->getContentSize().width / 2, CCDirector::sharedDirector()->getVisibleSize().height / 2 - rootNode->getContentSize().height / 2));
 
+    selectedWhite();
+    
     this->addChild(rootNode, 1, 2);
         
     return true;
@@ -69,45 +75,54 @@ void BilliardsMenu::playGame(){
 void BilliardsMenu::increaseNumOfBalls(){
     if(numOfBalls > 1){
         numOfBalls--;
-        updateLabel(std::to_string(numOfBalls));
+        ballNumber->setString(std::to_string(numOfBalls).c_str());
     }
 }
 
 void BilliardsMenu::decreaseNumOfBalls(){
     if(numOfBalls < 15){
         numOfBalls++;
-        updateLabel(std::to_string(numOfBalls));
+        ballNumber->setString(std::to_string(numOfBalls).c_str());
     }
-}
-
-void BilliardsMenu::updateLabel(std::string labelString){
-    CCLabelTTF *label = CCLabelTTF::create(labelString.c_str(), "Arial", 30);
-    label->setPosition(this->getChildByTag(2)->getChildByTag(50)->getPosition());
-    label->setAnchorPoint(CCPointZero);
-    this->getChildByTag(2)->removeChildByTag(50);
-    this->getChildByTag(2)->addChild(label, 1, 50);
 }
 
 void BilliardsMenu::selectedWhite(){
     colorOfWhiteBall = ccc3(255, 255, 255);
+    CCNode* node = manager->getCCNode("whiteColor");
+    box->setPosition(quickAdjust(node->getPosition()));
 }
 
 void BilliardsMenu::selectedYellow(){
     colorOfWhiteBall = ccc3(255, 255, 0);
+    CCNode* node = manager->getCCNode("yellowColor");
+    box->setPosition(quickAdjust(node->getPosition()));
 }
 
 void BilliardsMenu::selectedRed(){
     colorOfWhiteBall = ccc3(255, 0, 0);
+    CCNode* node = manager->getCCNode("redColor");
+    box->setPosition(quickAdjust(node->getPosition()));
 }
 
 void BilliardsMenu::selectedCyan(){
     colorOfWhiteBall = ccc3(0, 255, 255);
+    CCNode* node = manager->getCCNode("cyanColor");
+    box->setPosition(quickAdjust(node->getPosition()));
 }
 
 void BilliardsMenu::selectedBlue(){
     colorOfWhiteBall = ccc3(0, 0, 255);
+    CCNode* node = manager->getCCNode("blueColor");
+    box->setPosition(quickAdjust(node->getPosition()));
 }
 
 void BilliardsMenu::selectedMagenta(){
     colorOfWhiteBall = ccc3(255, 0, 255);
+    CCNode* node = manager->getCCNode("magentaColor");
+    box->setPosition(quickAdjust(node->getPosition()));
+}
+
+CCPoint BilliardsMenu::quickAdjust(CCPoint point){
+    CCPoint newPoint = CCPoint(point.x - 13, point.y - 10);
+    return newPoint;
 }

@@ -34,15 +34,18 @@ public:
     
     static int numOfBalls;
 
-private:
-    std::map<std::string, SEL_MenuHandler> menuItemsMap;
-    
-    void setMenuItemsInMap();
 
-    void updateLabel(std::string labelString);
+private:
+    CCLabelTTF* ballNumber;
+    CCSprite* box;
+    
+    NCLDeviceNodeManager* manager;
+    
+    std::map<std::string, SEL_MenuHandler> menuItemsMap;
+        
+    void setMenuItemsInMap();
     
     void increaseNumOfBalls();
-    
     void decreaseNumOfBalls();
     
     void selectedWhite();
@@ -53,8 +56,9 @@ private:
     void selectedMagenta();
 
     void closeMenu();
-    
     void playGame();
+    
+    CCPoint quickAdjust(CCPoint point);
 };
 
 #endif /* BilliardsMenu_hpp */
