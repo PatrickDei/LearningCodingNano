@@ -49,6 +49,8 @@ private:
     
     std::vector<Wall*> walls;
     
+    std::vector<CCPoint> holes;
+    
     int numOfScoredballs;
     
     CCLabelTTF* score;
@@ -59,7 +61,7 @@ private:
     
     
     void setTheBalls();
-    
+    void setTheHoles();
     void setTheWalls();
     void createWalls(std::vector<CCPoint> points);
     
@@ -72,6 +74,8 @@ private:
     void handleCollisions(int indexOfBall);
     
     bool inTableHole(int index);
+    
+    void checkHoles(int index);
     
     void addToScoreboard(Ball* b);
     

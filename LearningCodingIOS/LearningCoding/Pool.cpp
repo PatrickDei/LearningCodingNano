@@ -54,6 +54,7 @@ bool Pool::init(){
     
     setTheBalls();
     setTheWalls();
+    setTheHoles();
 
     score = CCLabelTTF::create(std::to_string(numOfScoredballs).c_str(), "Arial", 50);
     score->setPosition(ccp(windowSize.width / 2, windowSize.height - score->getContentSize().height));
@@ -75,8 +76,8 @@ bool Pool::ccTouchBegan(CCTouch *pTouch, CCEvent *pEvent){
 
 void Pool::ccTouchEnded(CCTouch *pTouch, CCEvent *pEvent){
     CCPoint touch = pTouch->getLocation();
-    balls.front()->setVelocityX(balls.front()->positionX - touch.x);
-    balls.front()->setVelocityY(balls.front()->positionY - touch.y);
+    balls.front()->setVelocityX(balls.front()->getPositionX() - touch.x);
+    balls.front()->setVelocityY(balls.front()->getPositionY() - touch.y);
 }
 
 bool Pool::whiteBallIsTapped(CCPoint touch){
@@ -91,8 +92,10 @@ void Pool::update(float dt){
     if(!gameRestart)
         for(int i = 0; i < balls.size(); i++){
             checkForEdgeCollision(i);
-            if(balls[i]->getVelocityX() != 0 || balls[i]->getVelocityY() != 0)
+            if(balls[i]->getVelocityX() != 0 || balls[i]->getVelocityY() != 0){
                 handleCollisions(i);
+                checkHoles(i);
+            }
             balls[i]->updatePosition();
             this->getChildByTag(i)->setPosition(balls[i]->getPos());
         }
@@ -102,36 +105,74 @@ void Pool::update(float dt){
 
 
 
+void Pool::checkHoles(int index){
+    for(auto h : holes)
+        if(abs(balls[index]->getPositionX() - h.x) <= 10 || abs(balls[index]->getPositionY() - h.y) <= 10){
+            printf("yup");
+            addToScoreboard(balls[index]);
+        }
+}
+
+
 void Pool::checkForEdgeCollision(int index){
     for(auto w : walls)
         if(balls[index]->wallCollision(w, balls[index])){
             w->bounce(w, balls[index]);
-            if(!inTableHole(index))
-                balls[index]->setAppropriatePosition(imageScale, tableSize);
+            /*if(!inTableHole(index))
+                balls[index]->setAppropriatePosition(imageScale, tableSize);*/
         }
 }
 
 //tableSize * image scale fix
 bool Pool::inTableHole(int index){
-    if(abs(balls[index]->positionX - tableSize.width * imageScale / 2) <= 20){
-        if(balls[index]->positionY <= tableSize.height * imageScale / 11 || balls[index]->positionY <= tableSize.height - tableSize.height * imageScale / 11)
+    /*if(abs(balls[index]->getPositionX() - tableSize.width * imageScale / 2) <= 20){
+        if(balls[index]->getPositionY() <= tableSize.height * imageScale / 11 || balls[index]->getPositionY() <= tableSize.height - tableSize.height * imageScale / 11)
             addToScoreboard(balls[index]);
         return true;
     }
-    if(abs(balls[index]->positionX - tableSize.width * imageScale / 11) <= 20 && (abs(balls[index]->positionY - tableSize.height * imageScale / 6) <= 20 || abs(-balls[index]->positionY + tableSize.height * imageScale - tableSize.height * imageScale / 6) <= 20)){
-        if(balls[index]->positionX < tableSize.width * imageScale / 11 || balls[index]->positionY < tableSize.height * imageScale / 11 || balls[index]->positionY >= tableSize.height - tableSize.height * imageScale / 11)
+    if(abs(balls[index]->getPositionX() - tableSize.width * imageScale / 11) <= 20 && (abs(balls[index]->getPositionY() - tableSize.height * imageScale / 6) <= 20 || abs(-balls[index]->getPositionY() + tableSize.height * imageScale - tableSize.height * imageScale / 6) <= 20)){
+        if(balls[index]->getPositionX() < tableSize.width * imageScale / 11 || balls[index]->getPositionY() < tableSize.height * imageScale / 11 || balls[index]->getPositionY() >= tableSize.height - tableSize.height * imageScale / 11)
             addToScoreboard(balls[index]);
         return true;
     }
-    if(abs(balls[index]->positionX - (tableSize.width * imageScale - tableSize.width * imageScale / 11)) <= 20 && (abs(balls[index]->positionY - tableSize.height * imageScale / 6) <= 20 || abs(-balls[index]->positionY + tableSize.height * imageScale - tableSize.height * imageScale / 6) <= 20)){
-        if(balls[index]->positionX > (tableSize.width * imageScale - tableSize.width * imageScale / 11) || balls[index]->positionY < tableSize.height * imageScale / 11 || balls[index]->positionY >= tableSize.height - tableSize.height * imageScale / 11)
+    if(abs(balls[index]->getPositionX() - (tableSize.width * imageScale - tableSize.width * imageScale / 11)) <= 20 && (abs(balls[index]->getPositionY() - tableSize.height * imageScale / 6) <= 20 || abs(-balls[index]->getPositionY() + tableSize.height * imageScale - tableSize.height * imageScale / 6) <= 20)){
+        if(balls[index]->getPositionX() > (tableSize.width * imageScale - tableSize.width * imageScale / 11) || balls[index]->getPositionY() < tableSize.height * imageScale / 11 || balls[index]->getPositionY() >= tableSize.height - tableSize.height * imageScale / 11)
             addToScoreboard(balls[index]);
         return true;
+    }*/
+    bool inHole = false;
+    tableSize.width *= imageScale;
+    tableSize.height *= imageScale;
+    printf("\ncall for this func");
+    if((balls[index]->getPositionY() > tableSize.height - tableSize.height / 6
+        || balls[index]->getPositionY() < tableSize.height / 6)
+        && index != 0){
+        if(abs(balls[index]->getPositionX() - tableSize.width * imageScale / 2) <= 20){
+            inHole = true;
+            printf("yupuajshdkjashdjkas");
+            addToScoreboard(balls[index]);
+        }
+        if(balls[index]->getPositionX() < tableSize.width / 11 || balls[index]->getPositionX() > tableSize.width - tableSize.width / 11){
+            inHole = true;
+            printf("yupuajshdkjashdjkas");
+
+            addToScoreboard(balls[index]);
+        }
+        if(abs(balls[index]->getPositionX() - tableSize.width / 2) <= ballSize * 1.5){
+            inHole = true;
+            printf("yupuajshdkjashdjkas");
+
+            addToScoreboard(balls[index]);
+        }
     }
-    return false;
+    
+    tableSize.width /= imageScale;
+    tableSize.height /= imageScale;
+    return inHole;
 }
 
 void Pool::addToScoreboard(Ball* b){
+    if(balls.size() > 11)
     if(b->getPos().x == balls[11]->getPos().x && b->getPos().y == balls[11]->getPos().y && numOfScoredballs != 14){
         score->setString("game over");
         b->addBallToScoreboard(numOfScoredballs++);
@@ -190,6 +231,21 @@ void Pool::createWalls(std::vector<CCPoint> points){
         this->addChild(line);
         walls.push_back(w);
     }
+}
+
+void Pool::setTheHoles(){
+    tableSize.width *= imageScale;
+    tableSize.height *= imageScale;
+    
+    holes.push_back(CCPoint(tableSize.width / 11 - ballSize, tableSize.height / 6 - ballSize));
+    holes.push_back(CCPoint(tableSize.width / 2, tableSize.height / 6 - ballSize));
+    holes.push_back(CCPoint(tableSize.width - tableSize.width / 11 + ballSize, tableSize.height / 6 - ballSize));
+    holes.push_back(CCPoint(tableSize.width - tableSize.width / 11 + ballSize, tableSize.height - tableSize.height / 6 + ballSize));
+    holes.push_back(CCPoint(tableSize.width / 2, tableSize.height - tableSize.height / 6 + ballSize));
+    holes.push_back(CCPoint(tableSize.width / 11 - ballSize, tableSize.height - tableSize.height / 6 + ballSize));
+    
+    tableSize.width /= imageScale;
+    tableSize.height /= imageScale;
 }
 
 void Pool::setTheBalls(){

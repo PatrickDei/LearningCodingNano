@@ -19,6 +19,11 @@ USING_NS_CC;
 
 class BilliardsMenu : public CCLayer, public NCLResponder{
 public:
+    static _ccColor3B colorOfWhiteBall;
+    
+    static int numOfBalls;
+    
+    
     virtual bool init() override;
     
     virtual cocos2d::SEL_MenuHandler getHandleForSelector( std::string handleName) override;
@@ -29,11 +34,6 @@ public:
     }
     
     CREATE_FUNC(BilliardsMenu);
-    
-    static _ccColor3B colorOfWhiteBall;
-    
-    static int numOfBalls;
-
 
 private:
     CCLabelTTF* ballNumber;

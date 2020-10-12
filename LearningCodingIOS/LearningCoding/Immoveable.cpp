@@ -9,8 +9,8 @@
 #define pi 3.141592654
 
 void Immoveable::bounce(MyObject* wall, MyObject* ball){
-    float fi = atan(abs(wall->point1.y - wall->point2.y) / abs(wall->point1.x - wall->point2.x));
-    if((wall->point2.y - wall->point1.y < 0 && wall->point1.x - wall->point2.x < 0) || (wall->point2.y - wall->point1.y > 0 && wall->point1.x - wall->point2.x > 0))
+    float fi = atan(abs(wall->getPoint1().y - wall->getPoint2().y) / abs(wall->getPoint1().x - wall->getPoint2().x));
+    if((wall->getPoint2().y - wall->getPoint1().y < 0 && wall->getPoint1().x - wall->getPoint2().x < 0) || (wall->getPoint2().y - wall->getPoint1().y > 0 && wall->getPoint1().x - wall->getPoint2().x > 0))
         fi = -fi;
     float alpha = atan(ball->getVelocityY() / ball->getVelocityX());
     if(ball->getVelocityX() < 0)

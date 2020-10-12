@@ -13,7 +13,7 @@
 #include "MovingDelegate.hpp"
 
 class MyObject{
-public:
+protected:
     float positionX;
     float positionY;
     
@@ -25,6 +25,7 @@ public:
     CCPoint point1;
     CCPoint point2;
     
+public:
     CollisionDelegate* collideable;
     MovingDelegate* moveable;
     
@@ -48,9 +49,20 @@ public:
         moveable->bounce(wall, ball);
     }
     
-    CCPoint getPos(){
-        CCPoint point = CCPoint(positionX, positionY);
-        return point;
+    float getPositionX() const{
+        return positionX;
+    }
+    
+    void setPositionX(float pos){
+        positionX = pos;
+    }
+    
+    float getPositionY() const{
+        return positionY;
+    }
+    
+    void setPositionY(float pos){
+        positionY = pos;
     }
     
     float getVelocityX() const{
@@ -61,7 +73,6 @@ public:
         velocityX = (_velocityX < 300) ? _velocityX : 300;
     }
 
-
     float getVelocityY() const{
         return velocityY;
     }
@@ -69,6 +80,24 @@ public:
     void setVelocityY(float _velocityY){
         velocityY = (_velocityY < 300) ? _velocityY : 300;
     }
+    
+    CCPoint getPos(){
+        CCPoint point = CCPoint(positionX, positionY);
+        return point;
+    }
+    
+    float getSize() const{
+        return sizeOfObject;
+    }
+    
+    CCPoint getPoint1() const{
+        return point1;
+    }
+    
+    CCPoint getPoint2() const{
+        return point2;
+    }
+
 };
 
 #endif /* MyObject_hpp */
