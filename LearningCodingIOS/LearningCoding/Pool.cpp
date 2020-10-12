@@ -92,10 +92,10 @@ void Pool::update(float dt){
     if(!gameRestart)
         for(int i = 0; i < balls.size(); i++){
             checkForEdgeCollision(i);
-            if(balls[i]->getVelocityX() != 0 || balls[i]->getVelocityY() != 0){
+            checkHoles(i);
+            //"expensive" operation -> jsut checking for the ball in ball bug :D
+            //if(balls[i]->getVelocityX() != 0 || balls[i]->getVelocityY() != 0)
                 handleCollisions(i);
-                checkHoles(i);
-            }
             balls[i]->updatePosition();
             this->getChildByTag(i)->setPosition(balls[i]->getPos());
         }
@@ -107,85 +107,34 @@ void Pool::update(float dt){
 
 void Pool::checkHoles(int index){
     for(auto h : holes)
-        if(abs(balls[index]->getPositionX() - h.x) <= 10 || abs(balls[index]->getPositionY() - h.y) <= 10){
-            printf("yup");
-            addToScoreboard(balls[index]);
+        if(abs(balls[index]->getPositionX() - h.x) <= ballSize * ballScale && abs(balls[index]->getPositionY() - h.y) <= ballSize * ballScale){
+            //black ball
+            if(balls.size() > 11 && balls[index]->getPos().x == balls[11]->getPos().x
+                && balls[index]->getPos().y == balls[11]->getPos().y
+                && numOfScoredballs != 14){
+                    score->setString("game over");
+                    balls[index]->addBallToScoreboard(numOfScoredballs++);
+            }
+            //white ball
+            else if(balls[index]->getPos().x == balls.front()->getPos().x
+                    && balls[index]->getPos().y == balls.front()->getPos().y){
+                        consecutive = 1;
+                        balls[index]->resetWhiteBall(tableSize, imageScale);
+            }
+            //red ball
+            else{
+                balls[index]->addBallToScoreboard(numOfScoredballs++);
+                score->setString(std::to_string(atoi(score->getString()) + consecutive).c_str());
+                consecutive++;
+
+            }
         }
 }
-
 
 void Pool::checkForEdgeCollision(int index){
     for(auto w : walls)
-        if(balls[index]->wallCollision(w, balls[index])){
+        if(balls[index]->wallCollision(w, balls[index]))
             w->bounce(w, balls[index]);
-            /*if(!inTableHole(index))
-                balls[index]->setAppropriatePosition(imageScale, tableSize);*/
-        }
-}
-
-//tableSize * image scale fix
-bool Pool::inTableHole(int index){
-    /*if(abs(balls[index]->getPositionX() - tableSize.width * imageScale / 2) <= 20){
-        if(balls[index]->getPositionY() <= tableSize.height * imageScale / 11 || balls[index]->getPositionY() <= tableSize.height - tableSize.height * imageScale / 11)
-            addToScoreboard(balls[index]);
-        return true;
-    }
-    if(abs(balls[index]->getPositionX() - tableSize.width * imageScale / 11) <= 20 && (abs(balls[index]->getPositionY() - tableSize.height * imageScale / 6) <= 20 || abs(-balls[index]->getPositionY() + tableSize.height * imageScale - tableSize.height * imageScale / 6) <= 20)){
-        if(balls[index]->getPositionX() < tableSize.width * imageScale / 11 || balls[index]->getPositionY() < tableSize.height * imageScale / 11 || balls[index]->getPositionY() >= tableSize.height - tableSize.height * imageScale / 11)
-            addToScoreboard(balls[index]);
-        return true;
-    }
-    if(abs(balls[index]->getPositionX() - (tableSize.width * imageScale - tableSize.width * imageScale / 11)) <= 20 && (abs(balls[index]->getPositionY() - tableSize.height * imageScale / 6) <= 20 || abs(-balls[index]->getPositionY() + tableSize.height * imageScale - tableSize.height * imageScale / 6) <= 20)){
-        if(balls[index]->getPositionX() > (tableSize.width * imageScale - tableSize.width * imageScale / 11) || balls[index]->getPositionY() < tableSize.height * imageScale / 11 || balls[index]->getPositionY() >= tableSize.height - tableSize.height * imageScale / 11)
-            addToScoreboard(balls[index]);
-        return true;
-    }*/
-    bool inHole = false;
-    tableSize.width *= imageScale;
-    tableSize.height *= imageScale;
-    printf("\ncall for this func");
-    if((balls[index]->getPositionY() > tableSize.height - tableSize.height / 6
-        || balls[index]->getPositionY() < tableSize.height / 6)
-        && index != 0){
-        if(abs(balls[index]->getPositionX() - tableSize.width * imageScale / 2) <= 20){
-            inHole = true;
-            printf("yupuajshdkjashdjkas");
-            addToScoreboard(balls[index]);
-        }
-        if(balls[index]->getPositionX() < tableSize.width / 11 || balls[index]->getPositionX() > tableSize.width - tableSize.width / 11){
-            inHole = true;
-            printf("yupuajshdkjashdjkas");
-
-            addToScoreboard(balls[index]);
-        }
-        if(abs(balls[index]->getPositionX() - tableSize.width / 2) <= ballSize * 1.5){
-            inHole = true;
-            printf("yupuajshdkjashdjkas");
-
-            addToScoreboard(balls[index]);
-        }
-    }
-    
-    tableSize.width /= imageScale;
-    tableSize.height /= imageScale;
-    return inHole;
-}
-
-void Pool::addToScoreboard(Ball* b){
-    if(balls.size() > 11)
-    if(b->getPos().x == balls[11]->getPos().x && b->getPos().y == balls[11]->getPos().y && numOfScoredballs != 14){
-        score->setString("game over");
-        b->addBallToScoreboard(numOfScoredballs++);
-    }
-    else if(b->getPos().x == balls.front()->getPos().x && b->getPos().y == balls.front()->getPos().y){
-        consecutive = 1;
-        b->resetWhiteBall(tableSize, imageScale);
-    }
-    else{
-        b->addBallToScoreboard(numOfScoredballs++);
-        score->setString(std::to_string(atoi(score->getString()) + consecutive).c_str());
-        consecutive++;
-    }
 }
 
 void Pool::setTheWalls(){
@@ -210,12 +159,12 @@ void Pool::setTheWalls(){
     points.push_back(CCPoint(tableSize.width / 11 - ballSize / 2, tableSize.height / 6 + 20));
     points.push_back(CCPoint(tableSize.width / 11 - ballSize / 2, tableSize.height - (tableSize.height / 6 + 20)));
     
-    points.push_back(CCPoint(190, 150));
+    /*points.push_back(CCPoint(190, 150));
     points.push_back(CCPoint(290, 250));
     
     
     points.push_back(CCPoint(490, 100));
-    points.push_back(CCPoint(540, 250));
+    points.push_back(CCPoint(540, 250));*/
     
     tableSize.width /= imageScale;
     tableSize.height /= imageScale;
@@ -237,15 +186,21 @@ void Pool::setTheHoles(){
     tableSize.width *= imageScale;
     tableSize.height *= imageScale;
     
-    holes.push_back(CCPoint(tableSize.width / 11 - ballSize, tableSize.height / 6 - ballSize));
+    holes.push_back(CCPoint(tableSize.width / 11 - ballSize / 2, tableSize.height / 6 - ballSize / 2));
     holes.push_back(CCPoint(tableSize.width / 2, tableSize.height / 6 - ballSize));
-    holes.push_back(CCPoint(tableSize.width - tableSize.width / 11 + ballSize, tableSize.height / 6 - ballSize));
-    holes.push_back(CCPoint(tableSize.width - tableSize.width / 11 + ballSize, tableSize.height - tableSize.height / 6 + ballSize));
+    holes.push_back(CCPoint(tableSize.width - tableSize.width / 11 + ballSize / 2, tableSize.height / 6 - ballSize / 2));
+    holes.push_back(CCPoint(tableSize.width - tableSize.width / 11 + ballSize / 2, tableSize.height - tableSize.height / 6 + ballSize / 2));
     holes.push_back(CCPoint(tableSize.width / 2, tableSize.height - tableSize.height / 6 + ballSize));
-    holes.push_back(CCPoint(tableSize.width / 11 - ballSize, tableSize.height - tableSize.height / 6 + ballSize));
+    holes.push_back(CCPoint(tableSize.width / 11 - ballSize / 2, tableSize.height - tableSize.height / 6 + ballSize / 2));
     
     tableSize.width /= imageScale;
     tableSize.height /= imageScale;
+    
+    for(auto h : holes){
+        CCDrawNode* dot = CCDrawNode::create();
+        dot->drawDot(h, ballSize * ballScale, ccc4f(0, 1, 0, 0.3));
+        this->addChild(dot);
+    }
 }
 
 void Pool::setTheBalls(){

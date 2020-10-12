@@ -58,8 +58,6 @@ private:
     int consecutive;
 
 
-    
-    
     void setTheBalls();
     void setTheHoles();
     void setTheWalls();
@@ -73,11 +71,7 @@ private:
     
     void handleCollisions(int indexOfBall);
     
-    bool inTableHole(int index);
-    
     void checkHoles(int index);
-    
-    void addToScoreboard(Ball* b);
     
     void resetGame();
 };
