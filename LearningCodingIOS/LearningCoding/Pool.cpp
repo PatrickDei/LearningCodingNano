@@ -94,7 +94,7 @@ void Pool::update(float dt){
             checkForEdgeCollision(i);
             checkHoles(i);
             //"expensive" operation -> jsut checking for the ball in ball bug :D
-            //if(balls[i]->getVelocityX() != 0 || balls[i]->getVelocityY() != 0)
+            if(balls[i]->getVelocityX() != 0 || balls[i]->getVelocityY() != 0)
                 handleCollisions(i);
             balls[i]->updatePosition();
             this->getChildByTag(i)->setPosition(balls[i]->getPos());
@@ -133,31 +133,33 @@ void Pool::checkHoles(int index){
 
 void Pool::checkForEdgeCollision(int index){
     for(auto w : walls)
-        if(balls[index]->wallCollision(w, balls[index]))
+        if(balls[index]->wallCollision(w, balls[index])){
             w->bounce(w, balls[index]);
+            balls[index]->setAppropriatePosition(imageScale, tableSize);
+        }
 }
 
 void Pool::setTheWalls(){
     tableSize.width *= imageScale;
     tableSize.height *= imageScale;
     std::vector<CCPoint> points;
-    points.push_back(CCPoint(tableSize.width / 11 + 20, tableSize.height / 6 - ballSize / 2));
+    points.push_back(CCPoint(tableSize.width / 12 + 20, tableSize.height / 6 - ballSize / 2));
     points.push_back(CCPoint(tableSize.width / 2 - 30, tableSize.height / 6 - ballSize / 2));
 
     points.push_back(CCPoint(tableSize.width / 2 + 30, tableSize.height / 6 - ballSize / 2));
-    points.push_back(CCPoint(tableSize.width - (tableSize.width / 11 + 20), tableSize.height / 6 - ballSize / 2));
+    points.push_back(CCPoint(tableSize.width - (tableSize.width / 12 + 20), tableSize.height / 6 - ballSize / 2));
 
-    points.push_back(CCPoint(tableSize.width - tableSize.width / 11 + ballSize / 2, tableSize.height / 6 + 20));
-    points.push_back(CCPoint(tableSize.width - tableSize.width / 11 + ballSize / 2, tableSize.height - (tableSize.height / 6 + 20)));
+    points.push_back(CCPoint(tableSize.width - tableSize.width / 12 + ballSize / 2, tableSize.height / 6 + 20));
+    points.push_back(CCPoint(tableSize.width - tableSize.width / 12 + ballSize / 2, tableSize.height - (tableSize.height / 6 + 20)));
 
-    points.push_back(CCPoint(tableSize.width - (tableSize.width / 11 + 20), tableSize.height - tableSize.height / 6 + ballSize / 2));
+    points.push_back(CCPoint(tableSize.width - (tableSize.width / 12 + 20), tableSize.height - tableSize.height / 6 + ballSize / 2));
     points.push_back(CCPoint(tableSize.width / 2 + 30, tableSize.height - tableSize.height / 6 + ballSize / 2));
 
     points.push_back(CCPoint(tableSize.width / 2 - 30, tableSize.height - tableSize.height / 6 + ballSize / 2));
-    points.push_back(CCPoint(tableSize.width / 11 + 20, tableSize.height - tableSize.height / 6 + ballSize / 2));
+    points.push_back(CCPoint(tableSize.width / 12 + 20, tableSize.height - tableSize.height / 6 + ballSize / 2));
     
-    points.push_back(CCPoint(tableSize.width / 11 - ballSize / 2, tableSize.height / 6 + 20));
-    points.push_back(CCPoint(tableSize.width / 11 - ballSize / 2, tableSize.height - (tableSize.height / 6 + 20)));
+    points.push_back(CCPoint(tableSize.width / 12 - ballSize / 2, tableSize.height / 6 + 20));
+    points.push_back(CCPoint(tableSize.width / 12 - ballSize / 2, tableSize.height - (tableSize.height / 6 + 20)));
     
     /*points.push_back(CCPoint(190, 150));
     points.push_back(CCPoint(290, 250));
@@ -187,10 +189,10 @@ void Pool::setTheHoles(){
     tableSize.height *= imageScale;
     
     holes.push_back(CCPoint(tableSize.width / 11 - ballSize / 2, tableSize.height / 6 - ballSize / 2));
-    holes.push_back(CCPoint(tableSize.width / 2, tableSize.height / 6 - ballSize));
+    holes.push_back(CCPoint(tableSize.width / 2, tableSize.height / 6 - ballSize * 3 / 4));
     holes.push_back(CCPoint(tableSize.width - tableSize.width / 11 + ballSize / 2, tableSize.height / 6 - ballSize / 2));
     holes.push_back(CCPoint(tableSize.width - tableSize.width / 11 + ballSize / 2, tableSize.height - tableSize.height / 6 + ballSize / 2));
-    holes.push_back(CCPoint(tableSize.width / 2, tableSize.height - tableSize.height / 6 + ballSize));
+    holes.push_back(CCPoint(tableSize.width / 2, tableSize.height - tableSize.height / 6 + ballSize * 3 / 4));
     holes.push_back(CCPoint(tableSize.width / 11 - ballSize / 2, tableSize.height - tableSize.height / 6 + ballSize / 2));
     
     tableSize.width /= imageScale;
@@ -208,6 +210,7 @@ void Pool::setTheBalls(){
     CCSprite* whiteBall = CCSprite::create("white_ball.png");
     CCSprite* blackBall = CCSprite::create("black_ball.png");
     
+    ballSize = whiteBall->getContentSize().height;
     ballScale = (windowSize.width / 20) / whiteBall->getContentSize().width;
     
     Ball* b = new Ball(tableSize.width * imageScale * 3 / 4, tableSize.height * imageScale / 2, whiteBall->getContentSize().width * ballScale);
@@ -218,7 +221,6 @@ void Pool::setTheBalls(){
     whiteBall->setScale(ballScale);
     this->addChild(whiteBall, 1, tagIndex++);
     
-    ballSize = whiteBall->getContentSize().height;
     float rowOffset = sqrt(pow(ballSize, 2) - pow(ballSize / 2, 2));
     float startPosition = tableSize.height * imageScale / 2 - 2 * ballSize * ballScale;
     
@@ -234,6 +236,7 @@ void Pool::setTheBalls(){
             
             if(i == 3 && j == 1){
                 Ball* b = new Ball(200 + (6 - i) * rowOffset * ballScale, initialOffset + startPosition + j * ballSize * ballScale, whiteBall->getContentSize().width * ballScale);
+                printf("aaa%f", whiteBall->getContentSize().width * ballScale);
                 balls.push_back(b);
 
                 blackBall->setPosition(balls.back()->getPos());

@@ -35,6 +35,11 @@ void Immoveable::bounce(MyObject* wall, MyObject* ball){
     if(exitAngle > pi / 2 || exitAngle < -pi / 2)
         x = -x;
 
-    ball->setVelocityY(y);
-    ball->setVelocityX(x);
+    //ball->setVelocityY(y);
+    //ball->setVelocityX(x);
+    if(fi == 0)
+        ball->setVelocityY(-ball->getVelocityY());
+    else
+        ball->setVelocityX(-ball->getVelocityX());
+
 }
