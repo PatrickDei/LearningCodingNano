@@ -9,7 +9,7 @@
 #define pi 3.141592654
 
 void Immoveable::bounce(MyObject* wall, MyObject* ball){
-    float fi = atan(abs(wall->getPoint1().y - wall->getPoint2().y) / abs(wall->getPoint1().x - wall->getPoint2().x));
+    /*float fi = atan(abs(wall->getPoint1().y - wall->getPoint2().y) / abs(wall->getPoint1().x - wall->getPoint2().x));
     if((wall->getPoint2().y - wall->getPoint1().y < 0 && wall->getPoint1().x - wall->getPoint2().x < 0) || (wall->getPoint2().y - wall->getPoint1().y > 0 && wall->getPoint1().x - wall->getPoint2().x > 0))
         fi = -fi;
     float alpha = atan(ball->getVelocityY() / ball->getVelocityX());
@@ -40,6 +40,65 @@ void Immoveable::bounce(MyObject* wall, MyObject* ball){
     if(fi == 0)
         ball->setVelocityY(-ball->getVelocityY());
     else
-        ball->setVelocityX(-ball->getVelocityX());
+        ball->setVelocityX(-ball->getVelocityX());*/
+    
+    //angle of wall
+    float fi = atan(abs(wall->getPoint1().y - wall->getPoint2().y) / abs(wall->getPoint1().x - wall->getPoint2().x));
+    //angle of ball
+    float alpha = atan(ball->getVelocityY() / ball->getVelocityX());
+    
+    /*if(ball->getVelocityX() < 0 && ball->getVelocityY() < 0)
+        alpha -= pi;
+    if(ball->getVelocityX() < 0 && ball->getVelocityY() > 0)
+        alpha += pi;
+    if(alpha < 0)
+        alpha += pi;*/
+    
+    
+    
+    float angleBetweenWallAndBall = angleBetweenLineAndDot(wall, ball, fi);
 
+    //float beta;
+    float exitAngle;
+    //wall through second and third quadrant
+    if(fi >= 0 && fi <= pi / 2){
+        //"above" the wall
+        if(angleBetweenWallAndBall > 0){
+            //beta = fi - alpha;
+            exitAngle = 2 * fi - alpha;
+        }
+        //below the wall
+        else{
+            if(alpha > 0)
+                exitAngle = 2 * fi - alpha;
+            else{
+                alpha += 2 * pi;
+                exitAngle = 2 * fi - alpha;
+            }
+        }
+    }
+    
+    float x, y, hipothenuse;
+    hipothenuse = sqrt(pow(ball->getVelocityX(), 2) + pow(ball->getVelocityY(), 2));
+    y = atan(exitAngle) * ball->getVelocityX();
+    x = sqrt(abs(pow(hipothenuse, 2) - pow(y, 2)));
+    
+    ball->setVelocityX(x);
+    ball->setVelocityY(y);
+}
+
+
+
+float Immoveable::angleBetweenLineAndDot(MyObject* wall, MyObject* ball, float fi){
+    float angle;
+    float x, y;
+    x = wall->getPoint2().x - wall->getPoint1().x + wall->getPoint2().x - ball->getPositionX();
+    y = tan(fi) * x;
+    
+    if(y < ball->getPositionY())
+        angle = pi / 2 + fi;
+    else
+        angle = fi - pi / 2;
+    
+    return angle;
 }

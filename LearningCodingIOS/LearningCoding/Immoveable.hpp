@@ -14,6 +14,9 @@
 class Immoveable : public MovingDelegate{
 protected:
     virtual void bounce(MyObject* wall, MyObject* ball) override;
+    
+private:
+    float angleBetweenLineAndDot(MyObject* wall, MyObject* ball, float fi);
 };
 
 #endif /* Immoveable_hpp */

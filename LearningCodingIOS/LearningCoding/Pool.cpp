@@ -161,12 +161,12 @@ void Pool::setTheWalls(){
     points.push_back(CCPoint(tableSize.width / 12 - ballSize / 2, tableSize.height / 6 + 20));
     points.push_back(CCPoint(tableSize.width / 12 - ballSize / 2, tableSize.height - (tableSize.height / 6 + 20)));
     
-    /*points.push_back(CCPoint(190, 150));
+    points.push_back(CCPoint(190, 150));
     points.push_back(CCPoint(290, 250));
     
     
     points.push_back(CCPoint(490, 100));
-    points.push_back(CCPoint(540, 250));*/
+    points.push_back(CCPoint(540, 250));
     
     tableSize.width /= imageScale;
     tableSize.height /= imageScale;
@@ -261,7 +261,6 @@ void Pool::handleCollisions(int indexOfBall){
         if(j != indexOfBall)
             if(balls[indexOfBall]->isInCollision(balls[indexOfBall], balls[j]))
                 balls[indexOfBall]->calculateVelocities(balls[indexOfBall], balls[j]);
-
 }
 
 void Pool::resetGame(){
