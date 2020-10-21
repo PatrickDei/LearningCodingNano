@@ -73,7 +73,7 @@ private:
     
     void checkHoles(int index);
     
-    void resetGame();
+    void restartGame();
 };
 
 #endif /* Pool_hpp */

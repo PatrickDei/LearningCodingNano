@@ -23,35 +23,11 @@ void Ball::resetWhiteBall(CCSize tableSize, float imageScale){
     this->setVelocityY(0);
 }
 
-void Ball::updatePosition(){
-    positionX = positionX + velocityX * friction;
-    positionY = positionY + velocityY * friction;
+void Ball::updatePosition(float dt){
+    positionX = positionX + velocityX * friction * dt * 30;
+    positionY = positionY + velocityY * friction * dt * 30;
     
     //slow the ball down
     velocityX *= friction;
     velocityY *= friction;
-}
-
-
-void Ball::setAppropriatePosition(float scale, CCSize size){
-    size.width *= scale;
-    size.height *= scale;
-    if(!scored){
-        //if(direction == 1){
-            /*float howManyPixelsBehind = positionX - size / 11;
-            //move it upwards for an appropriate amount
-            positionY = (velocityY * positionX)
-            //set it back*/
-            if(positionX > size.width - size.width / 11)
-                positionX = size.width - size.width / 11 - 1;
-            if(positionX < size.width / 11)
-                positionX = size.width / 11 + 1;
-        //}
-        //else{
-            if(positionY > size.height - size.height / 6)
-                positionY = size.height - size.height / 6 - 1;
-            if(positionY < size.height / 6)
-                positionY = size.height / 6 + 1;
-        //}
-    }
 }

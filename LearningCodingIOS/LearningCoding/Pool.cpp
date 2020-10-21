@@ -9,7 +9,7 @@
 #include "Games.hpp"
 #include "BilliardsMenu.hpp"
 
-#define pi 3.141592654
+bool Pool::gameRestart = false;
 
 CCScene* Pool::scene(){
     CCScene *scene = CCScene::create();
@@ -20,10 +20,6 @@ CCScene* Pool::scene(){
     
     return scene;
 }
-
-
-bool Pool::gameRestart = false;
-int BilliardsMenu::numOfBalls = 1;
 
 bool Pool::init(){
     if (!CCLayer::init()){
@@ -96,11 +92,11 @@ void Pool::update(float dt){
             //"expensive" operation -> jsut checking for the ball in ball bug :D
             if(balls[i]->getVelocityX() != 0 || balls[i]->getVelocityY() != 0)
                 handleCollisions(i);
-            balls[i]->updatePosition();
+            balls[i]->updatePosition(dt);
             this->getChildByTag(i)->setPosition(balls[i]->getPos());
         }
     else
-        resetGame();
+        restartGame();
 }
 
 
@@ -126,16 +122,15 @@ void Pool::checkHoles(int index){
                 balls[index]->addBallToScoreboard(numOfScoredballs++);
                 score->setString(std::to_string(atoi(score->getString()) + consecutive).c_str());
                 consecutive++;
-
             }
         }
 }
 
 void Pool::checkForEdgeCollision(int index){
     for(auto w : walls)
-        if(balls[index]->wallCollision(w, balls[index])){
+        if(balls[index]->wallCollision(w, balls[index], imageScale, tableSize)){
             w->bounce(w, balls[index]);
-            balls[index]->setAppropriatePosition(imageScale, tableSize);
+            //balls[index]->setAppropriatePosition(imageScale, tableSize);
         }
 }
 
@@ -161,12 +156,12 @@ void Pool::setTheWalls(){
     points.push_back(CCPoint(tableSize.width / 12 - ballSize / 2, tableSize.height / 6 + 20));
     points.push_back(CCPoint(tableSize.width / 12 - ballSize / 2, tableSize.height - (tableSize.height / 6 + 20)));
     
-    points.push_back(CCPoint(190, 150));
+    /*points.push_back(CCPoint(190, 150));
     points.push_back(CCPoint(290, 250));
     
     
     points.push_back(CCPoint(490, 100));
-    points.push_back(CCPoint(540, 250));
+    points.push_back(CCPoint(540, 250));*/
     
     tableSize.width /= imageScale;
     tableSize.height /= imageScale;
@@ -226,7 +221,7 @@ void Pool::setTheBalls(){
     
     int totalBalls = 0;
     
-    for(int i = 5; i >= 1 ; i--){
+    for(int i = 5; i >= 1; i--){
         float initialOffset = (5 * ballSize / 2 - (i * ballSize / 2)) * ballScale;
         
         for(int j = 0; j < i ; j++){
@@ -262,7 +257,7 @@ void Pool::handleCollisions(int indexOfBall){
                 balls[indexOfBall]->calculateVelocities(balls[indexOfBall], balls[j]);
 }
 
-void Pool::resetGame(){
+void Pool::restartGame(){
     for(int i = 0; i < balls.size(); i++)
         this->removeChildByTag(i, true);
     

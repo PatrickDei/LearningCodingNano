@@ -23,15 +23,30 @@ bool Collideable::isInCollision(MyObject* obj1, MyObject* obj2){
 
 
 //these two with TYPE* dynamic_cast<TYPE*> (object)
-bool Collideable::wallCollision(MyObject* wall, MyObject* ball){
+bool Collideable::wallCollision(MyObject* wall, MyObject* ball, float scale, CCSize size){
     int precision = 50;
     for(int i = 1; i < precision; i++){
         CCPoint positionInPath = wall->getPoint1();
         positionInPath.x += ((wall->getPoint2().x - wall->getPoint1().x) / precision) * i;
         positionInPath.y += ((wall->getPoint2().y - wall->getPoint1().y) / precision) * i;
         float distance = distanceBetweenPoints(positionInPath, ball->getPos());
-        if(distance <= ball->getSize() / 2 - 1)
+        if(distance <= ball->getSize() / 2 - 1){
+            //place the ball back in the playing area (don't get stuck in a wall) and then switch those velocities
+            size.width *= scale;
+            size.height *= scale;
+            if(!ball->scored){
+                    if(ball->getPositionX() > size.width - size.width / 11)
+                        ball->setPositionX(size.width - size.width / 11 - 1 + ball->getSize() / 4);
+                    if(ball->getPositionX() < size.width / 11)
+                        ball->setPositionX(size.width / 11 + 1 - ball->getSize() / 4);
+                    if(ball->getPositionY() > size.height - size.height / 6)
+                        ball->setPositionY(size.height - size.height / 6 - 1 + ball->getSize() / 4);
+                    if(ball->getPositionY() < size.height / 6)
+                        ball->setPositionY(size.height / 6 + 1 - ball->getSize() / 4);
+            }
+            
             return true;
+        }
     }
     return false;
 }

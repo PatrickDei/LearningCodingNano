@@ -8,6 +8,8 @@
 #include "BilliardsMenu.hpp"
 #include "Pool.hpp"
 
+int BilliardsMenu::numOfBalls = 1;
+
 ccColor3B BilliardsMenu::colorOfWhiteBall = ccc3(255, 255, 255);
 bool BilliardsMenu::init(){
     

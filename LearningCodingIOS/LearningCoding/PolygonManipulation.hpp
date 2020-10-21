@@ -29,8 +29,6 @@ public:
     
 
 private:
-
-    CCPoint touchLocation;
     
     int vertexIndex;
     
@@ -48,7 +46,7 @@ private:
     
     void ccTouchEnded(CCTouch *pTouch, CCEvent *pEvent) override;
     
-    int getVertexIndex();
+    int getVertexIndex(CCPoint touchLocation);
     
     void getShapeVertecies(int indexOfVertex);
     

@@ -42,9 +42,9 @@ bool PolygonManipulation::init(){
 
 
 bool PolygonManipulation::ccTouchBegan(CCTouch *pTouch, CCEvent *pEvent){
-    touchLocation = pTouch->getLocation();
+    CCPoint touchLocation = pTouch->getLocation();
     
-    vertexIndex = getVertexIndex();
+    vertexIndex = getVertexIndex(touchLocation);
     
     getShapeVertecies(vertexIndex);
     
@@ -115,7 +115,7 @@ void PolygonManipulation::ccTouchEnded(CCTouch *pTouch, CCEvent *pEvent){
     shapeIndex = 0;
 }
 
-int PolygonManipulation::getVertexIndex(){
+int PolygonManipulation::getVertexIndex(CCPoint touchLocation){
     for(int i = 0; i < points.size(); i++)
         if(20 >= sqrt(pow(points[i].x - touchLocation.x, 2) + pow(points[i].y - touchLocation.y, 2)))
             return i;

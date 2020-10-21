@@ -25,11 +25,13 @@ protected:
     CCPoint point1;
     CCPoint point2;
     
+
 public:
+    bool scored;
     CollisionDelegate* collideable;
     MovingDelegate* moveable;
     
-    MyObject(CollisionDelegate* c, MovingDelegate* m, float x, float y, float size) : collideable(c), moveable(m), positionX(x), positionY(y), sizeOfObject(size){}
+    MyObject(CollisionDelegate* c, MovingDelegate* m, float x, float y, float size, bool _scored) : collideable(c), moveable(m), positionX(x), positionY(y), sizeOfObject(size), scored(_scored){}
     
     MyObject(CollisionDelegate* c, MovingDelegate* m, CCPoint one, CCPoint two) : collideable(c), moveable(m), point1(one), point2(two){}
     
@@ -41,8 +43,8 @@ public:
         moveable->calculateVelocities(obj1, obj2);
     }
     
-    bool wallCollision(MyObject* wall, MyObject* ball){
-        return collideable->wallCollision(wall, ball);
+    bool wallCollision(MyObject* wall, MyObject* ball, float scale, CCSize size){
+        return collideable->wallCollision(wall, ball, scale, size);
     }
     
     void bounce(MyObject* wall, MyObject* ball){

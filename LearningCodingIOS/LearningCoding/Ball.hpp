@@ -17,14 +17,11 @@ USING_NS_CC;
 
 class Ball : public MyObject{
 public:
-    bool scored;
     
-    Ball(float x, float y, float size) : friction(0.9), MyObject(new Collideable(), new Moveable(), x, y, size), scored(false) {}
+    Ball(float x, float y, float size) : friction(0.9), MyObject(new Collideable(), new Moveable(), x, y, size, false) {}
     
-    void updatePosition();
-        
-    void setAppropriatePosition(float scale, CCSize size);
-    
+    void updatePosition(float dt);
+            
     void addBallToScoreboard(int numOfScoredBalls);
     
     void resetWhiteBall(CCSize tableSize, float imageScale);
