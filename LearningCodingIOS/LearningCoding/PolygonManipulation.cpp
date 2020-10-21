@@ -57,88 +57,63 @@ bool PolygonManipulation::ccTouchBegan(CCTouch *pTouch, CCEvent *pEvent){
 void PolygonManipulation::ccTouchMoved(CCTouch *pTouch, CCEvent *pEvent){
     CCPoint position = pTouch->getLocation();
     
-    CCDrawNode* dot = CCDrawNode::create();
-    CCDrawNode* line = CCDrawNode::create();
-    CCDrawNode* line2 = CCDrawNode::create();
+    CCDrawNode* extraLine = CCDrawNode::create();
 
-    //if its in the middle of the shape
     if(moveTheVertex){
         ccColor4F colorForLine = (!isLatestShapeFinished && shapeIndex == dotsInShape.size() - 1) ? ccc4f(1, 0, 0, 1) : ccc4f(0, 1, 0, 1);
         
-        if(vertexIndex - numOfDotsBeforeShape != 0 && vertexIndex - numOfDotsBeforeShape != dotsInShape[shapeIndex] - 1){
-            this->removeChild(getChildByTag(1000 + vertexIndex));
-            dot->drawDot(position, 15, ccc4f(0, 0, 1, 1));
-            this->addChild(dot, 2, 1000+vertexIndex);
-            points[vertexIndex] = position;
+        if(vertexIndex - numOfDotsBeforeShape == dotsInShape[shapeIndex] - 1){
             
-            //now for the lines
-            this->removeChild(getChildByTag(vertexIndex));
-            this->removeChild(getChildByTag(vertexIndex - 1));
-            line->drawSegment(points[vertexIndex], points[vertexIndex - 1], 15, colorForLine);
-            this->addChild(line, 1, vertexIndex - 1);
-            line2->drawSegment(points[vertexIndex], points[vertexIndex + 1], 15, colorForLine);
-            this->addChild(line2, 1, vertexIndex);
+            if(shapeIndex < dotsInShape.size() - 1 || isLatestShapeFinished)
+                redrawElements(extraLine, position, colorForLine, vertexIndex - 1, numOfDotsBeforeShape);
+            else
+                redrawElements(NULL, position, colorForLine, vertexIndex - 1, vertexIndex + 1);
         }
-        if(vertexIndex - numOfDotsBeforeShape == dotsInShape[shapeIndex] - 1 && (shapeIndex < dotsInShape.size() - 1 || isLatestShapeFinished)){
-            this->removeChild(getChildByTag(1000 + vertexIndex));
-            dot->drawDot(position, 15, ccc4f(0, 0, 1, 1));
-            this->addChild(dot, 2, 1000+vertexIndex);
-            points[vertexIndex] = position;
+        
+        else if(vertexIndex - numOfDotsBeforeShape == 0){
             
-            //now for the lines
-            this->removeChild(getChildByTag(vertexIndex));
-            this->removeChild(getChildByTag(vertexIndex - 1));
-            line->drawSegment(points[vertexIndex], points[vertexIndex - 1], 15, colorForLine);
-            this->addChild(line, 1, vertexIndex - 1);
-            line2->drawSegment(points[vertexIndex], points[numOfDotsBeforeShape], 15, colorForLine);
-            this->addChild(line2, 1, vertexIndex);
+            if(shapeIndex < dotsInShape.size() - 1 || isLatestShapeFinished)
+                redrawElements(extraLine, position, colorForLine, dotsInShape[shapeIndex] + numOfDotsBeforeShape - 1, vertexIndex + 1);
+            else
+                redrawElements(NULL, position, colorForLine, vertexIndex, vertexIndex + 1);
         }
-        if(vertexIndex - numOfDotsBeforeShape == 0 && (shapeIndex < dotsInShape.size() - 1 || isLatestShapeFinished)){
-            this->removeChild(getChildByTag(1000 + vertexIndex));
-            dot->drawDot(position, 15, ccc4f(0, 0, 1, 1));
-            this->addChild(dot, 2, 1000+vertexIndex);
-            points[vertexIndex] = position;
-            
-            //now for the lines
-            this->removeChild(getChildByTag(vertexIndex));
-            this->removeChild(getChildByTag(dotsInShape[shapeIndex] + numOfDotsBeforeShape - 1));
-            line->drawSegment(points[vertexIndex], points[dotsInShape[shapeIndex] + numOfDotsBeforeShape - 1], 15, colorForLine);
-            this->addChild(line, 1, dotsInShape[shapeIndex] + numOfDotsBeforeShape - 1);
-            line2->drawSegment(points[vertexIndex], points[vertexIndex + 1], 15, colorForLine);
-            this->addChild(line2, 1, vertexIndex);
-        }
-        if(vertexIndex - numOfDotsBeforeShape == dotsInShape[shapeIndex] - 1 && shapeIndex == dotsInShape.size() - 1 && !isLatestShapeFinished){
-            this->removeChild(getChildByTag(1000 + vertexIndex));
-            dot->drawDot(position, 15, ccc4f(0, 0, 1, 1));
-            this->addChild(dot, 2, 1000+vertexIndex);
-            points[vertexIndex] = position;
-            
-            this->removeChild(getChildByTag(vertexIndex - 1));
-            line->drawSegment(points[vertexIndex], points[vertexIndex - 1], 15, colorForLine);
-            this->addChild(line, 1, vertexIndex - 1);
-        }
-        if(vertexIndex - numOfDotsBeforeShape == 0 && shapeIndex == dotsInShape.size() - 1 && !isLatestShapeFinished){
-            this->removeChild(getChildByTag(1000 + vertexIndex));
-            dot->drawDot(position, 15, ccc4f(0, 0, 1, 1));
-            this->addChild(dot, 2, 1000+vertexIndex);
-            points[vertexIndex] = position;
-            
-            this->removeChild(getChildByTag(vertexIndex));
-            line->drawSegment(points[vertexIndex], points[vertexIndex + 1], 15, colorForLine);  
-            this->addChild(line, 1, vertexIndex);
-        }
+        
+        else
+            redrawElements(extraLine, position, colorForLine, vertexIndex - 1, vertexIndex + 1);
     }
 }
 
+void PolygonManipulation::redrawElements(CCDrawNode* extraLine, CCPoint position, ccColor4F colorForLine, int tagForFirstPoint, int tagForSecondPoint){
+    redrawDot(position);
+    
+    //now for the lines
+    CCDrawNode* line = CCDrawNode::create();
+    //remove the lines
+    this->removeChild(getChildByTag(vertexIndex));
+    this->removeChild(getChildByTag(tagForFirstPoint));
+    
+    //special case for when the red line has 3 or more dots
+    line->drawSegment(points[vertexIndex], points[(tagForFirstPoint == vertexIndex) ? tagForFirstPoint + 1 : tagForFirstPoint], 15, colorForLine);
+    this->addChild(line, 1, tagForFirstPoint);
+    if(extraLine != NULL){
+        extraLine->drawSegment(points[vertexIndex], points[tagForSecondPoint], 15, colorForLine);
+        this->addChild(extraLine, 1, vertexIndex);
+    }
+}
+
+void PolygonManipulation::redrawDot(CCPoint position){
+    CCDrawNode* dot = CCDrawNode::create();
+    this->removeChild(getChildByTag(1000 + vertexIndex));
+    dot->drawDot(position, 15, ccc4f(0, 0, 1, 1));
+    this->addChild(dot, 2, 1000 + vertexIndex);
+    points[vertexIndex] = position;
+}
 
 void PolygonManipulation::ccTouchEnded(CCTouch *pTouch, CCEvent *pEvent){
     moveTheVertex = false;
     numOfDotsBeforeShape = 0;
     shapeIndex = 0;
 }
-
-
-
 
 int PolygonManipulation::getVertexIndex(){
     for(int i = 0; i < points.size(); i++)

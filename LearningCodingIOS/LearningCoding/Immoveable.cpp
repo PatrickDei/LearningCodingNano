@@ -63,15 +63,23 @@ void Immoveable::bounce(MyObject* wall, MyObject* ball){
     //wall through second and third quadrant
     if(fi >= 0 && fi <= pi / 2){
         //"above" the wall
-        if(angleBetweenWallAndBall > 0){
+        if(pi / 2 - fi <= 0.1){
+            ball->setVelocityX(-ball->getVelocityX());
+            return;
+        }
+        else if(angleBetweenWallAndBall > 0){
             //beta = fi - alpha;
+            printf("1");
             exitAngle = 2 * fi - alpha;
         }
         //below the wall
         else{
-            if(alpha > 0)
+            if(alpha > 0){
+                printf("2");
                 exitAngle = 2 * fi - alpha;
+            }
             else{
+                printf("3");
                 alpha += 2 * pi;
                 exitAngle = 2 * fi - alpha;
             }
@@ -81,7 +89,7 @@ void Immoveable::bounce(MyObject* wall, MyObject* ball){
     float x, y, hipothenuse;
     hipothenuse = sqrt(pow(ball->getVelocityX(), 2) + pow(ball->getVelocityY(), 2));
     y = atan(exitAngle) * ball->getVelocityX();
-    x = sqrt(abs(pow(hipothenuse, 2) - pow(y, 2)));
+    x = y / atan(exitAngle);
     
     ball->setVelocityX(x);
     ball->setVelocityY(y);

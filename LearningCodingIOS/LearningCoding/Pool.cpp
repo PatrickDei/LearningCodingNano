@@ -236,7 +236,6 @@ void Pool::setTheBalls(){
             
             if(i == 3 && j == 1){
                 Ball* b = new Ball(200 + (6 - i) * rowOffset * ballScale, initialOffset + startPosition + j * ballSize * ballScale, whiteBall->getContentSize().width * ballScale);
-                printf("aaa%f", whiteBall->getContentSize().width * ballScale);
                 balls.push_back(b);
 
                 blackBall->setPosition(balls.back()->getPos());

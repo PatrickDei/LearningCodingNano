@@ -51,6 +51,10 @@ private:
     int getVertexIndex();
     
     void getShapeVertecies(int indexOfVertex);
+    
+    void redrawElements(CCDrawNode* extraLine, CCPoint position, ccColor4F colorForLine, int tagForFirstPoint, int tagForSecondPoint);
+    
+    void redrawDot(CCPoint position);
 };
 
 #endif /* PolygonManipulation_hpp */
