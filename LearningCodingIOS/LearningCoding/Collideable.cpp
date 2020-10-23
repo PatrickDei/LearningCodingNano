@@ -8,43 +8,34 @@
 #include "Collideable.hpp"
 #include "MyObject.hpp"
 
-bool Collideable::isInCollision(MyObject* obj1, MyObject* obj2){
-    int precision = 20;
-    for(int i = 1; i < precision; i++){
-        CCPoint positionInPath = obj1->getPos();
-        positionInPath.x += (obj1->getVelocityX() / precision) * i;
-        positionInPath.y += (obj1->getVelocityY() / precision) * i;
-        float distance = distanceBetweenPoints(positionInPath, obj2->getPos());
-        if(distance <= obj1->getSize() - 1)
-            return true;
-    }
-    return false;
-}
-
-
-//these two with TYPE* dynamic_cast<TYPE*> (object)
-bool Collideable::wallCollision(MyObject* wall, MyObject* ball, float scale, CCSize size){
+bool Collideable::isInCollision(MyObject* obj1, MyObject* obj2, float scale, CCSize size){
     int precision = 50;
+    bool collidedWithABall = obj2->type == "ball";
+    float checkDistanceX = (collidedWithABall) ? obj1->getVelocityX() / precision : (obj2->getPoint2().x - obj2->getPoint1().x) / precision;
+    float checkDistanceY = (collidedWithABall) ? obj1->getVelocityY() / precision : (obj2->getPoint2().y - obj2->getPoint1().y) / precision;
+    
     for(int i = 1; i < precision; i++){
-        CCPoint positionInPath = wall->getPoint1();
-        positionInPath.x += ((wall->getPoint2().x - wall->getPoint1().x) / precision) * i;
-        positionInPath.y += ((wall->getPoint2().y - wall->getPoint1().y) / precision) * i;
-        float distance = distanceBetweenPoints(positionInPath, ball->getPos());
-        if(distance <= ball->getSize() / 2 - 1){
-            //place the ball back in the playing area (don't get stuck in a wall) and then switch those velocities
-            size.width *= scale;
-            size.height *= scale;
-            if(!ball->scored){
-                    if(ball->getPositionX() > size.width - size.width / 11)
-                        ball->setPositionX(size.width - size.width / 11 - 1 + ball->getSize() / 4);
-                    if(ball->getPositionX() < size.width / 11)
-                        ball->setPositionX(size.width / 11 + 1 - ball->getSize() / 4);
-                    if(ball->getPositionY() > size.height - size.height / 6)
-                        ball->setPositionY(size.height - size.height / 6 - 1 + ball->getSize() / 4);
-                    if(ball->getPositionY() < size.height / 6)
-                        ball->setPositionY(size.height / 6 + 1 - ball->getSize() / 4);
+        CCPoint positionInPath = (collidedWithABall) ? obj1->getPos() : obj2->getPoint1();
+        positionInPath.x += (checkDistanceX) * i;
+        positionInPath.y += (checkDistanceY) * i;
+        float distance = distanceBetweenPoints(positionInPath, (collidedWithABall) ? obj2->getPos() : obj1->getPos());
+        float sizeToCheck = (collidedWithABall) ? obj1->getSize() - 1 : obj1->getSize() / 2 - 1;
+        
+        if(distance <= sizeToCheck){
+            if(!collidedWithABall){
+                size.width *= scale;
+                size.height *= scale;
+                if(!obj1->isScored()){
+                        if(obj1->getPositionX() > size.width - size.width / 11)
+                            obj1->setPositionX(size.width - size.width / 11 - 1 + obj1->getSize() / 4);
+                        if(obj1->getPositionX() < size.width / 11)
+                            obj1->setPositionX(size.width / 11 + 1 - obj1->getSize() / 4);
+                        if(obj1->getPositionY() > size.height - size.height / 6)
+                            obj1->setPositionY(size.height - size.height / 6 - 1 + obj1->getSize() / 4);
+                        if(obj1->getPositionY() < size.height / 6)
+                            obj1->setPositionY(size.height / 6 + 1 - obj1->getSize() / 4);
+                }
             }
-            
             return true;
         }
     }

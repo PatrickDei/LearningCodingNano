@@ -9,6 +9,7 @@
 #define MyObject_hpp
 
 #include <stdio.h>
+#include <string>
 #include "CollisionDelegate.hpp"
 #include "MovingDelegate.hpp"
 
@@ -25,26 +26,24 @@ protected:
     CCPoint point1;
     CCPoint point2;
     
-
-public:
     bool scored;
+    
+public:
     CollisionDelegate* collideable;
     MovingDelegate* moveable;
     
-    MyObject(CollisionDelegate* c, MovingDelegate* m, float x, float y, float size, bool _scored) : collideable(c), moveable(m), positionX(x), positionY(y), sizeOfObject(size), scored(_scored){}
+    std::string type;
     
-    MyObject(CollisionDelegate* c, MovingDelegate* m, CCPoint one, CCPoint two) : collideable(c), moveable(m), point1(one), point2(two){}
+    MyObject(CollisionDelegate* c, MovingDelegate* m, float x, float y, float size) : collideable(c), moveable(m), positionX(x), positionY(y), sizeOfObject(size), scored(false), type("ball"){}
     
-    bool isInCollision(MyObject* obj1, MyObject* obj2){
-        return collideable->isInCollision(obj1, obj2);
+    MyObject(CollisionDelegate* c, MovingDelegate* m, CCPoint one, CCPoint two) : collideable(c), moveable(m), point1(one), point2(two), type("wall"){}
+    
+    bool isInCollision(MyObject* obj1, MyObject* obj2, float scale, CCSize size){
+        return collideable->isInCollision(obj1, obj2, scale, size);
     }
     
     void calculateVelocities(MyObject* obj1, MyObject* obj2){
         moveable->calculateVelocities(obj1, obj2);
-    }
-    
-    bool wallCollision(MyObject* wall, MyObject* ball, float scale, CCSize size){
-        return collideable->wallCollision(wall, ball, scale, size);
     }
     
     void bounce(MyObject* wall, MyObject* ball){
@@ -90,6 +89,14 @@ public:
     
     float getSize() const{
         return sizeOfObject;
+    }
+    
+    bool isScored() const{
+        return scored;
+    }
+    
+    std::string getType() const{
+        return type;
     }
     
     CCPoint getPoint1() const{

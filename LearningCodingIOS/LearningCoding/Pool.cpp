@@ -128,10 +128,31 @@ void Pool::checkHoles(int index){
 
 void Pool::checkForEdgeCollision(int index){
     for(auto w : walls)
-        if(balls[index]->wallCollision(w, balls[index], imageScale, tableSize)){
+        if(balls[index]->isInCollision(balls[index], w, imageScale, tableSize))
             w->bounce(w, balls[index]);
-            //balls[index]->setAppropriatePosition(imageScale, tableSize);
+}
+
+void Pool::handleCollisions(int indexOfBall){
+    for(int j = 0; j < balls.size(); j++)
+        if(j != indexOfBall){
+            if(balls[indexOfBall]->isInCollision(balls[indexOfBall], balls[j], imageScale, tableSize))
+                balls[indexOfBall]->calculateVelocities(balls[indexOfBall], balls[j]);
         }
+}
+
+void Pool::restartGame(){
+    for(int i = 0; i < balls.size(); i++)
+        this->removeChildByTag(i, true);
+    
+    balls.clear();
+    
+    numOfScoredballs = 0;
+    consecutive = 1;
+    
+    setTheBalls();
+    
+    score->setValue(numOfScoredballs);
+    gameRestart = false;
 }
 
 void Pool::setTheWalls(){
@@ -248,26 +269,4 @@ void Pool::setTheBalls(){
             totalBalls++;
         }
     }
-}
-
-void Pool::handleCollisions(int indexOfBall){
-    for(int j = 0; j < balls.size(); j++)
-        if(j != indexOfBall)
-            if(balls[indexOfBall]->isInCollision(balls[indexOfBall], balls[j]))
-                balls[indexOfBall]->calculateVelocities(balls[indexOfBall], balls[j]);
-}
-
-void Pool::restartGame(){
-    for(int i = 0; i < balls.size(); i++)
-        this->removeChildByTag(i, true);
-    
-    balls.clear();
-    
-    numOfScoredballs = 0;
-    consecutive = 1;
-    
-    setTheBalls();
-    
-    score->setValue(numOfScoredballs);
-    gameRestart = false;
 }

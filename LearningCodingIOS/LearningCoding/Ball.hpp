@@ -18,7 +18,7 @@ USING_NS_CC;
 class Ball : public MyObject{
 public:
     
-    Ball(float x, float y, float size) : friction(0.9), MyObject(new Collideable(), new Moveable(), x, y, size, false) {}
+    Ball(float x, float y, float size) : friction(0.9), MyObject(new Collideable(), new Moveable(), x, y, size) {}
     
     void updatePosition(float dt);
             
