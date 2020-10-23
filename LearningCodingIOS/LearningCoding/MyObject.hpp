@@ -12,11 +12,10 @@
 #include <string>
 #include "CollisionDelegate.hpp"
 #include "MovingDelegate.hpp"
-#include "PoolVariables.hpp"
 
 class MyObject{
 protected:
-    /*float positionX;
+    float positionX;
     float positionY;
     
     float velocityY;
@@ -27,29 +26,17 @@ protected:
     CCPoint point1;
     CCPoint point2;
     
-    bool scored;*/
+    bool scored;
     
 public:
     CollisionDelegate* collideable;
     MovingDelegate* moveable;
     
-    PoolVariables variables;
+    std::string type;
     
-    //std::string type;
+    MyObject(CollisionDelegate* c, MovingDelegate* m, float x, float y, float size) : collideable(c), moveable(m), positionX(x), positionY(y), sizeOfObject(size), scored(false), type("ball"){}
     
-    MyObject(CollisionDelegate* c, MovingDelegate* m, float x, float y, float size) : collideable(c), moveable(m) /*positionX(x), positionY(y), sizeOfObject(size), scored(false), type("ball")*/{
-        variables.setPositionX(x);
-        variables.setPositionY(y);
-        variables.setSize(size);
-        variables.setScored(false);
-        variables.setType("ball");
-    }
-    
-    MyObject(CollisionDelegate* c, MovingDelegate* m, CCPoint one, CCPoint two) : collideable(c), moveable(m)/*, point1(one), point2(two), type("wall")*/{
-        variables.setPoint1(one);
-        variables.setPoint2(two);
-        variables.setType("wall");
-    }
+    MyObject(CollisionDelegate* c, MovingDelegate* m, CCPoint one, CCPoint two) : collideable(c), moveable(m), point1(one), point2(two), type("wall"){}
     
     bool isInCollision(MyObject* obj1, MyObject* obj2, float scale, CCSize size){
         return collideable->isInCollision(obj1, obj2, scale, size);
@@ -63,7 +50,7 @@ public:
         moveable->bounce(wall, ball);
     }
     
-    /*float getPositionX() const{
+    float getPositionX() const{
         return positionX;
     }
     
@@ -118,7 +105,7 @@ public:
     
     CCPoint getPoint2() const{
         return point2;
-    }*/
+    }
 
 };
 
