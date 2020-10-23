@@ -16,7 +16,7 @@
 
 USING_NS_CC;
 
-/*template <class T>
+template <class T>
 static cocos2d::CCMenuItemToggle* createButton(const char* text, cocos2d::CCObject* parent, cocos2d::CCMenuItemImage* button){
         
     CCMenuItemToggle* toggleButton = CCMenuItemToggle::createWithTarget(parent, menu_selector(T::callScene), button, NULL);
@@ -43,6 +43,6 @@ static CCMenuItemImage* getButtonImage(){
     CCMenuItemImage* button = CCMenuItemImage::create("BtnBg.png", "BtnBgSelected.png");
     return button;
 }
-*/
+
 
 #endif /* Games_hpp */

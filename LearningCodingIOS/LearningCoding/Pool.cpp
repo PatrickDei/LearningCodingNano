@@ -6,7 +6,7 @@
 //
 
 #include "Pool.hpp"
-#include "Games.hpp"
+#include "Games.cpp"
 #include "BilliardsMenu.hpp"
 
 bool Pool::gameRestart = false;

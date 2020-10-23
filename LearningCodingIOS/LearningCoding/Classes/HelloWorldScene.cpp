@@ -1,7 +1,7 @@
 #include "HelloWorldScene.h"
 #include "AppMacros.h"
 #include "MainMenuCreator.hpp"
-#include "Games.cpp"
+#include "Games.hpp"
 #include "Puzzle.hpp"
 #include "PolygonDraw.hpp"
 #include "PolygonManipulation.hpp"

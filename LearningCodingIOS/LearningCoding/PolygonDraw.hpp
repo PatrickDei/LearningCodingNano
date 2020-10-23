@@ -12,7 +12,7 @@
 #include "cocos2d.h"
 #include "HelloWorldScene.h"
 #include <vector>
-#include "Games.cpp"
+#include "Games.hpp"
 
 
 USING_NS_CC;

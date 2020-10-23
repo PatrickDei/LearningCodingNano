@@ -7,7 +7,7 @@
 
 #include "Puzzle.hpp"
 #include <algorithm>
-#include "Games.cpp"
+#include "Games.hpp"
 
 
 bool Puzzle::init(){
