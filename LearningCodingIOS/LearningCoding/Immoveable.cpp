@@ -11,9 +11,9 @@
 void Immoveable::bounce(MyObject* wall, MyObject* ball){
     
     //angle of wall
-    float fi = atan(abs(wall->getPoint1().y - wall->getPoint2().y) / abs(wall->getPoint1().x - wall->getPoint2().x));
+    float fi = atan(abs(wall->variables.getPoint1().y - wall->variables.getPoint2().y) / abs(wall->variables.getPoint1().x - wall->variables.getPoint2().x));
     //angle of ball
-    float alpha = atan(ball->getVelocityY() / ball->getVelocityX());
+    float alpha = atan(ball->variables.getVelocityY() / ball->variables.getVelocityX());
     
     
     float angleBetweenWallAndBall = angleBetweenLineAndDot(wall, ball, fi);
@@ -21,10 +21,10 @@ void Immoveable::bounce(MyObject* wall, MyObject* ball){
     //float beta;
     float exitAngle;
     //wall through second and third quadrant
-    if(fi >= 0 && fi <= pi / 2){
+    //if(fi >= 0 && fi <= pi / 2){
         //"above" the wall
         if(pi / 2 - fi <= 0.1){
-            ball->setVelocityX(-ball->getVelocityX());
+            ball->variables.setVelocityX(-ball->variables.getVelocityX());
             return;
         }
         else if(angleBetweenWallAndBall > 0){
@@ -44,15 +44,15 @@ void Immoveable::bounce(MyObject* wall, MyObject* ball){
                 exitAngle = 2 * fi - alpha;
             }
         }
-    }
+    //}
     
     float x, y, hipothenuse;
-    hipothenuse = sqrt(pow(ball->getVelocityX(), 2) + pow(ball->getVelocityY(), 2));
-    y = atan(exitAngle) * ball->getVelocityX();
+    hipothenuse = sqrt(pow(ball->variables.getVelocityX(), 2) + pow(ball->variables.getVelocityY(), 2));
+    y = atan(exitAngle) * ball->variables.getVelocityX();
     x = y / atan(exitAngle);
     
-    ball->setVelocityX(x);
-    ball->setVelocityY(y);
+    ball->variables.setVelocityX(x);
+    ball->variables.setVelocityY(y);
 }
 
 
@@ -60,10 +60,10 @@ void Immoveable::bounce(MyObject* wall, MyObject* ball){
 float Immoveable::angleBetweenLineAndDot(MyObject* wall, MyObject* ball, float fi){
     float angle;
     float x, y;
-    x = wall->getPoint2().x - wall->getPoint1().x + wall->getPoint2().x - ball->getPositionX();
+    x = wall->variables.getPoint2().x - wall->variables.getPoint1().x + wall->variables.getPoint2().x - ball->variables.getPositionX();
     y = tan(fi) * x;
     
-    if(y < ball->getPositionY())
+    if(y < ball->variables.getPositionY())
         angle = pi / 2 + fi;
     else
         angle = fi - pi / 2;

@@ -344,6 +344,7 @@
 		47D4DBD41CF341BF0074F3C8 /* Encoder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 47D4DBCD1CF341BF0074F3C8 /* Encoder.cpp */; };
 		47D4DBD51CF341BF0074F3C8 /* ObjectFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 47D4DBCF1CF341BF0074F3C8 /* ObjectFactory.cpp */; };
 		47D4DBD61CF341BF0074F3C8 /* Serialization.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 47D4DBD11CF341BF0074F3C8 /* Serialization.cpp */; };
+		615B60DD254354D800050E0B /* PoolVariables.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 615B60DB254354D800050E0B /* PoolVariables.cpp */; };
 		8E3F35CB2278A20F000C0932 /* ipadhd in Resources */ = {isa = PBXBuildFile; fileRef = 8E3F35C82278A20F000C0932 /* ipadhd */; };
 		8E3F35CC2278A20F000C0932 /* iphone in Resources */ = {isa = PBXBuildFile; fileRef = 8E3F35C92278A20F000C0932 /* iphone */; };
 		8E3F35CD2278A20F000C0932 /* ipad in Resources */ = {isa = PBXBuildFile; fileRef = 8E3F35CA2278A20F000C0932 /* ipad */; };
@@ -1191,6 +1192,8 @@
 		47FC6C491DFB180600F75A74 /* EventKitUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKitUI.framework; path = System/Library/Frameworks/EventKitUI.framework; sourceTree = SDKROOT; };
 		47FC6C4C1DFB183E00F75A74 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		47FC6C4E1DFB184200F75A74 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		615B60DB254354D800050E0B /* PoolVariables.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = PoolVariables.cpp; sourceTree = "<group>"; };
+		615B60DC254354D800050E0B /* PoolVariables.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = PoolVariables.hpp; sourceTree = "<group>"; };
 		8E3F35C82278A20F000C0932 /* ipadhd */ = {isa = PBXFileReference; lastKnownFileType = folder; name = ipadhd; path = Resources/ipadhd; sourceTree = "<group>"; };
 		8E3F35C92278A20F000C0932 /* iphone */ = {isa = PBXFileReference; lastKnownFileType = folder; name = iphone; path = Resources/iphone; sourceTree = "<group>"; };
 		8E3F35CA2278A20F000C0932 /* ipad */ = {isa = PBXFileReference; lastKnownFileType = folder; name = ipad; path = Resources/ipad; sourceTree = "<group>"; };
@@ -2817,6 +2820,8 @@
 				C92DAF2125273D0E002088D7 /* Moveable.hpp */,
 				C98613F3252A695C003E847A /* Immoveable.cpp */,
 				C98613F4252A695C003E847A /* Immoveable.hpp */,
+				615B60DB254354D800050E0B /* PoolVariables.cpp */,
+				615B60DC254354D800050E0B /* PoolVariables.hpp */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -3466,6 +3471,7 @@
 				12AE06C81E40E83B007827AB /* quaternion.c in Sources */,
 				12F9C12C1CEC6709001AD81C /* cpSweep1D.c in Sources */,
 				12AE06EC1E40E83B007827AB /* CCClippingNode.cpp in Sources */,
+				615B60DD254354D800050E0B /* PoolVariables.cpp in Sources */,
 				12AE09141E40E83D007827AB /* tinyxml2.cpp in Sources */,
 				101A2918220C9C8800BD8857 /* BlurSprite.cpp in Sources */,
 				12B376D21E42075100EABC29 /* CCControlSaturationBrightnessPicker.cpp in Sources */,
