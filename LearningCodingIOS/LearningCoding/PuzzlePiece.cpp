@@ -6,6 +6,7 @@
 //
 
 #include "PuzzlePiece.hpp"
+#include "Puzzle.hpp"
 
 int PuzzlePiece::getPositionIndex(){
     return positionIndex;

@@ -11,11 +11,6 @@
 #include <stdio.h>
 #include "cocos2d.h"
 
-
-#define NUM_OF_HORIZONTAL_PIECES 5
-#define NUM_OF_VERTICAL_PIECES 5
-
-
 USING_NS_CC;
 
 class PuzzlePiece : public CCLayer{

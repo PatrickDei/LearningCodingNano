@@ -14,6 +14,9 @@
 #include "PuzzlePiece.hpp"
 #include "HelloWorldScene.h"
 
+#define NUM_OF_HORIZONTAL_PIECES 5
+#define NUM_OF_VERTICAL_PIECES 5
+
 USING_NS_CC;
 
 class Puzzle : public cocos2d::CCLayer{

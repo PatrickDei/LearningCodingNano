@@ -96,7 +96,6 @@ bool PolygonDraw::isCompleted(){
 float PolygonDraw::distanceFromStart(){
     float distance = 0;
     distance = sqrt(pow(points[0 + sumOfPoints].x - points[points.size()-1].x, 2) + pow(points[0 + sumOfPoints].y - points[points.size()-1].y, 2));
-    
     return distance;
 }
 
