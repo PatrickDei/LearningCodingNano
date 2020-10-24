@@ -12,12 +12,12 @@
 #include <math.h>
 #include "cocos2d.h"
 #include "HelloWorldScene.h"
+#include "GameObject.hpp"
 #include "Ball.hpp"
 #include "Wall.hpp"
 #include "Hole.hpp"
-#include "GameObject.hpp"
 
-using namespace cocos2d;
+USING_NS_CC;
 
 class Pool : public cocos2d::CCLayer{
 public:

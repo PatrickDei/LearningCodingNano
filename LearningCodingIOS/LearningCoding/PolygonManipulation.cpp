@@ -6,6 +6,7 @@
 //
 
 #include "PolygonManipulation.hpp"
+#include "ButtonCreator.hpp"
 
 CCScene* PolygonManipulation::scene(){
     CCScene *scene = CCScene::create();

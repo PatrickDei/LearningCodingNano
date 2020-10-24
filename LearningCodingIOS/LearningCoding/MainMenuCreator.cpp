@@ -29,8 +29,3 @@ int calculateOffset(float height){
     int offset = height / PORTION_OF_SCREEN;
     return offset;
 }
-
-CCMenuItemImage* getNewButton(std::vector<CCMenuItemImage*> buttons){
-    buttons.push_back(CCMenuItemImage::create("BtnBg.png", "BtnBgSelected.png"));
-    return buttons.back();
-}

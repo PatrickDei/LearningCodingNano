@@ -10,7 +10,6 @@
 
 #include <stdio.h>
 #include "cocos2d.h"
-#include "Constants.hpp"
 
 USING_NS_CC;
 
@@ -19,7 +18,5 @@ void scaleButtons (CCMenuItemToggle* item1, CCMenuItemToggle* item2, CCMenuItemT
 void positionItems (int numberOfCells, float height, CCMenuItemToggle* item1, CCMenuItemToggle* item2, CCMenuItemToggle* item3, CCMenuItemToggle* item4);
 
 int calculateOffset(float height);
-
-CCMenuItemImage* getNewButton(std::vector<CCMenuItemImage*> buttons);
 
 #endif /* MainMenuCreator_hpp */

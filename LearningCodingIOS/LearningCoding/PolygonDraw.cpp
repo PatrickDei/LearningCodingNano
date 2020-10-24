@@ -6,8 +6,6 @@
 //
 
 #include "PolygonDraw.hpp"
-#include <math.h>
-#include <string>
 
 CCScene* PolygonDraw::scene(){
     CCScene *scene = CCScene::create();
@@ -220,37 +218,34 @@ void PolygonDraw::delButtonFunc(){
 
 void PolygonDraw::drawFromData(){
     int helpSum = 0;
+    _ccColor4F green = ccc4f(0, 1, 0, 1);
     for(int i = 0; i < dotsInShape.size(); i++){
         for(int j = 0; j < dotsInShape[i]; j++){
-            CCDrawNode* dot = CCDrawNode::create();
-            CCDrawNode* line = CCDrawNode::create();
             CCPoint point = CCPoint(points[j + helpSum].x, points[j + helpSum].y);
+            CCDrawNode* line = CCDrawNode::create();
+            CCDrawNode* dot = CCDrawNode::create();
+
             dot->drawDot(point, 15, ccc4f(0, 0, 1, 1));
             this->addChild(dot, 2, j + helpSum + 1000);
+            
             if(j != dotsInShape[i] - 1 && i != dotsInShape.size() - 1){
-                line->drawSegment(points[j + helpSum], points[j + helpSum + 1], 15, ccc4f(0, 1, 0, 1));
+                line->drawSegment(points[j + helpSum], points[j + helpSum + 1], 15, green);
                 this->addChild(line, 1, j + helpSum);
-
             }
-            else if(j == dotsInShape[i] - 1 && i != dotsInShape.size() - 1){
-                line->drawSegment(points[j + helpSum], points[helpSum], 15, ccc4f(0, 1, 0, 1));
+            
+            else if(j == dotsInShape[i] - 1 && (i != dotsInShape.size() - 1 || isLatestShapeFinished)){
+                line->drawSegment(points[j + helpSum], points[helpSum], 15, green);
                 this->addChild(line, 1, j + helpSum);
-
             }
-            else if(dotsInShape.size() - 1 == i && !isLatestShapeFinished){
+            
+            else if(i == dotsInShape.size() - 1 && !isLatestShapeFinished){
                 if(j != dotsInShape[i] - 1){
                     line->drawSegment(points[j + helpSum], points[j + helpSum + 1], 15, ccc4f(1, 0, 0, 1));
                     this->addChild(line, 1, j + helpSum);
-
                 }
             }
-            else if(isLatestShapeFinished && j == dotsInShape[i] - 1){
-                line->drawSegment(points[j + helpSum], points[helpSum], 15, ccc4f(0, 1, 0, 1));
-                this->addChild(line, 1, j + helpSum);
-
-            }
             else{
-                line->drawSegment(points[j + helpSum], points[j + helpSum + 1], 15, ccc4f(0, 1, 0, 1));
+                line->drawSegment(points[j + helpSum], points[j + helpSum + 1], 15, green);
                 this->addChild(line, 1, j + helpSum);
             }
         }

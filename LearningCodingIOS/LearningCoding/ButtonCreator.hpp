@@ -1,18 +1,19 @@
 //
-//  Games.hpp
+//  ButtonCreator.hpp
 //  LearningCoding
 //
-//  Created by Patrick Deisinger on 06/09/2020.
+//  Created by Patrick Deisinger on 25/10/2020.
 //
 
-#ifndef Games_hpp
-#define Games_hpp
+#ifndef ButtonCreator_hpp
+#define ButtonCreator_hpp
 
 #include <stdio.h>
 #include <string>
 #include "cocos2d.h"
 #include "AppMacros.h"
 #include "HelloWorldScene.h"
+#include "Constants.hpp"
 
 USING_NS_CC;
 
@@ -44,5 +45,9 @@ static CCMenuItemImage* getButtonImage(){
     return button;
 }
 
+CCMenuItemImage* getNewButton(std::vector<CCMenuItemImage*> buttons);
 
-#endif /* Games_hpp */
+
+
+
+#endif /* ButtonCreator_hpp */

@@ -9,11 +9,12 @@
 #define PolygonDraw_hpp
 
 #include <stdio.h>
+#include <vector>
+#include <math.h>
+#include <string>
 #include "cocos2d.h"
 #include "HelloWorldScene.h"
-#include <vector>
-#include "Games.hpp"
-
+#include "ButtonCreator.hpp"
 
 USING_NS_CC;
 

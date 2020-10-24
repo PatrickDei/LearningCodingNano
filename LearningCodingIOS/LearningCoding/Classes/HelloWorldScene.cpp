@@ -1,12 +1,12 @@
 #include "HelloWorldScene.h"
 #include "AppMacros.h"
 #include "MainMenuCreator.hpp"
-#include "Games.hpp"
+#include "ButtonCreator.hpp"
+#include "Constants.hpp"
 #include "Puzzle.hpp"
 #include "PolygonDraw.hpp"
 #include "PolygonManipulation.hpp"
 #include "Pool.hpp"
-#include "Constants.hpp"
 
 USING_NS_CC;
 

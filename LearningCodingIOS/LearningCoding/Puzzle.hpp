@@ -14,6 +14,7 @@
 #include "PuzzlePiece.hpp"
 #include "HelloWorldScene.h"
 #include "Constants.hpp"
+#include "ButtonCreator.hpp"
 
 USING_NS_CC;
 

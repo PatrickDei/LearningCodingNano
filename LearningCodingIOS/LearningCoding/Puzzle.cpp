@@ -7,7 +7,6 @@
 
 #include "Puzzle.hpp"
 #include <algorithm>
-#include "Games.hpp"
 
 
 bool Puzzle::init(){
@@ -56,8 +55,7 @@ bool Puzzle::init(){
     }
     
     //add the shuffle button
-    CCMenuItemImage* button = CCMenuItemImage::create("BtnBg.png", "BtnBgSelected.png");
-    CCMenuItemToggle* shuffleButton = CCMenuItemToggle::createWithTarget(this, menu_selector(Puzzle::shufflePieces), button, NULL);
+    CCMenuItemToggle* shuffleButton = CCMenuItemToggle::createWithTarget(this, menu_selector(Puzzle::shufflePieces), getButtonImage(), NULL);
     CCLabelTTF* shuffleButtonLabel = CCLabelTTF::create("Shuffle", "Arial", 24);
     shuffleButtonLabel->setPosition(ccp(shuffleButton->getContentSize().width / 2, shuffleButton->getContentSize().height / 2));
     shuffleButton->addChild(shuffleButtonLabel);
@@ -92,7 +90,8 @@ void Puzzle::shufflePieces(){
     std::random_shuffle(puzzlePieces.begin(), puzzlePieces.end());
     
     //remove "you won" label if exists
-    this->removeChildByTag(1);
+    if(this->getChildByTag(1) != nullptr)
+        this->removeChildByTag(1);
     
     for(int i = 0; i < NUM_OF_HORIZONTAL_PIECES; i++){
         for(int j = 0; j < NUM_OF_VERTICAL_PIECES; j++){

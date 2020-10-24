@@ -6,8 +6,8 @@
 //
 
 #include "Pool.hpp"
-#include "Games.cpp"
 #include "BilliardsMenu.hpp"
+#include "ButtonCreator.hpp"
 
 bool Pool::gameRestart = false;
 
