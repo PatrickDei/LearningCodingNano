@@ -30,7 +30,7 @@ bool Pool::init(){
     billiardsMenu->setZOrder(2);
     this->addChild(billiardsMenu);
         
-    windowSize = CCDirector::sharedDirector()->getVisibleSize();
+    CCSize windowSize = CCDirector::sharedDirector()->getVisibleSize();
     
     this->addChild(createBackButton(this, windowSize));
     
@@ -47,10 +47,6 @@ bool Pool::init(){
     
     numOfScoredballs = 0;
     consecutive = 1;
-    
-    setTheBalls();
-    setTheWalls();
-    setTheHoles();
 
     score = CCLabelTTF::create(std::to_string(numOfScoredballs).c_str(), "Arial", 50);
     score->setPosition(ccp(windowSize.width / 2, windowSize.height - score->getContentSize().height));
@@ -109,17 +105,17 @@ void Pool::checkHoles(int index){
         if(Hole* h = dynamic_cast<Hole*>(o))
             if(abs(objectList[index]->getPositionX() - o->getPositionX()) <= o->getSize() && abs(objectList[index]->getPositionY() - o->getPositionY()) <= o->getSize()){
                 //black ball
-                /*if(balls.size() > 11 && balls[index]->getPos().x == balls[11]->getPos().x
-                    && balls[index]->getPos().y == balls[11]->getPos().y
+                if(objectList[index]->getPos().x == objectList[blackBallIndex]->getPos().x
+                    && objectList[index]->getPos().y == objectList[blackBallIndex]->getPos().y
                     && numOfScoredballs != 14){
                         score->setString("game over");
-                        balls[index]->addBallToScoreboard(numOfScoredballs++);
+                        dynamic_cast<Ball*>(objectList[index])->addBallToScoreboard(numOfScoredballs++);
                 }
                 //white ball
-                else */if(objectList[index]->getPos().x == objectList.front()->getPos().x
-                        && objectList[index]->getPos().y == objectList.front()->getPos().y){
-                            consecutive = 1;
-                            dynamic_cast<Ball*>(objectList[index])->resetWhiteBall(tableSize, imageScale);
+                else if(objectList[index]->getPos().x == objectList.front()->getPos().x
+                    && objectList[index]->getPos().y == objectList.front()->getPos().y){
+                        consecutive = 1;
+                        dynamic_cast<Ball*>(objectList[index])->resetWhiteBall(tableSize, imageScale);
                 }
                 //red ball
                 else{
@@ -139,10 +135,9 @@ void Pool::checkForEdgeCollision(int index){
 
 void Pool::handleCollisions(int indexOfBall){
     for(int j = 0; j < objectList.size(); j++)
-        if(j != indexOfBall){
+        if(j != indexOfBall)
             if(objectList[indexOfBall]->isInCollision(objectList[indexOfBall], objectList[j], imageScale, tableSize))
                 objectList[indexOfBall]->calculateVelocities(objectList[indexOfBall], objectList[j]);
-        }
 }
 
 void Pool::restartGame(){
@@ -150,7 +145,6 @@ void Pool::restartGame(){
         this->removeChildByTag(i, true);
     
     objectList.clear();
-    
     
     numOfScoredballs = 0;
     consecutive = 1;
@@ -195,10 +189,6 @@ void Pool::setTheWalls(){
     tableSize.width /= imageScale;
     tableSize.height /= imageScale;
     
-    createWalls(points);
-}
-
-void Pool::createWalls(std::vector<CCPoint> points){
     for(int i = 0; i < points.size(); i+=2){
         Wall* w = new Wall(points[i], points[i + 1]);
         CCDrawNode* line = CCDrawNode::create();
@@ -237,6 +227,8 @@ void Pool::setTheBalls(){
     CCSprite* whiteBall = CCSprite::create("white_ball.png");
     CCSprite* blackBall = CCSprite::create("black_ball.png");
     
+    CCSize windowSize = CCDirector::sharedDirector()->getVisibleSize();
+    
     ballSize = whiteBall->getContentSize().height;
     ballScale = (windowSize.width / 20) / whiteBall->getContentSize().width;
     
@@ -244,9 +236,7 @@ void Pool::setTheBalls(){
     whiteBall->setColor(BilliardsMenu::colorOfWhiteBall);
     objectList.push_back(b);
 
-    whiteBall->setPosition(objectList.front()->getPos());
-    whiteBall->setScale(ballScale);
-    this->addChild(whiteBall, 1, objectList.size() - 1);
+    drawBall(whiteBall);
     
     float rowOffset = sqrt(pow(ballSize, 2) - pow(ballSize / 2, 2));
     float startPosition = tableSize.height * imageScale / 2 - 2 * ballSize * ballScale;
@@ -257,27 +247,30 @@ void Pool::setTheBalls(){
         float initialOffset = (5 * ballSize / 2 - (i * ballSize / 2)) * ballScale;
         
         for(int j = 0; j < i ; j++){
-            
             if(totalBalls == BilliardsMenu::numOfBalls)
                 return;
             
-            if(i == 3 && j == 1){
+            if((i == 3 && j == 1) || (BilliardsMenu::numOfBalls < 11 && totalBalls == BilliardsMenu::numOfBalls - 1)){
                 Ball* b = new Ball(200 + (6 - i) * rowOffset * ballScale, initialOffset + startPosition + j * ballSize * ballScale, whiteBall->getContentSize().width * ballScale);
                 objectList.push_back(b);
 
-                blackBall->setPosition(objectList.back()->getPos());
-                blackBall->setScale(ballScale);
-                this->addChild(blackBall, 1, objectList.size() - 1);
+                drawBall(blackBall);
+                blackBallIndex = objectList.size() - 1;
             }
             else{
                 CCSprite* redBall = CCSprite::create("red_ball.png");
                 Ball* b = new Ball(200 + (6 - i) * rowOffset * ballScale, initialOffset + startPosition + j * ballSize * ballScale, whiteBall->getContentSize().width * ballScale);
                 objectList.push_back(b);
-                redBall->setPosition(objectList.back()->getPos());
-                redBall->setScale(ballScale);
-                this->addChild(redBall, 1, objectList.size() - 1);
+                
+                drawBall(redBall);
             }
             totalBalls++;
         }
     }
+}
+
+void Pool::drawBall(CCSprite* image){
+    image->setPosition(objectList.back()->getPos());
+    image->setScale(ballScale);
+    this->addChild(image, 1, objectList.size() - 1);
 }

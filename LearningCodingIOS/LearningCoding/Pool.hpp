@@ -9,12 +9,12 @@
 #define Pool_hpp
 
 #include <stdio.h>
+#include <math.h>
 #include "cocos2d.h"
 #include "HelloWorldScene.h"
 #include "Ball.hpp"
 #include "Wall.hpp"
 #include "Hole.hpp"
-#include <math.h>
 #include "GameObject.hpp"
 
 using namespace cocos2d;
@@ -38,28 +38,24 @@ public:
 private:
     
     float imageScale;
-    
-    float ballScale;
-    
-    CCSize windowSize;
-    
     CCSize tableSize;
-    
+
+    float ballScale;
     float ballSize;
     
     std::vector<GameObject*> objectList;
     
-    int numOfScoredballs;
-    
+    int blackBallIndex;
+
     CCLabelTTF* score;
-    
+    int numOfScoredballs;
     int consecutive;
 
 
     void setTheBalls();
     void setTheHoles();
     void setTheWalls();
-    void createWalls(std::vector<CCPoint> points);
+    void drawBall(CCSprite* image);
     
     bool ccTouchBegan(CCTouch *pTouch, CCEvent *pEvent) override;
     void ccTouchEnded(CCTouch *pTouch, CCEvent *pEvent) override;
