@@ -10,8 +10,7 @@
 
 #include <stdio.h>
 #include "cocos2d.h"
-
-#define MENU_SCALE 3
+#include "Constants.hpp"
 
 USING_NS_CC;
 

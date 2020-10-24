@@ -6,9 +6,7 @@
 //
 
 #include "MainMenuCreator.hpp"
-
-#define PORTION_OF_SCREEN 24
-
+#include "Constants.hpp"
 
 void scaleButtons (CCMenuItemToggle* item1, CCMenuItemToggle* item2, CCMenuItemToggle* item3, CCMenuItemToggle* item4){
     item1->setScale(MENU_SCALE);

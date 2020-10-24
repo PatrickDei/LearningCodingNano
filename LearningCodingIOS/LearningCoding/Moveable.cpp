@@ -6,10 +6,9 @@
 //
 
 #include "Moveable.hpp"
+#include "Constants.hpp"
 
-#define pi 3.141592654
-
-void Moveable::calculateVelocities(MyObject* obj1, MyObject* obj2){
+void Moveable::calculateVelocities(GameObject* obj1, GameObject* obj2){
     //first i need the angle between the two balls (their centers)
     CCPoint whiteBallCenter = obj1->getPos();
     CCPoint redBallCenter = obj2->getPos();

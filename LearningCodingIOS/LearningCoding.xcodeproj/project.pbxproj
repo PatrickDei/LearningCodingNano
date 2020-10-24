@@ -344,6 +344,7 @@
 		47D4DBD41CF341BF0074F3C8 /* Encoder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 47D4DBCD1CF341BF0074F3C8 /* Encoder.cpp */; };
 		47D4DBD51CF341BF0074F3C8 /* ObjectFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 47D4DBCF1CF341BF0074F3C8 /* ObjectFactory.cpp */; };
 		47D4DBD61CF341BF0074F3C8 /* Serialization.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 47D4DBD11CF341BF0074F3C8 /* Serialization.cpp */; };
+		618F72372544554E0038DFCE /* GameObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 618F72352544554E0038DFCE /* GameObject.cpp */; };
 		8E3F35CB2278A20F000C0932 /* ipadhd in Resources */ = {isa = PBXBuildFile; fileRef = 8E3F35C82278A20F000C0932 /* ipadhd */; };
 		8E3F35CC2278A20F000C0932 /* iphone in Resources */ = {isa = PBXBuildFile; fileRef = 8E3F35C92278A20F000C0932 /* iphone */; };
 		8E3F35CD2278A20F000C0932 /* ipad in Resources */ = {isa = PBXBuildFile; fileRef = 8E3F35CA2278A20F000C0932 /* ipad */; };
@@ -389,7 +390,6 @@
 		C92DAF1625273966002088D7 /* CollisionDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C92DAF1425273966002088D7 /* CollisionDelegate.cpp */; };
 		C92DAF1925273978002088D7 /* MovingDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C92DAF1725273978002088D7 /* MovingDelegate.cpp */; };
 		C92DAF1C252739F8002088D7 /* Collideable.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C92DAF1A252739F8002088D7 /* Collideable.cpp */; };
-		C92DAF1F25273C07002088D7 /* MyObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C92DAF1D25273C07002088D7 /* MyObject.cpp */; };
 		C92DAF2225273D0E002088D7 /* Moveable.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C92DAF2025273D0E002088D7 /* Moveable.cpp */; };
 		C94434D02503E04300307820 /* MainMenuCreator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C94434CE2503E04300307820 /* MainMenuCreator.cpp */; };
 		C94434D32505124A00307820 /* Games.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C94434D12505124A00307820 /* Games.cpp */; };
@@ -1191,6 +1191,9 @@
 		47FC6C491DFB180600F75A74 /* EventKitUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKitUI.framework; path = System/Library/Frameworks/EventKitUI.framework; sourceTree = SDKROOT; };
 		47FC6C4C1DFB183E00F75A74 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		47FC6C4E1DFB184200F75A74 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		618F7233254451DC0038DFCE /* Constants.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Constants.hpp; sourceTree = "<group>"; };
+		618F72352544554E0038DFCE /* GameObject.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = GameObject.cpp; sourceTree = "<group>"; };
+		618F72362544554E0038DFCE /* GameObject.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = GameObject.hpp; sourceTree = "<group>"; };
 		8E3F35C82278A20F000C0932 /* ipadhd */ = {isa = PBXFileReference; lastKnownFileType = folder; name = ipadhd; path = Resources/ipadhd; sourceTree = "<group>"; };
 		8E3F35C92278A20F000C0932 /* iphone */ = {isa = PBXFileReference; lastKnownFileType = folder; name = iphone; path = Resources/iphone; sourceTree = "<group>"; };
 		8E3F35CA2278A20F000C0932 /* ipad */ = {isa = PBXFileReference; lastKnownFileType = folder; name = ipad; path = Resources/ipad; sourceTree = "<group>"; };
@@ -1246,8 +1249,6 @@
 		C92DAF1825273978002088D7 /* MovingDelegate.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = MovingDelegate.hpp; sourceTree = "<group>"; };
 		C92DAF1A252739F8002088D7 /* Collideable.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Collideable.cpp; sourceTree = "<group>"; };
 		C92DAF1B252739F8002088D7 /* Collideable.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Collideable.hpp; sourceTree = "<group>"; };
-		C92DAF1D25273C07002088D7 /* MyObject.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = MyObject.cpp; sourceTree = "<group>"; };
-		C92DAF1E25273C07002088D7 /* MyObject.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = MyObject.hpp; sourceTree = "<group>"; };
 		C92DAF2025273D0E002088D7 /* Moveable.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Moveable.cpp; sourceTree = "<group>"; };
 		C92DAF2125273D0E002088D7 /* Moveable.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Moveable.hpp; sourceTree = "<group>"; };
 		C94434CE2503E04300307820 /* MainMenuCreator.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = MainMenuCreator.cpp; sourceTree = "<group>"; };
@@ -2811,12 +2812,13 @@
 				C92DAF1825273978002088D7 /* MovingDelegate.hpp */,
 				C92DAF1A252739F8002088D7 /* Collideable.cpp */,
 				C92DAF1B252739F8002088D7 /* Collideable.hpp */,
-				C92DAF1D25273C07002088D7 /* MyObject.cpp */,
-				C92DAF1E25273C07002088D7 /* MyObject.hpp */,
 				C92DAF2025273D0E002088D7 /* Moveable.cpp */,
 				C92DAF2125273D0E002088D7 /* Moveable.hpp */,
 				C98613F3252A695C003E847A /* Immoveable.cpp */,
 				C98613F4252A695C003E847A /* Immoveable.hpp */,
+				618F7233254451DC0038DFCE /* Constants.hpp */,
+				618F72352544554E0038DFCE /* GameObject.cpp */,
+				618F72362544554E0038DFCE /* GameObject.hpp */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -3285,6 +3287,7 @@
 				12AE09061E40E83D007827AB /* ccUTF8.cpp in Sources */,
 				C9667A702516786700129110 /* Ball.cpp in Sources */,
 				BD51F7DB208A15FD009D7D39 /* Attachment.c in Sources */,
+				618F72372544554E0038DFCE /* GameObject.cpp in Sources */,
 				17420A4A1E5F35E10050E610 /* NanoBase64.cpp in Sources */,
 				BD51F7DC208A15FD009D7D39 /* IkConstraint.c in Sources */,
 				BD51F7D1208A15FD009D7D39 /* TransformConstraint.c in Sources */,
@@ -3494,7 +3497,6 @@
 				BD51F7C7208A15FD009D7D39 /* SlotData.c in Sources */,
 				BD51F7D4208A15FD009D7D39 /* BoundingBoxAttachment.c in Sources */,
 				12AE08E81E40E83D007827AB /* CCScriptSupport.cpp in Sources */,
-				C92DAF1F25273C07002088D7 /* MyObject.cpp in Sources */,
 				12B377571E4207C500EABC29 /* NCLLoadingSettings.cpp in Sources */,
 				12AE09341E40E83D007827AB /* CCTileMapAtlas.cpp in Sources */,
 				BD51F7C9208A15FD009D7D39 /* Slot.c in Sources */,

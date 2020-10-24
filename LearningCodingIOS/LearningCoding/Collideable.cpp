@@ -6,9 +6,9 @@
 //
 
 #include "Collideable.hpp"
-#include "MyObject.hpp"
+#include "GameObject.hpp"
 
-bool Collideable::isInCollision(MyObject* obj1, MyObject* obj2, float scale, CCSize size){
+bool Collideable::isInCollision(GameObject* obj1, GameObject* obj2, float scale, CCSize size){
     int precision = 50;
     bool collidedWithABall = obj2->type == "ball";
     float checkDistanceX = (collidedWithABall) ? obj1->getVelocityX() / precision : (obj2->getPoint2().x - obj2->getPoint1().x) / precision;

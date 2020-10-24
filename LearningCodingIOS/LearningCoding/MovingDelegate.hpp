@@ -13,13 +13,13 @@
 
 USING_NS_CC;
 
-class MyObject;
+class GameObject;
 
 class MovingDelegate : public CCLayer{
 public:
-    virtual void calculateVelocities(MyObject* obj1, MyObject* obj2){}
+    virtual void calculateVelocities(GameObject* obj1, GameObject* obj2){}
     
-    virtual void bounce(MyObject* wall, MyObject* ball){}
+    virtual void bounce(GameObject* wall, GameObject* ball){}
 };
 
 #endif /* MovingDelegate_hpp */

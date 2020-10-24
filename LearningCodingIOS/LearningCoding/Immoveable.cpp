@@ -6,9 +6,10 @@
 //
 
 #include "Immoveable.hpp"
-#define pi 3.141592654
+#include "Constants.hpp"
 
-void Immoveable::bounce(MyObject* wall, MyObject* ball){
+
+void Immoveable::bounce(GameObject* wall, GameObject* ball){
     
     //angle of wall
     float fi = atan(abs(wall->getPoint1().y - wall->getPoint2().y) / abs(wall->getPoint1().x - wall->getPoint2().x));
@@ -57,7 +58,7 @@ void Immoveable::bounce(MyObject* wall, MyObject* ball){
 
 
 
-float Immoveable::angleBetweenLineAndDot(MyObject* wall, MyObject* ball, float fi){
+float Immoveable::angleBetweenLineAndDot(GameObject* wall, GameObject* ball, float fi){
     float angle;
     float x, y;
     x = wall->getPoint2().x - wall->getPoint1().x + wall->getPoint2().x - ball->getPositionX();

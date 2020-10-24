@@ -10,11 +10,11 @@
 
 #include "CollisionDelegate.hpp"
 
-class MyObject;
+class GameObject;
 
 class Collideable : public CollisionDelegate{
 protected:
-    virtual bool isInCollision(MyObject* obj1, MyObject* obj2, float scale, CCSize size) override;
+    virtual bool isInCollision(GameObject* obj1, GameObject* obj2, float scale, CCSize size) override;
     
     float distanceBetweenPoints(CCPoint one, CCPoint two);
 };

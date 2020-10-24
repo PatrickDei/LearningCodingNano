@@ -13,11 +13,11 @@
 
 USING_NS_CC;
 
-class MyObject;
+class GameObject;
 
 class CollisionDelegate : public CCLayer{
 public:
-    virtual bool isInCollision(MyObject* obj1, MyObject* obj2, float scale, CCSize size) = 0;
+    virtual bool isInCollision(GameObject* obj1, GameObject* obj2, float scale, CCSize size) = 0;
 };
 
 #endif /* CollisionDelegate_hpp */

@@ -13,9 +13,7 @@
 #include "cocos2d.h"
 #include "PuzzlePiece.hpp"
 #include "HelloWorldScene.h"
-
-#define NUM_OF_HORIZONTAL_PIECES 5
-#define NUM_OF_VERTICAL_PIECES 5
+#include "Constants.hpp"
 
 USING_NS_CC;
 

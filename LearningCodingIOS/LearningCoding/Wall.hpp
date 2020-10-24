@@ -9,13 +9,13 @@
 #define Wall_hpp
 
 #include <stdio.h>
-#include "MyObject.hpp"
+#include "GameObject.hpp"
 #include "Collideable.hpp"
 #include "Immoveable.hpp"
 
-class Wall : public MyObject{
+class Wall : public GameObject{
 public:
-    Wall(CCPoint _point1, CCPoint _point2) : MyObject(new Collideable(), new Immoveable(), _point1, _point2){}
+    Wall(CCPoint _point1, CCPoint _point2) : GameObject(new Collideable(), new Immoveable(), _point1, _point2){}
 };
 
 #endif /* Wall_hpp */

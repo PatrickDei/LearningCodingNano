@@ -9,14 +9,14 @@
 #define Immoveable_hpp
 
 #include "MovingDelegate.hpp"
-#include "MyObject.hpp"
+#include "GameObject.hpp"
 
 class Immoveable : public MovingDelegate{
 protected:
-    virtual void bounce(MyObject* wall, MyObject* ball) override;
+    virtual void bounce(GameObject* wall, GameObject* ball) override;
     
 private:
-    float angleBetweenLineAndDot(MyObject* wall, MyObject* ball, float fi);
+    float angleBetweenLineAndDot(GameObject* wall, GameObject* ball, float fi);
 };
 
 #endif /* Immoveable_hpp */

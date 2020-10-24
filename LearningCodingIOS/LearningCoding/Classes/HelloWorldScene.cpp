@@ -6,6 +6,7 @@
 #include "PolygonDraw.hpp"
 #include "PolygonManipulation.hpp"
 #include "Pool.hpp"
+#include "Constants.hpp"
 
 USING_NS_CC;
 
