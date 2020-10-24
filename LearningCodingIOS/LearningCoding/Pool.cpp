@@ -72,13 +72,13 @@ bool Pool::ccTouchBegan(CCTouch *pTouch, CCEvent *pEvent){
 
 void Pool::ccTouchEnded(CCTouch *pTouch, CCEvent *pEvent){
     CCPoint touch = pTouch->getLocation();
-    balls.front()->setVelocityX(balls.front()->getPositionX() - touch.x);
-    balls.front()->setVelocityY(balls.front()->getPositionY() - touch.y);
+    objectList.front()->setVelocityX(objectList.front()->getPositionX() - touch.x);
+    objectList.front()->setVelocityY(objectList.front()->getPositionY() - touch.y);
 }
 
 bool Pool::whiteBallIsTapped(CCPoint touch){
     float distance;
-    distance = sqrt(pow(balls.front()->getPos().x - touch.x, 2) + pow(balls.front()->getPos().y - touch.y, 2));
+    distance = sqrt(pow(objectList.front()->getPos().x - touch.x, 2) + pow(objectList.front()->getPos().y - touch.y, 2));
     return (distance <= ballSize * ballScale) ? true : false;
 }
 
@@ -86,14 +86,16 @@ bool Pool::whiteBallIsTapped(CCPoint touch){
 
 void Pool::update(float dt){
     if(!gameRestart)
-        for(int i = 0; i < balls.size(); i++){
-            checkForEdgeCollision(i);
-            checkHoles(i);
-            //"expensive" operation -> jsut checking for the ball in ball bug :D
-            if(balls[i]->getVelocityX() != 0 || balls[i]->getVelocityY() != 0)
-                handleCollisions(i);
-            balls[i]->updatePosition(dt);
-            this->getChildByTag(i)->setPosition(balls[i]->getPos());
+        for(int i = 0; i < objectList.size(); i++){
+            if(Ball* b = dynamic_cast<Ball*>(objectList[i])){
+                checkForEdgeCollision(i);
+                checkHoles(i);
+                //"expensive" operation -> jsut checking for the ball in ball bug :D
+                if(objectList[i]->getVelocityX() != 0 || objectList[i]->getVelocityY() != 0)
+                    handleCollisions(i);
+                dynamic_cast<Ball*>(objectList[i])->updatePosition(dt);
+                this->getChildByTag(i)->setPosition(objectList[i]->getPos());
+            }
         }
     else
         restartGame();
@@ -102,54 +104,60 @@ void Pool::update(float dt){
 
 
 void Pool::checkHoles(int index){
-    for(auto h : holes)
-        if(abs(balls[index]->getPositionX() - h.x) <= ballSize * ballScale && abs(balls[index]->getPositionY() - h.y) <= ballSize * ballScale){
-            //black ball
-            if(balls.size() > 11 && balls[index]->getPos().x == balls[11]->getPos().x
-                && balls[index]->getPos().y == balls[11]->getPos().y
-                && numOfScoredballs != 14){
-                    score->setString("game over");
-                    balls[index]->addBallToScoreboard(numOfScoredballs++);
+    for(auto o : objectList)
+        //check only the holes
+        if(Hole* h = dynamic_cast<Hole*>(o))
+            if(abs(objectList[index]->getPositionX() - o->getPositionX()) <= o->getSize() && abs(objectList[index]->getPositionY() - o->getPositionY()) <= o->getSize()){
+                //black ball
+                /*if(balls.size() > 11 && balls[index]->getPos().x == balls[11]->getPos().x
+                    && balls[index]->getPos().y == balls[11]->getPos().y
+                    && numOfScoredballs != 14){
+                        score->setString("game over");
+                        balls[index]->addBallToScoreboard(numOfScoredballs++);
+                }
+                //white ball
+                else */if(objectList[index]->getPos().x == objectList.front()->getPos().x
+                        && objectList[index]->getPos().y == objectList.front()->getPos().y){
+                            consecutive = 1;
+                            dynamic_cast<Ball*>(objectList[index])->resetWhiteBall(tableSize, imageScale);
+                }
+                //red ball
+                else{
+                    dynamic_cast<Ball*>(objectList[index])->addBallToScoreboard(numOfScoredballs++);
+                    score->setString(std::to_string(atoi(score->getString()) + consecutive).c_str());
+                    consecutive++;
+                }
             }
-            //white ball
-            else if(balls[index]->getPos().x == balls.front()->getPos().x
-                    && balls[index]->getPos().y == balls.front()->getPos().y){
-                        consecutive = 1;
-                        balls[index]->resetWhiteBall(tableSize, imageScale);
-            }
-            //red ball
-            else{
-                balls[index]->addBallToScoreboard(numOfScoredballs++);
-                score->setString(std::to_string(atoi(score->getString()) + consecutive).c_str());
-                consecutive++;
-            }
-        }
 }
 
 void Pool::checkForEdgeCollision(int index){
-    for(auto w : walls)
-        if(balls[index]->isInCollision(balls[index], w, imageScale, tableSize))
-            w->bounce(w, balls[index]);
+    for(auto o : objectList)
+        if(Wall* h = dynamic_cast<Wall*>(o))
+            if(objectList[index]->isInCollision(objectList[index], o, imageScale, tableSize))
+                o->bounce(o, objectList[index]);
 }
 
 void Pool::handleCollisions(int indexOfBall){
-    for(int j = 0; j < balls.size(); j++)
+    for(int j = 0; j < objectList.size(); j++)
         if(j != indexOfBall){
-            if(balls[indexOfBall]->isInCollision(balls[indexOfBall], balls[j], imageScale, tableSize))
-                balls[indexOfBall]->calculateVelocities(balls[indexOfBall], balls[j]);
+            if(objectList[indexOfBall]->isInCollision(objectList[indexOfBall], objectList[j], imageScale, tableSize))
+                objectList[indexOfBall]->calculateVelocities(objectList[indexOfBall], objectList[j]);
         }
 }
 
 void Pool::restartGame(){
-    for(int i = 0; i < balls.size(); i++)
+    for(int i = 0; i < objectList.size(); i++)
         this->removeChildByTag(i, true);
     
-    balls.clear();
+    objectList.clear();
+    
     
     numOfScoredballs = 0;
     consecutive = 1;
     
     setTheBalls();
+    setTheWalls();
+    setTheHoles();
     
     score->setValue(numOfScoredballs);
     gameRestart = false;
@@ -196,7 +204,7 @@ void Pool::createWalls(std::vector<CCPoint> points){
         CCDrawNode* line = CCDrawNode::create();
         line->drawSegment(points[i], points[i + 1], 5, ccc4f(1, 1, 1, 1));
         this->addChild(line);
-        walls.push_back(w);
+        objectList.push_back(w);
     }
 }
 
@@ -204,6 +212,7 @@ void Pool::setTheHoles(){
     tableSize.width *= imageScale;
     tableSize.height *= imageScale;
     
+    std::vector<CCPoint> holes;
     holes.push_back(CCPoint(tableSize.width / 11 - ballSize / 2, tableSize.height / 6 - ballSize / 2));
     holes.push_back(CCPoint(tableSize.width / 2, tableSize.height / 6 - ballSize * 3 / 4));
     holes.push_back(CCPoint(tableSize.width - tableSize.width / 11 + ballSize / 2, tableSize.height / 6 - ballSize / 2));
@@ -218,11 +227,13 @@ void Pool::setTheHoles(){
         CCDrawNode* dot = CCDrawNode::create();
         dot->drawDot(h, ballSize * ballScale, ccc4f(0, 1, 0, 0.3));
         this->addChild(dot);
+        Hole* hole = new Hole(h.x, h.y, ballSize * ballScale);
+        objectList.push_back(hole);
     }
 }
 
 void Pool::setTheBalls(){
-    int tagIndex = 0;
+    //int tagIndex = 0;
     CCSprite* whiteBall = CCSprite::create("white_ball.png");
     CCSprite* blackBall = CCSprite::create("black_ball.png");
     
@@ -231,11 +242,11 @@ void Pool::setTheBalls(){
     
     Ball* b = new Ball(tableSize.width * imageScale * 3 / 4, tableSize.height * imageScale / 2, whiteBall->getContentSize().width * ballScale);
     whiteBall->setColor(BilliardsMenu::colorOfWhiteBall);
-    balls.push_back(b);
+    objectList.push_back(b);
 
-    whiteBall->setPosition(balls.front()->getPos());
+    whiteBall->setPosition(objectList.front()->getPos());
     whiteBall->setScale(ballScale);
-    this->addChild(whiteBall, 1, tagIndex++);
+    this->addChild(whiteBall, 1, objectList.size() - 1);
     
     float rowOffset = sqrt(pow(ballSize, 2) - pow(ballSize / 2, 2));
     float startPosition = tableSize.height * imageScale / 2 - 2 * ballSize * ballScale;
@@ -252,19 +263,19 @@ void Pool::setTheBalls(){
             
             if(i == 3 && j == 1){
                 Ball* b = new Ball(200 + (6 - i) * rowOffset * ballScale, initialOffset + startPosition + j * ballSize * ballScale, whiteBall->getContentSize().width * ballScale);
-                balls.push_back(b);
+                objectList.push_back(b);
 
-                blackBall->setPosition(balls.back()->getPos());
+                blackBall->setPosition(objectList.back()->getPos());
                 blackBall->setScale(ballScale);
-                this->addChild(blackBall, 1, tagIndex++);
+                this->addChild(blackBall, 1, objectList.size() - 1);
             }
             else{
                 CCSprite* redBall = CCSprite::create("red_ball.png");
                 Ball* b = new Ball(200 + (6 - i) * rowOffset * ballScale, initialOffset + startPosition + j * ballSize * ballScale, whiteBall->getContentSize().width * ballScale);
-                balls.push_back(b);
-                redBall->setPosition(balls.back()->getPos());
+                objectList.push_back(b);
+                redBall->setPosition(objectList.back()->getPos());
                 redBall->setScale(ballScale);
-                this->addChild(redBall, 1, tagIndex++);
+                this->addChild(redBall, 1, objectList.size() - 1);
             }
             totalBalls++;
         }

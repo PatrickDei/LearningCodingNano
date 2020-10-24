@@ -13,7 +13,9 @@
 #include "HelloWorldScene.h"
 #include "Ball.hpp"
 #include "Wall.hpp"
+#include "Hole.hpp"
 #include <math.h>
+#include "GameObject.hpp"
 
 using namespace cocos2d;
 
@@ -45,11 +47,7 @@ private:
     
     float ballSize;
     
-    std::vector<Ball*> balls;
-    
-    std::vector<Wall*> walls;
-    
-    std::vector<CCPoint> holes;
+    std::vector<GameObject*> objectList;
     
     int numOfScoredballs;
     

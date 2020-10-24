@@ -34,9 +34,13 @@ public:
     
     std::string type;
     
-    GameObject(CollisionDelegate* c, MovingDelegate* m, float x, float y, float size) : collideable(c), moveable(m), positionX(x), positionY(y), sizeOfObject(size), scored(false), type("ball"){}
+    //ball & hole constructor
+    GameObject(CollisionDelegate* c, MovingDelegate* m, float x, float y, float size, std::string t) : collideable(c), moveable(m), positionX(x), positionY(y), sizeOfObject(size), scored(false), type(t){}
     
+    //wall constructor
     GameObject(CollisionDelegate* c, MovingDelegate* m, CCPoint one, CCPoint two) : collideable(c), moveable(m), point1(one), point2(two), type("wall"){}
+    
+    virtual ~GameObject() {}
     
     bool isInCollision(GameObject* obj1, GameObject* obj2, float scale, CCSize size);
     void calculateVelocities(GameObject* obj1, GameObject* obj2);

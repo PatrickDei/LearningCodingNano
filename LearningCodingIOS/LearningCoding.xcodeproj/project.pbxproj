@@ -345,6 +345,7 @@
 		47D4DBD51CF341BF0074F3C8 /* ObjectFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 47D4DBCF1CF341BF0074F3C8 /* ObjectFactory.cpp */; };
 		47D4DBD61CF341BF0074F3C8 /* Serialization.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 47D4DBD11CF341BF0074F3C8 /* Serialization.cpp */; };
 		618F72372544554E0038DFCE /* GameObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 618F72352544554E0038DFCE /* GameObject.cpp */; };
+		618F723A2544C9300038DFCE /* Hole.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 618F72382544C9300038DFCE /* Hole.cpp */; };
 		8E3F35CB2278A20F000C0932 /* ipadhd in Resources */ = {isa = PBXBuildFile; fileRef = 8E3F35C82278A20F000C0932 /* ipadhd */; };
 		8E3F35CC2278A20F000C0932 /* iphone in Resources */ = {isa = PBXBuildFile; fileRef = 8E3F35C92278A20F000C0932 /* iphone */; };
 		8E3F35CD2278A20F000C0932 /* ipad in Resources */ = {isa = PBXBuildFile; fileRef = 8E3F35CA2278A20F000C0932 /* ipad */; };
@@ -1194,6 +1195,8 @@
 		618F7233254451DC0038DFCE /* Constants.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Constants.hpp; sourceTree = "<group>"; };
 		618F72352544554E0038DFCE /* GameObject.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = GameObject.cpp; sourceTree = "<group>"; };
 		618F72362544554E0038DFCE /* GameObject.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = GameObject.hpp; sourceTree = "<group>"; };
+		618F72382544C9300038DFCE /* Hole.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Hole.cpp; sourceTree = "<group>"; };
+		618F72392544C9300038DFCE /* Hole.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Hole.hpp; sourceTree = "<group>"; };
 		8E3F35C82278A20F000C0932 /* ipadhd */ = {isa = PBXFileReference; lastKnownFileType = folder; name = ipadhd; path = Resources/ipadhd; sourceTree = "<group>"; };
 		8E3F35C92278A20F000C0932 /* iphone */ = {isa = PBXFileReference; lastKnownFileType = folder; name = iphone; path = Resources/iphone; sourceTree = "<group>"; };
 		8E3F35CA2278A20F000C0932 /* ipad */ = {isa = PBXFileReference; lastKnownFileType = folder; name = ipad; path = Resources/ipad; sourceTree = "<group>"; };
@@ -2781,6 +2784,7 @@
 			isa = PBXGroup;
 			children = (
 				12F9C2151CEC67B5001AD81C /* Base */,
+				618F7233254451DC0038DFCE /* Constants.hpp */,
 				8EF775572277531800E87567 /* AppMacros.h */,
 				8EF775502277500900E87567 /* HelloWorldScene.cpp */,
 				8EF7754F2277500900E87567 /* HelloWorldScene.h */,
@@ -2804,8 +2808,12 @@
 				C9667A6F2516786700129110 /* Ball.hpp */,
 				C98613F0252A4770003E847A /* Wall.cpp */,
 				C98613F1252A4770003E847A /* Wall.hpp */,
+				618F72382544C9300038DFCE /* Hole.cpp */,
+				618F72392544C9300038DFCE /* Hole.hpp */,
 				C90F8D7B25225B7F000665AB /* BilliardsMenu.cpp */,
 				C90F8D7C25225B7F000665AB /* BilliardsMenu.hpp */,
+				618F72352544554E0038DFCE /* GameObject.cpp */,
+				618F72362544554E0038DFCE /* GameObject.hpp */,
 				C92DAF1425273966002088D7 /* CollisionDelegate.cpp */,
 				C92DAF1525273966002088D7 /* CollisionDelegate.hpp */,
 				C92DAF1725273978002088D7 /* MovingDelegate.cpp */,
@@ -2816,9 +2824,6 @@
 				C92DAF2125273D0E002088D7 /* Moveable.hpp */,
 				C98613F3252A695C003E847A /* Immoveable.cpp */,
 				C98613F4252A695C003E847A /* Immoveable.hpp */,
-				618F7233254451DC0038DFCE /* Constants.hpp */,
-				618F72352544554E0038DFCE /* GameObject.cpp */,
-				618F72362544554E0038DFCE /* GameObject.hpp */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -3360,6 +3365,7 @@
 				12B376CE1E42075100EABC29 /* CCControlHuePicker.cpp in Sources */,
 				12AE09021E40E83D007827AB /* CCPointExtension.cpp in Sources */,
 				10ED60342189AFFC0054B581 /* CCData.cpp in Sources */,
+				618F723A2544C9300038DFCE /* Hole.cpp in Sources */,
 				12AE08881E40E83C007827AB /* CCAccelerometer.mm in Sources */,
 				47D4DBD31CF341BF0074F3C8 /* Decoder.cpp in Sources */,
 				12F9C11F1CEC6709001AD81C /* cpBB.c in Sources */,
