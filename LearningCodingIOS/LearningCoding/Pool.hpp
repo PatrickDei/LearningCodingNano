@@ -43,10 +43,10 @@ private:
     float ballScale;
     float ballSize;
     
+    int blackBallIndex;
+    
     std::vector<GameObject*> objectList;
     
-    int blackBallIndex;
-
     CCLabelTTF* score;
     int numOfScoredballs;
     int consecutive;
