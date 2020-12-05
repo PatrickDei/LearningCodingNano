@@ -2,9 +2,34 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>settings</key>
+	<dict>
+		<key>device</key>
+		<string>Custom</string>
+		<key>deviceFactor</key>
+		<string>1</string>
+		<key>deviceSize</key>
+		<string>500,500</string>
+		<key>shouldRemoveDevExt</key>
+		<string>0</string>
+		<key>version</key>
+		<string>1.4</string>
+	</dict>
 	<key>children</key>
 	<array>
 		<dict>
+			<key>class</key>
+			<string>Node</string>
+			<key>name</key>
+			<string>rootNode</string>
+			<key>posAbs</key>
+			<string>0,0</string>
+			<key>posRel</key>
+			<string>0,0</string>
+			<key>sizeAbs</key>
+			<string>500,480</string>
+			<key>sizeRel</key>
+			<string>0,0</string>
 			<key>children</key>
 			<array>
 				<dict>
@@ -618,32 +643,7 @@
 					<string>center</string>
 				</dict>
 			</array>
-			<key>class</key>
-			<string>Node</string>
-			<key>name</key>
-			<string>rootNode</string>
-			<key>posAbs</key>
-			<string>0,0</string>
-			<key>posRel</key>
-			<string>0,0</string>
-			<key>sizeAbs</key>
-			<string>500,480</string>
-			<key>sizeRel</key>
-			<string>0,0</string>
 		</dict>
 	</array>
-	<key>settings</key>
-	<dict>
-		<key>device</key>
-		<string>Custom</string>
-		<key>deviceFactor</key>
-		<string>1</string>
-		<key>deviceSize</key>
-		<string>500,500</string>
-		<key>shouldRemoveDevExt</key>
-		<string>0</string>
-		<key>version</key>
-		<string>1.4</string>
-	</dict>
 </dict>
 </plist>

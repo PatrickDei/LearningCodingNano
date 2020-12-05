@@ -58,7 +58,11 @@ private:
     void closeMenu();
     void playGame();
     
-    CCPoint quickAdjust(CCPoint point);
+    void onEnterAnim();
+    void buttonAnim(CCNode* button, bool moveTheBox);
+    
+    void animationStart();
+    void animationEnd();
 };
 
 #endif /* BilliardsMenu_hpp */

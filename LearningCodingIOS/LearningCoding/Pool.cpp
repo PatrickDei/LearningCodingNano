@@ -7,7 +7,6 @@
 
 #include "Pool.hpp"
 #include "BilliardsMenu.hpp"
-#include "ButtonCreator.hpp"
 
 bool Pool::gameRestart = false;
 
@@ -26,13 +25,16 @@ bool Pool::init(){
         return false;
     }
     
-    BilliardsMenu* billiardsMenu = BilliardsMenu::create();
-    billiardsMenu->setZOrder(2);
-    this->addChild(billiardsMenu);
+    startTheMenu();
         
     CCSize windowSize = CCDirector::sharedDirector()->getVisibleSize();
     
-    this->addChild(createBackButton(this, windowSize));
+    CCMenuItemImage* image = CCMenuItemImage::create("button_close.png", "button_close_selected.png");
+    CCMenuItemToggle* menuButton = CCMenuItemToggle::createWithTarget(this, menu_selector(Pool::startTheMenu), image, NULL);
+    menuButton->setPosition(ccp(menuButton->getContentSize().width / 2, windowSize.height - menuButton->getContentSize().height / 2));
+    CCMenu* menu = CCMenu::create(menuButton, NULL);
+    menu->setPosition(CCPointZero);
+    this->addChild(menu, 2);
     
     CCSprite* table = CCSprite::create("pool_table.png");
     
@@ -58,6 +60,12 @@ bool Pool::init(){
     this->scheduleUpdate();
 
     return true;
+}
+
+void Pool::startTheMenu(){
+    BilliardsMenu* billiardsMenu = BilliardsMenu::create();
+    billiardsMenu->setZOrder(2);
+    this->addChild(billiardsMenu);
 }
 
 bool Pool::ccTouchBegan(CCTouch *pTouch, CCEvent *pEvent){

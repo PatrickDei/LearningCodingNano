@@ -68,6 +68,8 @@ private:
     void checkHoles(int index);
     
     void restartGame();
+    
+    void startTheMenu();
 };
 
 #endif /* Pool_hpp */
