@@ -16,7 +16,6 @@
 #include <ctype.h>
 #include "stdio.h"
 #include <stdlib.h>
-#include <openssl/md5.h>
 using namespace std;
 
 //#include "GameState.h"
@@ -33,10 +32,6 @@ using namespace std;
 //#include "InAppPurchaseManager.h"
 
 using namespace cocos2d::extension;
-
-extern "C" {
-#include "libb64.h"
-}
 
 // modify in CCNative_objc.mm to prevent freeze when multiple alerts come up :
 
@@ -1898,21 +1893,6 @@ std::vector<std::string> split(const std::string &s, char delim)
     std::vector<std::string> elems;
     split(s, delim, elems);
     return elems;
-}
-
-std::string fileMd5(std::string fullPath)
-{
-    unsigned long nSize = 0;
-    unsigned char *pBuffer = CCFileUtils::sharedFileUtils()->getFileData(fullPath.c_str(), "r", &nSize);
-    unsigned char result[MD5_DIGEST_LENGTH];
-    MD5(pBuffer, nSize, result);
-    char mdString[33];
-
-    for (int i = 0; i < MD5_DIGEST_LENGTH; i++)
-        sprintf(&mdString[i * 2], "%02x", (unsigned int)result[i]);
-
-    free(pBuffer);
-    return std::string(mdString);
 }
 
 //bool isCountryUS(std::string countryCode)

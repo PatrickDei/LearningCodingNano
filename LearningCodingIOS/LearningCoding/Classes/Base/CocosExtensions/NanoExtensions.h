@@ -183,6 +183,4 @@ std::vector<std::string> split(const std::string &s, char delim);
 bool isCountryUS(std::string countryCode);
 bool isCountryEU(std::string countryCode);
 
-std::string fileMd5(std::string filename);
-
 #endif /* defined(__NanoGirl__NanoExtensions__) */
