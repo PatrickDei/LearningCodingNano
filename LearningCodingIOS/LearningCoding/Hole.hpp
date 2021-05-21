@@ -10,15 +10,14 @@
 
 #include <stdio.h>
 #include "cocos2d.h"
-#include "GameObject.hpp"
-#include "Collideable.hpp"
-#include "Immoveable.hpp"
+#include "PoolObject.hpp"
+#include "NonMoveableObject.hpp"
 
 USING_NS_CC;
 
-class Hole : public GameObject{
+class Hole : public PoolObject{
 public:
-    Hole(float x, float y, float size) : GameObject(new Collideable(), new Immoveable(), x, y, size, "hole"){}
+    Hole(float x, float y, float size) : PoolObject(x, y, size, size, new NonMoveableObject()){}
 };
 
 #endif /* Hole_hpp */

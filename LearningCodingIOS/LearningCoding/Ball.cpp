@@ -8,26 +8,52 @@
 #include "Ball.hpp"
 #include "Pool.hpp"
 
+float Ball::getVelocityX(){
+    return _velocityX;
+}
+
+void Ball::setVelocityX(float velocity){
+    if(velocity <= MAX_SPEED && velocity >= -MAX_SPEED)
+        _velocityX = velocity;
+}
+
+float Ball::getVelocityY(){
+    return _velocityY;
+}
+
+void Ball::setVelocityY(float velocity){
+    if(velocity <= MAX_SPEED && velocity >= -MAX_SPEED)
+        _velocityY = velocity;
+}
+
 void Ball::addBallToScoreboard(int numOfScoredBalls){
     this->setVelocityX(0);
     this->setVelocityY(0);
-    this->positionX = this->sizeOfObject + this->sizeOfObject * numOfScoredBalls;
-    this->positionY = CCDirector::sharedDirector()->getVisibleSize().height / 2;
+    
+    float horizontalPosition = this->getSize().width * (numOfScoredBalls + 1);
+    float verticalPosition = CCDirector::sharedDirector()->getVisibleSize().height / 2;
+    
+    this->setPosition(horizontalPosition, verticalPosition);
+    
     this->scored = true;
 }
 
 void Ball::resetWhiteBall(CCSize tableSize, float imageScale){
-    this->positionX = tableSize.width * imageScale * 3 / 4;
-    this->positionY = tableSize.height * imageScale / 2;
+    this->setPosition(tableSize.width * imageScale * 3 / 4
+                      , tableSize.height * imageScale / 2);
+    
     this->setVelocityX(0);
     this->setVelocityY(0);
 }
 
 void Ball::updatePosition(float dt){
-    positionX = positionX + velocityX * friction * dt * 30;
-    positionY = positionY + velocityY * friction * dt * 30;
+    float delta = friction * dt * 30;
     
-    //slow the ball down
-    velocityX *= friction;
-    velocityY *= friction;
+    Position newPosition(this->getPostition().x + _velocityX * delta
+                         , this->getPostition().y + _velocityY * delta);
+    
+    performUpdate(newPosition.x, newPosition.y);
+    
+    _velocityX *= friction;
+    _velocityY *= friction;
 }

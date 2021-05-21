@@ -10,24 +10,43 @@
 
 #include <stdio.h>
 #include "cocos2d.h"
-#include "GameObject.hpp"
-#include "Moveable.hpp"
-#include "Collideable.hpp"
+#include "PoolObject.hpp"
+#include "MoveableObject.hpp"
+#include "Constants.hpp"
+#include "BallCollider.hpp"
 USING_NS_CC;
 
-class Ball : public GameObject{
+class Ball : public PoolObject{
 public:
+    bool scored;
     
-    Ball(float x, float y, float size) : friction(0.9), GameObject(new Collideable(), new Moveable(), x, y, size, "ball") {}
-    
-    void updatePosition(float dt);
-            
+    Ball(float x, float y, float radius)
+        : friction(0.9)
+        , PoolObject(x, y, radius, radius, new MoveableObject(), new BallCollider())
+        , previousPosition(x, y)
+        , scored(false) {}
+                
     void addBallToScoreboard(int numOfScoredBalls);
     
     void resetWhiteBall(CCSize tableSize, float imageScale);
     
+    virtual void updatePosition(float dt) override;
+    
 private:
     float friction;
-};
+    
+    float _velocityX;
+    float _velocityY;
+    
+    Position previousPosition;
+    
+    float getVelocityX();
+    
+    void setVelocityX(float velocity);
+    
+    float getVelocityY();
+    
+    void setVelocityY(float velocity);
+    };
 
 #endif /* Ball_hpp */

@@ -348,6 +348,13 @@
 		617036C6265514FB00AD3A74 /* Puzzle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 617036B3265514FA00AD3A74 /* Puzzle.cpp */; };
 		617036C7265514FB00AD3A74 /* MainMenuCreator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 617036B7265514FB00AD3A74 /* MainMenuCreator.cpp */; };
 		617036C8265514FB00AD3A74 /* Collideable.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 617036BB265514FB00AD3A74 /* Collideable.cpp */; };
+		61F85911265802F000F898F5 /* PoolObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 61F8590F265802F000F898F5 /* PoolObject.cpp */; };
+		61F85915265809F300F898F5 /* UpdateDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 61F85913265809F300F898F5 /* UpdateDelegate.cpp */; };
+		61F8591A26580B2300F898F5 /* MoveableObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 61F8591826580B2300F898F5 /* MoveableObject.cpp */; };
+		61F8591E26580C6000F898F5 /* NonMoveableObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 61F8591C26580C6000F898F5 /* NonMoveableObject.cpp */; };
+		61F8592526581E6A00F898F5 /* ColliderDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 61F8592326581E6A00F898F5 /* ColliderDelegate.cpp */; };
+		61F8592926581FAF00F898F5 /* BallCollider.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 61F8592726581FAF00F898F5 /* BallCollider.cpp */; };
+		61F8592D2658219600F898F5 /* WallCollider.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 61F8592B2658219600F898F5 /* WallCollider.cpp */; };
 		8E3F35CB2278A20F000C0932 /* ipadhd in Resources */ = {isa = PBXBuildFile; fileRef = 8E3F35C82278A20F000C0932 /* ipadhd */; };
 		8E3F35CC2278A20F000C0932 /* iphone in Resources */ = {isa = PBXBuildFile; fileRef = 8E3F35C92278A20F000C0932 /* iphone */; };
 		8E3F35CD2278A20F000C0932 /* ipad in Resources */ = {isa = PBXBuildFile; fileRef = 8E3F35CA2278A20F000C0932 /* ipad */; };
@@ -1100,6 +1107,20 @@
 		617036B9265514FB00AD3A74 /* PolygonManipulation.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = PolygonManipulation.hpp; sourceTree = "<group>"; };
 		617036BA265514FB00AD3A74 /* Hole.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Hole.hpp; sourceTree = "<group>"; };
 		617036BB265514FB00AD3A74 /* Collideable.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Collideable.cpp; sourceTree = "<group>"; };
+		61F8590F265802F000F898F5 /* PoolObject.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = PoolObject.cpp; path = Classes/Pool/PoolObject.cpp; sourceTree = "<group>"; };
+		61F85910265802F000F898F5 /* PoolObject.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = PoolObject.hpp; path = Classes/Pool/PoolObject.hpp; sourceTree = "<group>"; };
+		61F85913265809F300F898F5 /* UpdateDelegate.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = UpdateDelegate.cpp; path = Classes/Pool/UpdateDelegate.cpp; sourceTree = "<group>"; };
+		61F85914265809F300F898F5 /* UpdateDelegate.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = UpdateDelegate.hpp; path = Classes/Pool/UpdateDelegate.hpp; sourceTree = "<group>"; };
+		61F8591826580B2300F898F5 /* MoveableObject.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = MoveableObject.cpp; path = Classes/Pool/MoveableObject.cpp; sourceTree = "<group>"; };
+		61F8591926580B2300F898F5 /* MoveableObject.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = MoveableObject.hpp; path = Classes/Pool/MoveableObject.hpp; sourceTree = "<group>"; };
+		61F8591C26580C6000F898F5 /* NonMoveableObject.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = NonMoveableObject.cpp; path = Classes/Pool/NonMoveableObject.cpp; sourceTree = "<group>"; };
+		61F8591D26580C6000F898F5 /* NonMoveableObject.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = NonMoveableObject.hpp; path = Classes/Pool/NonMoveableObject.hpp; sourceTree = "<group>"; };
+		61F8592326581E6A00F898F5 /* ColliderDelegate.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ColliderDelegate.cpp; path = Classes/Pool/ColliderDelegate.cpp; sourceTree = "<group>"; };
+		61F8592426581E6A00F898F5 /* ColliderDelegate.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = ColliderDelegate.hpp; path = Classes/Pool/ColliderDelegate.hpp; sourceTree = "<group>"; };
+		61F8592726581FAF00F898F5 /* BallCollider.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = BallCollider.cpp; path = Classes/Pool/BallCollider.cpp; sourceTree = "<group>"; };
+		61F8592826581FAF00F898F5 /* BallCollider.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = BallCollider.hpp; path = Classes/Pool/BallCollider.hpp; sourceTree = "<group>"; };
+		61F8592B2658219600F898F5 /* WallCollider.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = WallCollider.cpp; path = Classes/Pool/WallCollider.cpp; sourceTree = "<group>"; };
+		61F8592C2658219600F898F5 /* WallCollider.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = WallCollider.hpp; path = Classes/Pool/WallCollider.hpp; sourceTree = "<group>"; };
 		8E3F35C82278A20F000C0932 /* ipadhd */ = {isa = PBXFileReference; lastKnownFileType = folder; name = ipadhd; path = Resources/ipadhd; sourceTree = "<group>"; };
 		8E3F35C92278A20F000C0932 /* iphone */ = {isa = PBXFileReference; lastKnownFileType = folder; name = iphone; path = Resources/iphone; sourceTree = "<group>"; };
 		8E3F35CA2278A20F000C0932 /* ipad */ = {isa = PBXFileReference; lastKnownFileType = folder; name = ipad; path = Resources/ipad; sourceTree = "<group>"; };
@@ -2416,43 +2437,16 @@
 		12F9BE521CEC651D001AD81C /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				617036AA265514FA00AD3A74 /* Ball.cpp */,
-				617036A9265514FA00AD3A74 /* Ball.hpp */,
-				617036AB265514FA00AD3A74 /* BilliardsMenu.cpp */,
-				617036A4265514F900AD3A74 /* BilliardsMenu.hpp */,
-				617036AC265514FA00AD3A74 /* ButtonCreator.cpp */,
-				617036B4265514FA00AD3A74 /* ButtonCreator.hpp */,
-				617036BB265514FB00AD3A74 /* Collideable.cpp */,
-				617036B6265514FA00AD3A74 /* Collideable.hpp */,
-				617036A2265514F900AD3A74 /* CollisionDelegate.hpp */,
-				617036A3265514F900AD3A74 /* Constants.hpp */,
-				6170369F265514F900AD3A74 /* GameObject.cpp */,
-				617036AE265514FA00AD3A74 /* GameObject.hpp */,
-				617036BA265514FB00AD3A74 /* Hole.hpp */,
-				617036AF265514FA00AD3A74 /* Immoveable.cpp */,
-				617036B2265514FA00AD3A74 /* Immoveable.hpp */,
-				617036B7265514FB00AD3A74 /* MainMenuCreator.cpp */,
-				617036B8265514FB00AD3A74 /* MainMenuCreator.hpp */,
-				617036B1265514FA00AD3A74 /* Moveable.cpp */,
-				617036A6265514FA00AD3A74 /* Moveable.hpp */,
-				617036A7265514FA00AD3A74 /* MovingDelegate.hpp */,
-				617036A8265514FA00AD3A74 /* PolygonDraw.cpp */,
-				617036A5265514FA00AD3A74 /* PolygonDraw.hpp */,
-				6170369E265514F900AD3A74 /* PolygonManipulation.cpp */,
-				617036B9265514FB00AD3A74 /* PolygonManipulation.hpp */,
-				617036B0265514FA00AD3A74 /* Pool.cpp */,
-				617036B5265514FA00AD3A74 /* Pool.hpp */,
+				61BEC16926568089009D9526 /* Constants */,
+				61BEC16826568078009D9526 /* MainMenuScene */,
+				61BEC16426567FEA009D9526 /* PuzzleGame */,
+				61BEC16526568019009D9526 /* PolygonDraw */,
+				61BEC16626568024009D9526 /* PolygonManipulation */,
+				61BEC16726568046009D9526 /* PoolGame */,
 				6170369C265514F900AD3A74 /* Prefix.pch */,
-				617036B3265514FA00AD3A74 /* Puzzle.cpp */,
-				617036A0265514F900AD3A74 /* Puzzle.hpp */,
-				6170369D265514F900AD3A74 /* PuzzlePiece.cpp */,
-				617036AD265514FA00AD3A74 /* PuzzlePiece.hpp */,
-				617036A1265514F900AD3A74 /* Wall.hpp */,
 				8EF775572277531800E87567 /* AppMacros.h */,
 				12F9BE541CEC651D001AD81C /* AppDelegate.cpp */,
 				12F9BE531CEC651D001AD81C /* AppDelegate.h */,
-				8EF775502277500900E87567 /* HelloWorldScene.cpp */,
-				8EF7754F2277500900E87567 /* HelloWorldScene.h */,
 				12F9C2151CEC67B5001AD81C /* Base */,
 			);
 			name = Classes;
@@ -2661,6 +2655,103 @@
 			path = libs/GHODictionary;
 			sourceTree = "<group>";
 		};
+		61BEC16426567FEA009D9526 /* PuzzleGame */ = {
+			isa = PBXGroup;
+			children = (
+				617036B3265514FA00AD3A74 /* Puzzle.cpp */,
+				617036A0265514F900AD3A74 /* Puzzle.hpp */,
+				6170369D265514F900AD3A74 /* PuzzlePiece.cpp */,
+				617036AD265514FA00AD3A74 /* PuzzlePiece.hpp */,
+			);
+			name = PuzzleGame;
+			sourceTree = "<group>";
+		};
+		61BEC16526568019009D9526 /* PolygonDraw */ = {
+			isa = PBXGroup;
+			children = (
+				617036A8265514FA00AD3A74 /* PolygonDraw.cpp */,
+				617036A5265514FA00AD3A74 /* PolygonDraw.hpp */,
+			);
+			name = PolygonDraw;
+			sourceTree = "<group>";
+		};
+		61BEC16626568024009D9526 /* PolygonManipulation */ = {
+			isa = PBXGroup;
+			children = (
+				6170369E265514F900AD3A74 /* PolygonManipulation.cpp */,
+				617036B9265514FB00AD3A74 /* PolygonManipulation.hpp */,
+			);
+			name = PolygonManipulation;
+			sourceTree = "<group>";
+		};
+		61BEC16726568046009D9526 /* PoolGame */ = {
+			isa = PBXGroup;
+			children = (
+				617036AA265514FA00AD3A74 /* Ball.cpp */,
+				617036A9265514FA00AD3A74 /* Ball.hpp */,
+				617036AB265514FA00AD3A74 /* BilliardsMenu.cpp */,
+				617036A4265514F900AD3A74 /* BilliardsMenu.hpp */,
+				617036BB265514FB00AD3A74 /* Collideable.cpp */,
+				617036B6265514FA00AD3A74 /* Collideable.hpp */,
+				617036A2265514F900AD3A74 /* CollisionDelegate.hpp */,
+				6170369F265514F900AD3A74 /* GameObject.cpp */,
+				617036AE265514FA00AD3A74 /* GameObject.hpp */,
+				617036BA265514FB00AD3A74 /* Hole.hpp */,
+				617036AF265514FA00AD3A74 /* Immoveable.cpp */,
+				617036B2265514FA00AD3A74 /* Immoveable.hpp */,
+				617036B1265514FA00AD3A74 /* Moveable.cpp */,
+				617036A6265514FA00AD3A74 /* Moveable.hpp */,
+				617036A7265514FA00AD3A74 /* MovingDelegate.hpp */,
+				617036B0265514FA00AD3A74 /* Pool.cpp */,
+				617036B5265514FA00AD3A74 /* Pool.hpp */,
+				617036A1265514F900AD3A74 /* Wall.hpp */,
+				61F8592126580E9C00F898F5 /* Rework */,
+			);
+			name = PoolGame;
+			sourceTree = "<group>";
+		};
+		61BEC16826568078009D9526 /* MainMenuScene */ = {
+			isa = PBXGroup;
+			children = (
+				8EF775502277500900E87567 /* HelloWorldScene.cpp */,
+				8EF7754F2277500900E87567 /* HelloWorldScene.h */,
+				617036AC265514FA00AD3A74 /* ButtonCreator.cpp */,
+				617036B4265514FA00AD3A74 /* ButtonCreator.hpp */,
+				617036B7265514FB00AD3A74 /* MainMenuCreator.cpp */,
+				617036B8265514FB00AD3A74 /* MainMenuCreator.hpp */,
+			);
+			name = MainMenuScene;
+			sourceTree = "<group>";
+		};
+		61BEC16926568089009D9526 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				617036A3265514F900AD3A74 /* Constants.hpp */,
+			);
+			name = Constants;
+			sourceTree = "<group>";
+		};
+		61F8592126580E9C00F898F5 /* Rework */ = {
+			isa = PBXGroup;
+			children = (
+				61F8590F265802F000F898F5 /* PoolObject.cpp */,
+				61F85910265802F000F898F5 /* PoolObject.hpp */,
+				61F85913265809F300F898F5 /* UpdateDelegate.cpp */,
+				61F85914265809F300F898F5 /* UpdateDelegate.hpp */,
+				61F8591826580B2300F898F5 /* MoveableObject.cpp */,
+				61F8591926580B2300F898F5 /* MoveableObject.hpp */,
+				61F8591C26580C6000F898F5 /* NonMoveableObject.cpp */,
+				61F8591D26580C6000F898F5 /* NonMoveableObject.hpp */,
+				61F8592326581E6A00F898F5 /* ColliderDelegate.cpp */,
+				61F8592426581E6A00F898F5 /* ColliderDelegate.hpp */,
+				61F8592726581FAF00F898F5 /* BallCollider.cpp */,
+				61F8592826581FAF00F898F5 /* BallCollider.hpp */,
+				61F8592B2658219600F898F5 /* WallCollider.cpp */,
+				61F8592C2658219600F898F5 /* WallCollider.hpp */,
+			);
+			name = Rework;
+			sourceTree = "<group>";
+		};
 		8EF775542277529200E87567 /* NanoGameServer */ = {
 			isa = PBXGroup;
 			children = (
@@ -2844,6 +2935,7 @@
 				12AE06B61E40E83A007827AB /* aabb.c in Sources */,
 				12B377511E4207C500EABC29 /* CEMenuItemCycle.cpp in Sources */,
 				12B377301E42075100EABC29 /* spine-cocos2dx.cpp in Sources */,
+				61F8592526581E6A00F898F5 /* ColliderDelegate.cpp in Sources */,
 				12AE08961E40E83C007827AB /* CCFileUtilsIOS.mm in Sources */,
 				12AE06A21E40E83A007827AB /* CCNS.cpp in Sources */,
 				47D4DBC31CF341890074F3C8 /* CCMoveWithFunc.cpp in Sources */,
@@ -2872,6 +2964,7 @@
 				12F9C11E1CEC6709001AD81C /* cpArray.c in Sources */,
 				12B377611E4207C600EABC29 /* NCLWidgetCache.cpp in Sources */,
 				12B3774D1E4207C500EABC29 /* lz4.c in Sources */,
+				61F8592926581FAF00F898F5 /* BallCollider.cpp in Sources */,
 				1259A2071E4DC9FF00483120 /* msgpack.cpp in Sources */,
 				12B3777F1E42088D00EABC29 /* json_writer.cpp in Sources */,
 				12AE067E1E40E83A007827AB /* CCActionProgressTimer.cpp in Sources */,
@@ -2954,6 +3047,7 @@
 				12AE08881E40E83C007827AB /* CCAccelerometer.mm in Sources */,
 				47D4DBD31CF341BF0074F3C8 /* Decoder.cpp in Sources */,
 				12F9C11F1CEC6709001AD81C /* cpBB.c in Sources */,
+				61F85915265809F300F898F5 /* UpdateDelegate.cpp in Sources */,
 				12AE06E21E40E83B007827AB /* CCTransition.cpp in Sources */,
 				12AE08841E40E83C007827AB /* CCThread.cpp in Sources */,
 				12F9C12D1CEC6709001AD81C /* cpVect.c in Sources */,
@@ -2978,6 +3072,7 @@
 				12AE06C41E40E83A007827AB /* neon_matrix_impl.c in Sources */,
 				12F9C1131CEC6709001AD81C /* cpDampedRotarySpring.c in Sources */,
 				BD51F7D9208A15FD009D7D39 /* SkeletonJson.c in Sources */,
+				61F85911265802F000F898F5 /* PoolObject.cpp in Sources */,
 				12B375CB1E4206C000EABC29 /* UICKeyChainStore.mm in Sources */,
 				617036C5265514FB00AD3A74 /* Moveable.cpp in Sources */,
 				12B3769E1E42075100EABC29 /* CCNetwork.mm in Sources */,
@@ -3013,6 +3108,7 @@
 				12AE08EA1E40E83D007827AB /* CCGLProgram.cpp in Sources */,
 				12B376AC1E42075100EABC29 /* OpenUDID_objc.m in Sources */,
 				12AE09181E40E83D007827AB /* CCUserDefault.cpp in Sources */,
+				61F8591A26580B2300F898F5 /* MoveableObject.cpp in Sources */,
 				12B376E41E42075100EABC29 /* CCEditBoxImplMac.mm in Sources */,
 				12B3774F1E4207C500EABC29 /* CEFlowLayout.cpp in Sources */,
 				12AE08F21E40E83D007827AB /* CCAnimation.cpp in Sources */,
@@ -3060,6 +3156,7 @@
 				12F9C12C1CEC6709001AD81C /* cpSweep1D.c in Sources */,
 				12AE06EC1E40E83B007827AB /* CCClippingNode.cpp in Sources */,
 				12AE09141E40E83D007827AB /* tinyxml2.cpp in Sources */,
+				61F8592D2658219600F898F5 /* WallCollider.cpp in Sources */,
 				101A2918220C9C8800BD8857 /* BlurSprite.cpp in Sources */,
 				12B376D21E42075100EABC29 /* CCControlSaturationBrightnessPicker.cpp in Sources */,
 				12B376BE1E42075100EABC29 /* SimpleAudioEngine.mm in Sources */,
@@ -3098,6 +3195,7 @@
 				12AE06BC1E40E83A007827AB /* mat4stack.c in Sources */,
 				12AE09101E40E83D007827AB /* ccCArray.cpp in Sources */,
 				12AE09381E40E83D007827AB /* CCTMXObjectGroup.cpp in Sources */,
+				61F8591E26580C6000F898F5 /* NonMoveableObject.cpp in Sources */,
 				12F9BE551CEC651D001AD81C /* AppDelegate.cpp in Sources */,
 				12B376BC1E42075100EABC29 /* CocosDenshion.m in Sources */,
 				12AE06AA1E40E83A007827AB /* CCZone.cpp in Sources */,
